@@ -17,7 +17,7 @@ class ManageExpenseController extends Controller
 
     public function expenseTypeCreate(Request $request){
 
-        dd($request->all());
+       // dd($request->all());
 
         Categories::create([
 
@@ -26,7 +26,10 @@ class ManageExpenseController extends Controller
             "expense_type"          =>$request->expense_type,
             "expense_details"       =>$request->expense_details,
 
+
         ]);
+
+        return back();
 
     }
 

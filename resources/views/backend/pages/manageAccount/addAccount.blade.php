@@ -67,8 +67,8 @@
                       </div>
 
                       <div class="form-group col-md-12">
-                        <label for="inputPassword4">Bank Address </label>
-                        <input type="text" name="bank_address" class="form-control text-area" id="inputPassword4" placeholder="Bank Address">
+                        <label for="inputAddress">Bank Address </label>
+                        <input type="text" name="bank_address" class="form-control text-area" id="inputAddress" placeholder="Bank Address">
 
                         @error('bank_address')
                         <small class="text-danger">{{$message}}</small>
