@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ManageExpenseController extends Controller
 {
@@ -15,7 +16,19 @@ class ManageExpenseController extends Controller
 
     // Expense Type
 
-    public function expenseTypeCreate(Request $request){
+        public function expenseTypeCreate(Request $request){
+
+         //validation
+
+        $validator = Validator::make($request->all(), [
+            'expense_name' => 'required|string',
+            'expense_type' => 'required|string',
+            'expense_details' => 'required|string',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
        // dd($request->all());
 
