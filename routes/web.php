@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'home'])->name('home');
 
 Route::get('/add-account',[ManageAccountsController::class,'addAccount'])->name('add.account');
-
+Route::post('/add-account-create',[ManageAccountsController::class,'addAccountCreate'])->name('add.account.create');
