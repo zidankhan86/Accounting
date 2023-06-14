@@ -20,31 +20,31 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="inputName1">Bank Holder Name</label>
-                            <input type="text" class="form-control" id="inputName1" placeholder="Bank Holder Name">
+                            <input type="text" name="" class="form-control" id="inputName1" placeholder="Bank Holder Name">
                           </div>
 
                       <div class="form-group col-md-6">
                         <label for="inputName2">Bank Name</label>
-                        <input type="text" class="form-control" id="inputName2" placeholder="Bank Name">
+                        <input type="text" name="" class="form-control" id="inputName2" placeholder="Bank Name">
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputBalance1">Account Number</label>
-                        <input type="number" class="form-control" id="inputBalance1" placeholder="Password">
+                        <input type="number" name="" class="form-control" id="inputBalance1" placeholder="Password">
                       </div>
 
 
                       <div class="form-group col-md-6">
                         <label for="inputBalance">Opening Balance</label>
-                        <input type="number" class="form-control" id="inputBalance" placeholder="Bank Name">
+                        <input type="number" name="" class="form-control" id="inputBalance" placeholder="Bank Name">
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputPassword4">Contact Number </label>
-                        <input type="tel" class="form-control" id="inputPassword4" placeholder="Contact Number">
+                        <input type="tel" name="" class="form-control" id="inputPassword4" placeholder="Contact Number">
                       </div>
 
                       <div class="form-group col-md-12">
                         <label for="inputPassword4">Bank Address </label>
-                        <input type="text" class="form-control text-area" id="inputPassword4" placeholder="Bank Address">
+                        <input type="text" name="" class="form-control text-area" id="inputPassword4" placeholder="Bank Address">
                       </div>
 
                     </div>
