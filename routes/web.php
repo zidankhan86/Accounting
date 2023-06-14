@@ -23,6 +23,6 @@ Route::post('/add-account-create',[ManageAccountsController::class,'addAccountCr
 Route::get('/account-list',[ManageAccountsController::class,'AccountList'])->name('account.list');
 
 //Manage Expense
-Route::get('/manage-expense',[ManageExpenseController::class,'manageExpense'])->name('manage.expense');
-
+Route::get('/add-expense-type',[ManageExpenseController::class,'manageExpense'])->name('manage.expense');
+Route::post('/expense-type-create',[ManageExpenseController::class,'expenseTypeCreate'])->name('expense.type.create');
 

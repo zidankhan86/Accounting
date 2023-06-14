@@ -17,7 +17,7 @@
       <div class="card-header">
         <h4 class="text-center">+Add Expense Type</h4>
       </div>
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form action="{{route('expense.type.create')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
       <div class="card-body">
@@ -44,8 +44,8 @@
 
 
           <div class="form-group col-md-6">
-            <label for="inputBalance">Expense Details</label>
-            <input type="number" name="expense_details" class="form-control" id="inputBalance" placeholder="Expense Details">
+            <label for="inputDetails">Expense Details</label>
+            <input type="text" name="expense_details" class="form-control" id="inputDetails" placeholder="Expense Details">
 
             @error('expense_details')
             <small class="text-danger">{{$message}}</small>
