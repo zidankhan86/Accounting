@@ -39,14 +39,14 @@
 
 
 
-@include('backend.fixed.sidebar')
+     @include('backend.fixed.sidebar')
 
 
 
       <!-- Main Content -->
       <div class="main-content">
 
-
+       @yield('content')
 
 
 

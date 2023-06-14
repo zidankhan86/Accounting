@@ -16,11 +16,11 @@
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Manage Accounts</span></a>
           <ul class="dropdown-menu">
             <li><a class="nav-link" href="layout-default.html">List Accounts</a></li>
-            <li><a class="nav-link" href="layout-transparent.html">Add Accounts</a></li>
+            <li><a class="nav-link" href="{{route('add.account')}}">Add Accounts</a></li>
             <li><a class="nav-link" href="layout-top-navigation.html">Cash Flow</a></li>
           </ul>
         </li>
-       
+
         <li class="dropdown">
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Manage Expenses</span></a>
           <ul class="dropdown-menu">
