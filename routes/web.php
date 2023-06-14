@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManageAccountsController;
+use App\Http\Controllers\ManageExpenseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[HomeController::class,'home'])->name('home');
-
+//Manage Account
 Route::get('/add-account',[ManageAccountsController::class,'addAccount'])->name('add.account');
 Route::post('/add-account-create',[ManageAccountsController::class,'addAccountCreate'])->name('add.account.create');
 Route::get('/account-list',[ManageAccountsController::class,'AccountList'])->name('account.list');
+
+//Manage Expense
+Route::get('/manage-expense',[ManageExpenseController::class,'manageExpense'])->name('manage.expense');
+
+
