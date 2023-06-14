@@ -10,40 +10,38 @@
         <div class="table-responsive">
           <table class="table table-bordered table-md">
             <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Created At</th>
+              <th>ID</th>
+              <th>Account Holder Name</th>
+              <th>Bank Name</th>
+              <th>Account Number</th>
+              <th>Opening Balance</th>
+              <th>Contact Number</th>
+              <th>Bank Address</th>
               <th>Status</th>
               <th>Action</th>
             </tr>
+
+            @foreach ($accounts as $account)
+
+
             <tr>
-              <td>1</td>
-              <td>Irwansyah Saputra</td>
-              <td>2017-01-09</td>
+              <td>{{$account->id}}</td>
+              <td>{{$account->account_holder_name}}</td>
+              <td>{{$account->bank_name}}</td>
+              <td>{{$account->account_number}}</td>
+              <td>{{$account->opening_balance}} BDT</td>
+              <td>{{$account->contact_number}}</td>
+              <td>{{$account->bank_address}}</td>
               <td><div class="badge badge-success">Active</div></td>
-              <td><a href="#" class="btn btn-secondary">Detail</a></td>
+              <td>
+                <a href="#" class="btn btn-secondary">Detail</a>
+                <a href="#" class="btn btn-info">Edit</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+            </td>
             </tr>
-            <tr>
-              <td>2</td>
-              <td>Hasan Basri</td>
-              <td>2017-01-09</td>
-              <td><div class="badge badge-success">Active</div></td>
-              <td><a href="#" class="btn btn-secondary">Detail</a></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Kusnadi</td>
-              <td>2017-01-11</td>
-              <td><div class="badge badge-danger">Not Active</div></td>
-              <td><a href="#" class="btn btn-secondary">Detail</a></td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Rizal Fakhri</td>
-              <td>2017-01-11</td>
-              <td><div class="badge badge-success">Active</div></td>
-              <td><a href="#" class="btn btn-secondary">Detail</a></td>
-            </tr>
+
+            @endforeach
+
           </table>
         </div>
       </div>

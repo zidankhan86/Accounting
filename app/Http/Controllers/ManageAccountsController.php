@@ -51,7 +51,9 @@ class ManageAccountsController extends Controller
             }
 
             public  function AccountList(){
-                return view('backend.pages.manageAccount.accountList');
+
+                $accounts = ManageAccount::all();
+                return view('backend.pages.manageAccount.accountList',compact('accounts'));
             }
 
-}
+         }
