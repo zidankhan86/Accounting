@@ -16,6 +16,7 @@ class ManageAccountsController extends Controller
 
          public function addAccountCreate(Request $request){
 
+            //Validation
             $validator = Validator::make($request->all(), [
                 'account_holder_name' => 'required|string',
                 'bank_name' => 'required|string',
@@ -30,9 +31,7 @@ class ManageAccountsController extends Controller
             }
 
             // Validation passed, create account
-            ManageAccount::create($request->all());
-
-
+            // ManageAccount::create($request->all());
 
 
          //dd($request->all());
@@ -47,8 +46,12 @@ class ManageAccountsController extends Controller
             "bank_address"          =>$request->bank_address,
 
          ]);
-         return back();
+            return back();
 
-  }
+            }
+
+            public  function AccountList(){
+                return view('backend.pages.manageAccount.accountList');
+            }
 
 }

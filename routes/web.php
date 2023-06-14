@@ -19,3 +19,4 @@ Route::get('/',[HomeController::class,'home'])->name('home');
 
 Route::get('/add-account',[ManageAccountsController::class,'addAccount'])->name('add.account');
 Route::post('/add-account-create',[ManageAccountsController::class,'addAccountCreate'])->name('add.account.create');
+Route::get('/account-list',[ManageAccountsController::class,'AccountList'])->name('account.list');
