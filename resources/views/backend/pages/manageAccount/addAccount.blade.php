@@ -36,20 +36,35 @@
 
                       <div class="form-group col-md-6">
                         <label for="inputName2">Account Type</label>
-                        <input type="text" name="account_type" class="form-control" id="inputName2" placeholder="Account Type">
+
+
+
+
+                            <select name="account_id" id="" class="form-control">
+
+                                @foreach ($accounts as $accounts)
+
+                                <option value="{{$accounts->id}}">{{$accounts->account_name}}</option>
+
+                                @endforeach
+
+                            </select>
+
+                      
                         @error('bank_name')
                         <p class="text-danger">{{$message}}</p>
                         @enderror
-                      </div>
+                       </div>
+
                       <div class="form-group col-md-6">
                         <label for="inputBalance1">Account Number</label>
                         <input type="number" name="account_number" class="form-control" id="inputBalance1" placeholder="Account Number">
                         @error('account_number')
                         <small class="text-danger">{{$message}}</small>
                         @enderror
-                      </div>
+                       </div>
 
-                      <div class="form-group col-md-12">
+                       <div class="form-group col-md-12">
                         <label for="inputAddress">Account Status</label>
                         <input type="hidden" name="account_status" class="form-control " id="inputAddress" placeholder="Account Status">
                           <select class="form-control" name="account_status" id="">

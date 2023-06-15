@@ -9,4 +9,9 @@ class ManageAccount extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+
+    public function AccountSetup(){
+        return $this->belongsTo(AccountType::class,'account_id','id');
+    }
 }

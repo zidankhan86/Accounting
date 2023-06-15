@@ -12,10 +12,15 @@ class ManageAccountsController extends Controller
     // Add Accounts
 
     public function addAccount(){
-              return view('backend.pages.manageAccount.addAccount');
+
+
+              $accounts = AccountType::all();
+              return view('backend.pages.manageAccount.addAccount',compact('accounts'));
               }
 
              public function addAccountCreate(Request $request){
+
+                //dd($request->all());
 
                  //Validation
                  $validator = Validator::make($request->all(), [
@@ -42,6 +47,7 @@ class ManageAccountsController extends Controller
                 "account_type"             =>$request->account_type,
                 "account_number"           =>$request->account_number,
                 "account_status"           =>$request->account_status,
+                "account_id"               =>$request->account_id
 
                 ]);
                 return back();
@@ -72,7 +78,7 @@ class ManageAccountsController extends Controller
                     }
 
 
-                //dd($request->all());
+               // dd($request->all());
 
                 AccountType::create([
 
