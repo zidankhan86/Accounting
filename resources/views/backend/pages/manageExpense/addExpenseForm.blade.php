@@ -24,7 +24,7 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="inputName1">Payable</label>
-                <input type="text" name="payable" class="form-control" id="inputName1" placeholder="Payable Name">
+                <input type="number" name="payable" class="form-control" id="inputName1" placeholder="Payable">
 
                 @error('payable')
 
@@ -114,7 +114,7 @@
 
 
         <div class="center">
-            <button type="submit" class="btn btn-success ">Submit</button>
+            <button type="submit" class="btn btn-success " style="color: rgb(8, 8, 8);">Submit</button>
         </div>
 
 
