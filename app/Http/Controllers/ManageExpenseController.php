@@ -14,30 +14,30 @@ class ManageExpenseController extends Controller
         return view('backend.pages.manageExpense.expenseCategory');
     }
 
-    // Expense Type
+        // Expense Type
 
         public function expenseTypeCreate(Request $request){
 
          //validation
 
         $validator = Validator::make($request->all(), [
-            'expense_name' => 'required|string',
-            'expense_type' => 'required|string',
-            'expense_details' => 'required|string',
+            'expense_name'       => 'required|string',
+            'expense_type'       => 'required|string',
+            'expense_details'    => 'required|string',
         ]);
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-       // dd($request->all());
+          // dd($request->all());
 
-        Categories::create([
+          Categories::create([
 
 
-            "expense_name"          =>$request->expense_name,
-            "expense_type"          =>$request->expense_type,
-            "expense_details"       =>$request->expense_details,
+            "expense_name"        =>$request->expense_name,
+            "expense_type"        =>$request->expense_type,
+            "expense_details"     =>$request->expense_details,
 
 
         ]);
