@@ -52,6 +52,23 @@ class ManageExpenseController extends Controller
             return view('backend.pages.manageExpense.addExpenseForm');
         }
         public function ExpenseCreate(Request $request){
+
+
+            //Validation
+            
+            $validator = Validator::make($request->all(), [
+                'payable' => 'required',
+                'expense_account' => 'required',
+                'expense_details' => 'required',
+                'item_name' => 'required',
+                'item_price' => 'required|numeric|min:0',
+                'item_quantity' => 'required|integer|min:1',
+                'status' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
         //Add Expense Create
 
         //dd($request->all());
