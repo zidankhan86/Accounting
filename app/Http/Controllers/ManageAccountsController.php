@@ -65,6 +65,16 @@ class ManageAccountsController extends Controller
                 //Account Type Create
                 public function AccountTypeCreate(Request $request){
 
+                    $validator = Validator::make($request->all(), [
+                        'account_name' => 'required',
+                        'account_status' => 'required',
+                    ]);
+
+                    if ($validator->fails()) {
+                        return redirect()->back()->withErrors($validator)->withInput();
+                    }
+
+
                 //dd($request->all());
 
                 AccountType::create([
