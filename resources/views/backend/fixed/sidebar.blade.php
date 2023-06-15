@@ -26,7 +26,7 @@
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Manage Expenses</span></a>
           <ul class="dropdown-menu">
             <li><a class="nav-link" href="bootstrap-alert.html">List Expenses</a></li>
-            <li><a class="nav-link" href="bootstrap-badge.html">Add Expenses</a></li>
+            <li><a class="nav-link" href="{{route('add.expense')}}">Add Expenses</a></li>
             <li><a class="nav-link" href="{{route('manage.expense')}}">Expenses type</a></li>
           </ul>
         </li>

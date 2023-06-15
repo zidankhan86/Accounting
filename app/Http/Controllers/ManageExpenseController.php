@@ -46,5 +46,9 @@ class ManageExpenseController extends Controller
 
     }
 
+    public function addExpense(){
+        return view('backend.pages.manageExpense.addExpenseForm');
+    }
+
 
 }

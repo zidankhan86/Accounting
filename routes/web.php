@@ -28,4 +28,4 @@ Route::post('/account-type-create',[ManageAccountsController::class,'AccountType
 //Manage Expense
 Route::get('/add-expense-type',[ManageExpenseController::class,'manageExpense'])->name('manage.expense');
 Route::post('/expense-type-create',[ManageExpenseController::class,'expenseTypeCreate'])->name('expense.type.create');
-
+Route::get('/add-expense-form',[ManageExpenseController::class,'addExpense'])->name('add.expense');
