@@ -17,7 +17,7 @@
           <ul class="dropdown-menu">
           <li><a class="nav-link" href="{{route('account.type')}}">Accounts Type</a></li>
             <li><a class="nav-link" href="{{route('account.list')}}">List Accounts</a></li>
-            <li><a class="nav-link" href="{{route('add.account')}}">Add Accounts</a></li>
+            <li><a class="nav-link" href="{{route('add.account')}}">Accounts Setup</a></li>
             <li><a class="nav-link" href="layout-top-navigation.html">Cash Flow</a></li>
           </ul>
         </li>

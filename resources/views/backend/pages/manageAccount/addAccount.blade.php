@@ -24,8 +24,8 @@
                   <div class="card-body">
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label for="inputName1">Bank Holder Name</label>
-                            <input type="text" name="account_holder_name" class="form-control" id="inputName1" placeholder="Bank Holder Name">
+                            <label for="inputName1">Account Name</label>
+                            <input type="text" name="account_name" class="form-control" id="inputName1" placeholder="Account Name">
 
                             @error('account_holder_name')
 
@@ -35,41 +35,27 @@
                           </div>
 
                       <div class="form-group col-md-6">
-                        <label for="inputName2">Bank Name</label>
-                        <input type="text" name="bank_name" class="form-control" id="inputName2" placeholder="Bank Name">
+                        <label for="inputName2">Account Type</label>
+                        <input type="text" name="account_type" class="form-control" id="inputName2" placeholder="Account Type">
                         @error('bank_name')
                         <p class="text-danger">{{$message}}</p>
                         @enderror
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputBalance1">Account Number</label>
-                        <input type="number" name="account_number" class="form-control" id="inputBalance1" placeholder="Password">
+                        <input type="number" name="account_number" class="form-control" id="inputBalance1" placeholder="Account Number">
                         @error('account_number')
                         <small class="text-danger">{{$message}}</small>
                         @enderror
                       </div>
 
-
-                      <div class="form-group col-md-6">
-                        <label for="inputBalance">Opening Balance</label>
-                        <input type="number" name="opening_balance" class="form-control" id="inputBalance" placeholder="Bank Name">
-
-                        @error('opening_balance')
-                        <small class="text-danger">{{$message}}</small>
-                        @enderror
-                      </div>
-                      <div class="form-group col-md-6">
-                        <label for="inputPassword4">Contact Number </label>
-                        <input type="tel" name="contact_number" class="form-control" id="inputPassword4" placeholder="Contact Number">
-
-                        @error('contact_number')
-                        <small class="text-danger">{{$message}}</small>
-                        @enderror
-                      </div>
-
                       <div class="form-group col-md-12">
-                        <label for="inputAddress">Bank Address </label>
-                        <input type="text" name="bank_address" class="form-control text-area" id="inputAddress" placeholder="Bank Address">
+                        <label for="inputAddress">Account Status</label>
+                        <input type="hidden" name="account_status" class="form-control " id="inputAddress" placeholder="Account Status">
+                          <select class="form-control" name="account_status" id="">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                          </select>
 
                         @error('bank_address')
                         <small class="text-danger">{{$message}}</small>

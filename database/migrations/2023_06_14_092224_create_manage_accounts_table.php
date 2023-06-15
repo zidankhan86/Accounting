@@ -13,12 +13,10 @@ return new class extends Migration
     {
         Schema::create('manage_accounts', function (Blueprint $table) {
             $table->id();
-            $table->string('account_holder_name',1000);
-            $table->string('bank_name',100);
+            $table->string('account_name',1000);
+            $table->string('account_type',100);
             $table->string('account_number',100);
-            $table->string('opening_balance',100);
-            $table->string('contact_number',100);
-            $table->longText('bank_address',1000);
+            $table->string('account_status',100);
             $table->timestamps();
         });
     }
