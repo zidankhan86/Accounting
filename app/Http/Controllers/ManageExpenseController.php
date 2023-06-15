@@ -49,11 +49,13 @@ class ManageExpenseController extends Controller
 
             //Add Expense Form
            public function addExpense(){
-            return view('backend.pages.manageExpense.addExpenseForm');
+
+            $expenses = Categories::all();
+            return view('backend.pages.manageExpense.addExpenseForm',compact('expenses'));
            }
            public function ExpenseCreate(Request $request){
 
-            dd($request->all()); 
+            //dd($request->all());
             //Validation
 
             $validator = Validator::make($request->all(), [
@@ -71,7 +73,7 @@ class ManageExpenseController extends Controller
             }
         //Add Expense Create
 
-            //dd($request->all());
+           // dd($request->all());
             Expense::create([
 
             "payable"             =>$request->payable,
@@ -81,6 +83,7 @@ class ManageExpenseController extends Controller
             "item_price"          =>$request->item_price,
             "item_quantity"       =>$request->item_quantity,
             "status"              =>$request->status,
+            "expense_id"          =>$request->expense_id
 
 
          ]);

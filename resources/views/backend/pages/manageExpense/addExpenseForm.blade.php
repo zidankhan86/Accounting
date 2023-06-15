@@ -43,9 +43,23 @@
 
 
 
-          <div class="form-group col-md-6">
-            <label for="inputDetails">Expense Type</label>
-            <input type="text" name="expense_type" class="form-control" id="inputDetails" placeholder="Expense Type">
+
+
+            <div class="form-group col-md-6">
+                <label for="inputName2">Account Type</label>
+
+                    <select name="expense_type" id="" class="form-control">
+
+                        @foreach ($expenses as $expense)
+
+                        <option value="{{$expense->id}}">{{$expense->expense_type}}</option>
+
+                        @endforeach
+
+                    </select>
+
+
+
 
             @error('expense_details')
             <small class="text-danger">{{$message}}</small>
@@ -90,11 +104,12 @@
         @enderror
         </div>
 
+         <div>
+            <input type="hidden" name="expense_id" value="{{$expense->id}}">
+         </div>
 
         <div class="form-group col-md-12">
             <label for="inputName1">Status</label>
-            <input type="hidden" name="status" class="form-control" id="inputName1" placeholder="Status">
-
             <select  class="form-control" name="status" id="">
                 <option value="Cash_In" style="color: green">Cash In</option>
                 <option value="Cash_Out" style="color: red">Cash Out</option>
