@@ -17,7 +17,7 @@
       <div class="card-header">
         <h4 class="text-center">+Add Account Type</h4>
       </div>
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form action="{{route('account.type.create')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
       <div class="card-body">
