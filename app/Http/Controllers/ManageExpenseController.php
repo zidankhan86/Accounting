@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categories;
+use App\Models\Expense;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class ManageExpenseController extends Controller
 {
-    // Category Blade
+    // Category Form
 
     public function manageExpense(){
         return view('backend.pages.manageExpense.expenseCategory');
     }
 
-        // Expense Type
+        // Expense Type Create
 
         public function expenseTypeCreate(Request $request){
 
@@ -46,9 +47,32 @@ class ManageExpenseController extends Controller
 
     }
 
-    public function addExpense(){
-        return view('backend.pages.manageExpense.addExpenseForm');
-    }
+        //Add Expense Form
+        public function addExpense(){
+            return view('backend.pages.manageExpense.addExpenseForm');
+        }
+        public function ExpenseCreate(Request $request){
+        //Add Expense Create
+
+        //dd($request->all());
+        Expense::create([
+
+        "payable" =>$request->payable,
+        "expense_account" =>$request->expense_account,
+        "expense_details" =>$request->expense_details,
+        "item_name" =>$request->item_name,
+        "item_price" =>$request->item_price,
+        "item_quantity" =>$request->item_quantity,
+        "status" =>$request->status,
+
+
+     ]);
+     return redirect()->back();
+
+}
+
+
+
 
 
 }

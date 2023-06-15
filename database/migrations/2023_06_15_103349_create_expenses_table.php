@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('item_name',1000);
             $table->double('item_price',100);
             $table->double('item_quantity',100);
-            $table->double('status');
+            $table->string('status');
             $table->timestamps();
         });
     }

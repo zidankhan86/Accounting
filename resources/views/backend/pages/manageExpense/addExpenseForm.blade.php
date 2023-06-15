@@ -17,7 +17,7 @@
       <div class="card-header">
         <h4 class="text-center">+Add Expense </h4>
       </div>
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form action="{{route('expense.create')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
       <div class="card-body">
@@ -96,8 +96,8 @@
             <input type="hidden" name="status" class="form-control" id="inputName1" placeholder="Status">
 
             <select  class="form-control" name="status" id="">
-                <option value="Cash In" style="color: green">Cash In</option>
-                <option value="Cash Out" style="color: red">Cash Out</option>
+                <option value="Cash_In" style="color: green">Cash In</option>
+                <option value="Cash_Out" style="color: red">Cash Out</option>
             </select>
 
             @error('status')
