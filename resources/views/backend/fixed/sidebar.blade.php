@@ -15,7 +15,7 @@
         <li class="dropdown">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Manage Accounts</span></a>
           <ul class="dropdown-menu">
-          <li><a class="nav-link" href="">Accounts Type</a></li>
+          <li><a class="nav-link" href="{{route('account.type')}}">Accounts Type</a></li>
             <li><a class="nav-link" href="{{route('account.list')}}">List Accounts</a></li>
             <li><a class="nav-link" href="{{route('add.account')}}">Add Accounts</a></li>
             <li><a class="nav-link" href="layout-top-navigation.html">Cash Flow</a></li>

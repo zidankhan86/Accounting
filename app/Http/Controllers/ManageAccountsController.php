@@ -56,4 +56,8 @@ class ManageAccountsController extends Controller
                 return view('backend.pages.manageAccount.accountList',compact('accounts'));
             }
 
+            public function AccountType(){
+                return view('backend.pages.manageAccount.accountType');
+            }
+
          }

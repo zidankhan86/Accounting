@@ -21,7 +21,7 @@ Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/add-account',[ManageAccountsController::class,'addAccount'])->name('add.account');
 Route::post('/add-account-create',[ManageAccountsController::class,'addAccountCreate'])->name('add.account.create');
 Route::get('/account-list',[ManageAccountsController::class,'AccountList'])->name('account.list');
-
+Route::get('/account-type',[ManageAccountsController::class,'AccountType'])->name('account.type');
 //Manage Expense
 Route::get('/add-expense-type',[ManageExpenseController::class,'manageExpense'])->name('manage.expense');
 Route::post('/expense-type-create',[ManageExpenseController::class,'expenseTypeCreate'])->name('expense.type.create');

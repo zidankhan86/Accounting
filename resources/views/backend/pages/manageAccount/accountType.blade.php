@@ -33,12 +33,12 @@
                 @enderror
               </div>
 
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-12">
             <label for="inputName2">Account Status</label>
-            <input type="text" name="account_status" class="form-control" id="inputName2" placeholder="Account Status">
-            <select name="" id="">
-                <option value="">Inactive</option>
-                <option value="">Active</option>
+            <input type="hidden" name="account_status" class="form-control" id="inputName2" placeholder="Account Status">
+            <select name="account_status" class="form-control" name="" id="">
+                <option  value="Inactive">Inactive</option>
+                <option value="Active">Active</option>
             </select>
             @error('expense_type')
             <p class="text-danger">{{$message}}</p>
