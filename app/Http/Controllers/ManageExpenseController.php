@@ -45,21 +45,21 @@ class ManageExpenseController extends Controller
 
         return back();
 
-    }
+         }
 
-        //Add Expense Form
-        public function addExpense(){
+            //Add Expense Form
+           public function addExpense(){
             return view('backend.pages.manageExpense.addExpenseForm');
-        }
-        public function ExpenseCreate(Request $request){
+           }
+           public function ExpenseCreate(Request $request){
 
-
+            dd($request->all()); 
             //Validation
-            
+
             $validator = Validator::make($request->all(), [
                 'payable' => 'required',
                 'expense_account' => 'required',
-                'expense_details' => 'required',
+                'expense_type' => 'required',
                 'item_name' => 'required',
                 'item_price' => 'required|numeric|min:0',
                 'item_quantity' => 'required|integer|min:1',
@@ -71,20 +71,20 @@ class ManageExpenseController extends Controller
             }
         //Add Expense Create
 
-        //dd($request->all());
-        Expense::create([
+            //dd($request->all());
+            Expense::create([
 
-        "payable" =>$request->payable,
-        "expense_account" =>$request->expense_account,
-        "expense_details" =>$request->expense_details,
-        "item_name" =>$request->item_name,
-        "item_price" =>$request->item_price,
-        "item_quantity" =>$request->item_quantity,
-        "status" =>$request->status,
+            "payable"             =>$request->payable,
+            "expense_account"     =>$request->expense_account,
+            "expense_type"        =>$request->expense_type,
+            "item_name"           =>$request->item_name,
+            "item_price"          =>$request->item_price,
+            "item_quantity"       =>$request->item_quantity,
+            "status"              =>$request->status,
 
 
-     ]);
-     return redirect()->back();
+         ]);
+         return redirect()->back();
 
 }
 

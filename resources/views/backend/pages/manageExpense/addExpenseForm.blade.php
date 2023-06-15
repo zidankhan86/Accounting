@@ -44,8 +44,8 @@
 
 
           <div class="form-group col-md-6">
-            <label for="inputDetails">Expense Details</label>
-            <input type="text" name="expense_details" class="form-control" id="inputDetails" placeholder="Expense Details">
+            <label for="inputDetails">Expense Type</label>
+            <input type="text" name="expense_type" class="form-control" id="inputDetails" placeholder="Expense Type">
 
             @error('expense_details')
             <small class="text-danger">{{$message}}</small>

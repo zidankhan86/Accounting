@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('expense_id');
             $table->string('payable',100);
             $table->string('expense_account',100);
-            $table->longText('expense_details',1000);
+            $table->longText('expense_type',1000);
             $table->text('item_name',1000);
             $table->string('item_price',100);
             $table->double('item_quantity',100);
