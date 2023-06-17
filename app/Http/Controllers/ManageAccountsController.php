@@ -25,7 +25,6 @@ class ManageAccountsController extends Controller
                  //Validation
                  $validator = Validator::make($request->all(), [
                 'account_name' => 'required|string',
-                'account_type' => 'required|string',
                 'account_number' => 'required|string',
                 'account_status' => 'required',
 
@@ -44,7 +43,6 @@ class ManageAccountsController extends Controller
                 ManageAccount::create([
 
                 "account_name"             =>$request->account_name,
-                "account_type"             =>$request->account_type,
                 "account_number"           =>$request->account_number,
                 "account_status"           =>$request->account_status,
                 "account_id"               =>$request->account_id
@@ -56,7 +54,7 @@ class ManageAccountsController extends Controller
                   //Acount List Blade
                 public  function AccountList(){
 
-                    $accounts = ManageAccount::all();
+                    $accounts = ManageAccount::simplePaginate(5);
                     return view('backend.pages.manageAccount.accountList',compact('accounts'));
                 }
                 //Account Type Blade

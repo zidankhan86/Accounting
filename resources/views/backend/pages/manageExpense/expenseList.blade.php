@@ -11,22 +11,28 @@
           <table class="table table-bordered table-md">
             <tr>
               <th>ID</th>
-              <th>Account Name</th>
+              <th>Payable</th>
+              <th>Expense Account</th>
               <th>Account Type</th>
-              <th>Account Number</th>
-              <th>Account Status</th>
+              <th>Item Name</th>
+              <th>Item Price</th>
+              <th>Item Quantity</th>
+              <th>Status</th>
               <th>Action</th>
             </tr>
 
-            @foreach ($accounts as $account)
+            @foreach ($expenses as $account)
 
 
             <tr>
               <td>{{$account->id}}</td>
-              <td>{{$account->account_name}}</td>
-              <td>{{$account->account_type}}</td>
-              <td>{{$account->account_number}}</td>
-              <td>{{$account->account_status}}</td>
+              <td>{{$account->payable}}</td>
+              <td>{{$account->expense_account}}</td>
+              <td>{{$account->expense_type}}</td>
+              <td>{{$account->item_name}}</td>
+              <td>{{$account->item_price}}</td>
+              <td>{{$account->item_quantity}}</td>
+              <td>{{$account->status}}</td>
               <td>
                 <a href="#" class="btn btn-secondary">Detail</a>
                 <a href="#" class="btn btn-info">Edit</a>
@@ -37,7 +43,7 @@
             @endforeach
 
           </table>
-          {{$accounts->links()}}
+          {{$expenses->links()}}
         </div>
       </div>
     </div>

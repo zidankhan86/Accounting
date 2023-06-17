@@ -91,6 +91,12 @@ class ManageExpenseController extends Controller
 
 }
 
+public function ExpenseList(){
+
+    $expenses = Expense::simplePaginate(5);
+    return view('backend.pages.manageExpense.expenseList',compact('expenses'));
+}
+
 
 
 

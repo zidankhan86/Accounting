@@ -30,4 +30,4 @@ Route::get('/add-expense-type',[ManageExpenseController::class,'manageExpense'])
 Route::post('/expense-type-create',[ManageExpenseController::class,'expenseTypeCreate'])->name('expense.type.create');
 Route::get('/add-expense-form',[ManageExpenseController::class,'addExpense'])->name('add.expense');
 Route::post('/expense-create',[ManageExpenseController::class,'ExpenseCreate'])->name('expense.create');
-
+Route::get('/expense-list',[ManageExpenseController::class,'ExpenseList'])->name('expense.list');
