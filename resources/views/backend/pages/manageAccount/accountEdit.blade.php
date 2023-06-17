@@ -80,7 +80,7 @@
         </div>
 
         <div class="center">
-            <button type="submit" class="btn btn-success ">Submit</button>
+            <button type="submit" class="btn btn-success ">Update Changes</button>
         </div>
       </div>
 

@@ -88,7 +88,7 @@ class ManageAccountsController extends Controller
 
                 }
 
-                public function AccountTypeEdit($id){
+                public function AccountManageEdit($id){
 
                     //dd($id);
 

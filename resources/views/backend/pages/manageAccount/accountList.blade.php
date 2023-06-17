@@ -29,7 +29,7 @@
               <td>{{$account->account_status}}</td>
               <td>
                 <a href="#" class="btn btn-secondary">Detail</a>
-                <a href="{{route('account.type.edit',$account->id)}}" class="btn btn-info">Edit</a>
+                <a href="{{route('account.manage.edit',$account->id)}}" class="btn btn-info">Edit</a>
                 <a href="#" class="btn btn-danger">Delete</a>
             </td>
             </tr>
