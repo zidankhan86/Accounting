@@ -11,13 +11,10 @@
           <table class="table table-bordered table-md">
             <tr>
               <th>ID</th>
-              <th>Account Holder Name</th>
-              <th>Bank Name</th>
+              <th>Account Name</th>
+              <th>Account Type</th>
               <th>Account Number</th>
-              <th>Opening Balance</th>
-              <th>Contact Number</th>
-              <th>Bank Address</th>
-              <th>Status</th>
+              <th>Account Status</th>
               <th>Action</th>
             </tr>
 
@@ -26,13 +23,10 @@
 
             <tr>
               <td>{{$account->id}}</td>
-              <td>{{$account->account_holder_name}}</td>
-              <td>{{$account->bank_name}}</td>
+              <td>{{$account->account_name}}</td>
+              <td>{{$account->account_type}}</td>
               <td>{{$account->account_number}}</td>
-              <td>{{$account->opening_balance}} BDT</td>
-              <td>{{$account->contact_number}}</td>
-              <td>{{$account->bank_address}}</td>
-              <td><div class="badge badge-success">Active</div></td>
+              <td>{{$account->account_status}}</td>
               <td>
                 <a href="#" class="btn btn-secondary">Detail</a>
                 <a href="#" class="btn btn-info">Edit</a>
