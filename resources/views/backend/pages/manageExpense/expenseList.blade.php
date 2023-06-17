@@ -27,7 +27,7 @@
             <tr>
               <td>{{$account->id}}</td>
               <td>{{$account->payable}}</td>
-              <td>{{$account->expense_account}}</td>
+              <td>{{$account->transactionAccount->account_name}}</td>
               <td>{{$account->ExpenseType->expense_type}}</td>
               <td>{{$account->item_name}}</td>
               <td>{{$account->item_price}}</td>

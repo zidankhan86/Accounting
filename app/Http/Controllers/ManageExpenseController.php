@@ -59,7 +59,6 @@ class ManageExpenseController extends Controller
 
             $validator = Validator::make($request->all(), [
                 'payable' => 'required',
-                'expense_account' => 'required',
                 'expense_type' => 'required',
                 'item_name' => 'required',
                 'item_price' => 'required|numeric|min:0',
@@ -76,7 +75,6 @@ class ManageExpenseController extends Controller
             Expense::create([
 
             "payable"             =>$request->payable,
-            "expense_account"     =>$request->expense_account,
             "expense_type"        =>$request->expense_type,
             "item_name"           =>$request->item_name,
             "item_price"          =>$request->item_price,
