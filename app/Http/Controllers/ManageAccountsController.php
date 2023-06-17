@@ -88,5 +88,17 @@ class ManageAccountsController extends Controller
 
                 }
 
+                public function AccountTypeEdit($id){
+
+                    //dd($id);
+
+                    $accounts =AccountType::all();
+
+                    $edit = ManageAccount::find($id);
+
+                    return view('backend.pages.manageAccount.accountEdit',compact('edit','accounts'));
+
+                }
+
 
                     }

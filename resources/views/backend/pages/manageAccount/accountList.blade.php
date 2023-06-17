@@ -24,12 +24,12 @@
             <tr>
               <td>{{$account->id}}</td>
               <td>{{$account->account_name}}</td>
-              <td>{{$account->account_type}}</td>
+              <td>{{$account->AccountSetup->account_name}}</td>
               <td>{{$account->account_number}}</td>
               <td>{{$account->account_status}}</td>
               <td>
                 <a href="#" class="btn btn-secondary">Detail</a>
-                <a href="#" class="btn btn-info">Edit</a>
+                <a href="{{route('account.type.edit',$account->id)}}" class="btn btn-info">Edit</a>
                 <a href="#" class="btn btn-danger">Delete</a>
             </td>
             </tr>
