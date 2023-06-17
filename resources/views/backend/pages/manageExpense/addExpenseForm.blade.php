@@ -33,16 +33,25 @@
                 @enderror
               </div>
 
-          <div class="form-group col-md-6">
-            <label for="inputName2">Expense Account</label>
-            <input type="text" name="expense_account" class="form-control" id="inputName2" placeholder="Expense Account">
-            @error('expense_account')
-            <p class="text-danger">{{$message}}</p>
+              <div class="form-group col-md-6">
+                <label for="inputName2">Expense Account</label>
+
+                    <select name="tansaction_account_id" id="" class="form-control">
+
+                        @foreach ($transaction as $expense)
+
+                        <option value="{{$expense->id}}">{{$expense->account_name}}</option>
+
+                        @endforeach
+
+                    </select>
+            @error('expense_details')
+            <small class="text-danger">{{$message}}</small>
             @enderror
-          </div>
+             </div>
 
 
-
+             
 
 
             <div class="form-group col-md-6">
@@ -57,10 +66,6 @@
                         @endforeach
 
                     </select>
-
-
-
-
             @error('expense_details')
             <small class="text-danger">{{$message}}</small>
             @enderror

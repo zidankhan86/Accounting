@@ -17,6 +17,12 @@ return new class extends Migration
             ->constrained('expenses')
             ->restrictOnDelete()
             ->restrictOnUpdate();
+            
+            $table->foreignId('tansaction_account_id')
+            ->constrained('expenses')
+            ->restrictOnDelete()
+            ->restrictOnUpdate();
+
             $table->string('payable',100);
             $table->string('expense_account',100);
             $table->longText('expense_type',1000);

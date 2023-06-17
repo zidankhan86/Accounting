@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AccountType;
 use App\Models\Categories;
 use App\Models\Expense;
 use Illuminate\Http\Request;
@@ -9,11 +10,11 @@ use Illuminate\Support\Facades\Validator;
 
 class ManageExpenseController extends Controller
 {
-    // Category Form
+        // Category Form
 
-    public function manageExpense(){
+        public function manageExpense(){
         return view('backend.pages.manageExpense.expenseCategory');
-    }
+        }
 
         // Expense Type Create
 
@@ -33,25 +34,23 @@ class ManageExpenseController extends Controller
 
           // dd($request->all());
 
-          Categories::create([
-
+           Categories::create([
 
             "expense_name"        =>$request->expense_name,
             "expense_type"        =>$request->expense_type,
             "expense_details"     =>$request->expense_details,
 
+         ]);
 
-        ]);
-
-        return back();
+          return back();
 
          }
 
             //Add Expense Form
            public function addExpense(){
-
+            $transaction = AccountType::all();
             $expenses = Categories::all();
-            return view('backend.pages.manageExpense.addExpenseForm',compact('expenses'));
+            return view('backend.pages.manageExpense.addExpenseForm',compact('expenses','transaction'));
            }
            public function ExpenseCreate(Request $request){
 
@@ -83,7 +82,8 @@ class ManageExpenseController extends Controller
             "item_price"          =>$request->item_price,
             "item_quantity"       =>$request->item_quantity,
             "status"              =>$request->status,
-            "expense_id"          =>$request->expense_id
+            "expense_id"          =>$request->expense_id,
+            "tansaction_account_id"=>$request->tansaction_account_id
 
 
          ]);
