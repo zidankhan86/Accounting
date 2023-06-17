@@ -54,7 +54,7 @@ class ManageAccountsController extends Controller
                   //Acount List Blade
                 public  function AccountList(){
 
-                    $accounts = ManageAccount::simplePaginate(5);
+                    $accounts = ManageAccount::simplePaginate(10);
                     return view('backend.pages.manageAccount.accountList',compact('accounts'));
                 }
                 //Account Type Blade
