@@ -91,12 +91,36 @@ class ManageExpenseController extends Controller
 
 public function ExpenseList(){
 
-    $expenses = Expense::simplePaginate(10);
-    return view('backend.pages.manageExpense.expenseList',compact('expenses'));
+     //Calculate total expense amount and total item quantity
+     $totalExpenseAmount = Expense::sum('item_price');
+     $totalItemQuantity = Expense::sum('item_quantity');
+
+     //Perform any other accounting calculations or operations here
+
+
+     //Retrieve account types
+     $accountTypes = AccountType::all();
+
+     //Return the data to the view or perform any other actions
+
+
+       $expenses = Expense::simplePaginate(10);
+
+
+    //     foreach ($expenses as $expense) {
+    //     if (strcasecmp($expense->status, 'Cash_In') === 0) {
+    //         Cash_in: Deduct the item price from the total expense amount
+    //         $totalExpenseAmount += $expense->item_price;
+    //     } elseif (strcasecmp($expense->status, 'Cash_Out') === 0) {
+    //          Cash_out: Add the item price to the total expense amount
+    //         $totalExpenseAmount -= $expense->item_price;
+    //     }
+    // }
+
+    // Retrieve account types
+    $accountTypes = AccountType::all();
+    return view('backend.pages.manageExpense.expenseList',compact('expenses','totalExpenseAmount', 'totalItemQuantity', 'accountTypes'));
+
 }
-
-
-
-
 
 }

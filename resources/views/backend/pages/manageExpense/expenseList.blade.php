@@ -11,8 +11,11 @@
           <table class="table table-bordered table-md">
             <tr>
               <th>ID</th>
+              <th>Date & Time</th>
               <th>Payable</th>
-              <th>Expense Account</th>
+              {{-- <th>Expense Account</th> --}}
+              <th>Total Amount</th>
+              <th>Total Quantity</th>
               <th>Account Type</th>
               <th>Item Name</th>
               <th>Item Price</th>
@@ -26,8 +29,13 @@
 
             <tr>
               <td>{{$account->id}}</td>
+              <td>{{$account->created_at}}</td>
               <td>{{$account->payable}}</td>
-              <td>{{$account->transactionAccount->account_name}}</td>
+              {{-- <td>{{$account->transactionAccount->account_name}}</td> --}}
+
+              <td>{{$totalExpenseAmount}} BDT</td>
+              <td>{{$totalItemQuantity}}</td>
+
               <td>{{$account->ExpenseType->expense_type}}</td>
               <td>{{$account->item_name}}</td>
               <td>{{$account->item_price}}</td>
