@@ -18,14 +18,14 @@
       <div class="card-header">
         <h4 class="text-center">+Add Authorities Form</h4>
       </div>
-    <form action="{{route('add.account.create')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('add.authorities.create')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
       <div class="card-body">
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="inputName1">Authorities Name</label>
-                <input type="text" name="account_name" class="form-control" id="inputName1" placeholder="Authorities Name">
+                <input type="text" name="name" class="form-control" id="inputName1" placeholder="Authorities Name">
 
                 @error('account_holder_name')
 
@@ -54,9 +54,9 @@
 
            <div class="form-group col-md-6">
             <label for="inputName2">Cash Credit (CC) Loan Limit</label>
-           <input class="form-control" type="email" name="cash_credit" placeholder="Cash Credit (CC) Loan Limit">
+           <input class="form-control" type="number" name="cash_limit" placeholder="100000">
 
-            @error('bank_name')
+            @error('cash_credit')
             <p class="text-danger">{{$message}}</p>
             @enderror
            </div>
@@ -71,13 +71,13 @@
 
            <div class="form-group col-md-12">
             <label for="inputAddress">Account Status</label>
-            <input type="hidden" name="account_status" class="form-control " id="inputAddress" placeholder="Account Status">
-              <select class="form-control" name="account_status" id="">
+            <input type="hidden" name="status" class="form-control " id="inputAddress" placeholder="Account Status">
+              <select class="form-control" name="status" id="">
                 <option value="Active">Active</option>
                 <option value="Inactive">Inactive</option>
               </select>
 
-            @error('bank_address')
+            @error('status')
             <small class="text-danger">{{$message}}</small>
             @enderror
           </div>
