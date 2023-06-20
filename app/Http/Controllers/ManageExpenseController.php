@@ -103,7 +103,6 @@ public function ExpenseList(){
 
      //Return the data to the view or perform any other actions
 
-
        $expenses = Expense::simplePaginate(10);
 
 
