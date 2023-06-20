@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoanManageController;
 use App\Http\Controllers\ManageAccountsController;
 use App\Http\Controllers\ManageExpenseController;
 use Illuminate\Support\Facades\Route;
@@ -34,3 +35,5 @@ Route::post('/expense-create',[ManageExpenseController::class,'ExpenseCreate'])-
 Route::get('/expense-list',[ManageExpenseController::class,'ExpenseList'])->name('expense.list');
 Route::get('/expense-edit',[ManageExpenseController::class,'ExpenseEdit'])->name('expense.edit');
 
+//Manage Loan
+Route::get('/add-authorities',[LoanManageController::class,'addAuthorities'])->name('add.authorities');
