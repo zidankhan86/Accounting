@@ -17,7 +17,7 @@
       <div class="card-header">
         <h4 class="text-center">+Add Loan Type</h4>
       </div>
-    <form action="{{route('account.type.create')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('loan.type.create')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
       <div class="card-body">
@@ -35,7 +35,6 @@
 
           <div class="form-group col-md-12">
             <label for="inputName2">Status</label>
-            <input type="hidden" name="account_status" class="form-control" id="inputName2" placeholder="Account Status">
             <select name="status" class="form-control" name="" id="">
                 <option  value="Inactive">Inactive</option>
                 <option value="Active">Active</option>

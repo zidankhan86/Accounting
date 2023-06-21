@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Authorities;
+use App\Models\LoanType;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
@@ -59,5 +60,21 @@ class LoanManageController extends Controller
 
     public function addType(){
         return view('backend.pages.manageLoan.loanType');
+    }
+
+    public function typeCreate(Request $request){
+
+        //dd($request->all());
+
+        LoanType::create([
+
+            "loan_type"=>$request->loan_type,
+            "status"=>$request->status
+
+        ]);
+
+        Alert::toast('Loan type added','success');
+        return back();
+
     }
 }

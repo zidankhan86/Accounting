@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Dashboard
 Route::get('/',[HomeController::class,'home'])->name('home');
+
 //Manage Account
 Route::get('/add-account',[ManageAccountsController::class,'addAccount'])->name('add.account');
 Route::post('/add-account-create',[ManageAccountsController::class,'addAccountCreate'])->name('add.account.create');
@@ -38,7 +40,6 @@ Route::get('/expense-edit',[ManageExpenseController::class,'ExpenseEdit'])->name
 //Manage Loan
 Route::get('/add-authorities',[LoanManageController::class,'addAuthorities'])->name('add.authorities');
 Route::post('/add-authorities-create',[LoanManageController::class,'addAuthoritiesCreate'])->name('add.authorities.create');
-
-
 Route::get('/add-loan',[LoanManageController::class,'addLoan'])->name('add.loan');
 Route::get('/add-type',[LoanManageController::class,'addType'])->name('add.loan.type');
+Route::post('/add-type/create',[LoanManageController::class,'typeCreate'])->name('loan.type.create');
