@@ -16,7 +16,7 @@
 
     <div class="card">
       <div class="card-header">
-        <h4 class="text-center">+Add Authorities Form</h4>
+        <h4 class="text-center">+Add Loan Form</h4>
       </div>
     <form action="{{route('add.authorities.create')}}" method="POST" enctype="multipart/form-data">
         @csrf

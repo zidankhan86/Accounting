@@ -37,13 +37,19 @@
           <ul class="dropdown-menu">
             <li><a class="nav-link beep beep-sidebar" href="{{route('add.authorities')}}">Add Authorities </a></li>
             <li><a class="nav-link beep beep-sidebar" href="{{route('authorities.list')}}">Authorities List </a></li>
-            <li><a class="nav-link" href="components-article.html">List Loans</a></li>
+
+
+            <li><a class="nav-link" href="{{route('add.loan.type')}}">Loan Types</a></li>
+
              <li><a class="nav-link beep beep-sidebar" href="{{route('add.loan')}}">Add Loan </a></li>
 
-              <li><a class="nav-link" href="{{route('add.loan.type')}}">Loan Types</a></li>
+             <li><a class="nav-link" href="components-article.html">List Loans</a></li>
+
+             <li><a class="nav-link" href="components-gallery.html">Add Loans Accounts</a></li>
+
             <li><a class="nav-link beep beep-sidebar" href="components-empty-state.html">List Loan Accounts</a></li>
 
-              <li><a class="nav-link" href="components-gallery.html">Add Loans Accounts</a></li>
+
 
             <li><a class="nav-link beep beep-sidebar" href="components-hero.html">VAT & TAX</a></li>
 
