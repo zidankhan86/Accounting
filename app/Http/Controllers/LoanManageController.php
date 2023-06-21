@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Authorities;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 
 class LoanManageController extends Controller
@@ -43,7 +44,16 @@ class LoanManageController extends Controller
 
 
         ]);
+
+       Alert::toast('Authorities Added!','success');
+
+
+
         return back();
 
+    }
+
+    public function addLoan(){
+        return view('backend.pages.manageLoan.addLoan');
     }
 }

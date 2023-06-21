@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AccountType;
 use Illuminate\Http\Request;
 use App\Models\ManageAccount;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 
 class ManageAccountsController extends Controller
@@ -48,6 +49,7 @@ class ManageAccountsController extends Controller
                 "account_id"               =>$request->account_id
 
                 ]);
+                Alert::toast(' Success! Account Setup','success');
                 return back();
 
                 }
@@ -83,7 +85,7 @@ class ManageAccountsController extends Controller
                 "account_name" =>$request->account_name,
                 "account_status" =>$request->account_status,
                 ]);
-
+                Alert::toast(' Success! Account Type Added','success');
                 return redirect()->back();
 
                 }

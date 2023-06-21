@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AccountType;
-use App\Models\Categories;
 use App\Models\Expense;
+use App\Models\Categories;
+use App\Models\AccountType;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 
 class ManageExpenseController extends Controller
@@ -41,7 +42,7 @@ class ManageExpenseController extends Controller
             "expense_details"     =>$request->expense_details,
 
          ]);
-
+         Alert::toast(' Success! Expense Type Added','success');
           return back();
 
          }
@@ -85,6 +86,7 @@ class ManageExpenseController extends Controller
 
 
          ]);
+         Alert::toast(' Success! Expense Added','success');
          return redirect()->back();
 
 }

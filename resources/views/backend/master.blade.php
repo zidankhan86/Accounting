@@ -47,7 +47,7 @@
       <div class="main-content">
 
        @yield('content')
-
+       @include('sweetalert::alert')
 
 
       </div>

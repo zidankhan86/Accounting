@@ -38,7 +38,7 @@
             <li><a class="nav-link beep beep-sidebar" href="{{route('add.authorities')}}">Add Authorities </a></li>
             <li><a class="nav-link beep beep-sidebar" href="components-avatar.html">Authorities List </a></li>
             <li><a class="nav-link" href="components-article.html">List Loans</a></li>
-             <li><a class="nav-link beep beep-sidebar" href="components-avatar.html">Add Loan </a></li>
+             <li><a class="nav-link beep beep-sidebar" href="{{route('add.loan')}}">Add Loan </a></li>
 
               <li><a class="nav-link" href="components-chat-box.html">Loan Types</a></li>
             <li><a class="nav-link beep beep-sidebar" href="components-empty-state.html">List Loan Accounts</a></li>
