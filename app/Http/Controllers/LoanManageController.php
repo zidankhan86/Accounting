@@ -56,4 +56,8 @@ class LoanManageController extends Controller
     public function addLoan(){
         return view('backend.pages.manageLoan.addLoan');
     }
+
+    public function addType(){
+        return view('backend.pages.manageLoan.loanType');
+    }
 }

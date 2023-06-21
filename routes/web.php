@@ -41,3 +41,4 @@ Route::post('/add-authorities-create',[LoanManageController::class,'addAuthoriti
 
 
 Route::get('/add-loan',[LoanManageController::class,'addLoan'])->name('add.loan');
+Route::get('/add-type',[LoanManageController::class,'addType'])->name('add.loan.type');
