@@ -27,7 +27,7 @@
                             <label for="inputName1">Account Name</label>
                             <input type="text" name="account_name" class="form-control" id="inputName1" placeholder="Account Name">
 
-                            @error('account_holder_name')
+                            @error('account_name')
 
                             <small class="text-danger">{{$message}}</small>
 
@@ -50,15 +50,15 @@
 
                             </select>
 
-                      
-                        @error('bank_name')
+
+                        @error('account_id')
                         <p class="text-danger">{{$message}}</p>
                         @enderror
                        </div>
 
                       <div class="form-group col-md-6">
                         <label for="inputBalance1">Account Number</label>
-                        <input type="number" name="account_number" class="form-control" id="inputBalance1" placeholder="Account Number">
+                        <input type="text" name="account_number" class="form-control" id="inputBalance1" placeholder="Account Number">
                         @error('account_number')
                         <small class="text-danger">{{$message}}</small>
                         @enderror
@@ -72,7 +72,7 @@
                             <option value="Inactive">Inactive</option>
                           </select>
 
-                        @error('bank_address')
+                        @error('account_status')
                         <small class="text-danger">{{$message}}</small>
                         @enderror
                       </div>

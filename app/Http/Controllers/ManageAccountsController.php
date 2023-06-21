@@ -26,12 +26,13 @@ class ManageAccountsController extends Controller
                  //Validation
                  $validator = Validator::make($request->all(), [
                 'account_name' => 'required|string',
-                'account_number' => 'required|string',
+                'account_number' => 'required|unique:manage_accounts,account_number',
                 'account_status' => 'required',
 
                  ]);
 
                  if ($validator->fails()) {
+                    Alert::toast()->error('Something went wrog','error');
                     return redirect()->back()->withErrors($validator)->withInput();
                  }
 
@@ -74,7 +75,7 @@ class ManageAccountsController extends Controller
                     ]);
 
                     if ($validator->fails()) {
-                        Alert::toast()->error('Somethin went wrog','error');
+                        Alert::toast()->error('Something went wrog','error');
                         return redirect()->back()->withErrors($validator)->withInput();
                     }
 
