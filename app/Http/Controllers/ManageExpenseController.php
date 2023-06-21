@@ -108,15 +108,15 @@ public function ExpenseList(){
        $expenses = Expense::simplePaginate(10);
 
 
-    //     foreach ($expenses as $expense) {
-    //     if (strcasecmp($expense->status, 'Cash_In') === 0) {
-    //         Cash_in: Deduct the item price from the total expense amount
-    //         $totalExpenseAmount += $expense->item_price;
-    //     } elseif (strcasecmp($expense->status, 'Cash_Out') === 0) {
-    //          Cash_out: Add the item price to the total expense amount
-    //         $totalExpenseAmount -= $expense->item_price;
-    //     }
-    // }
+        foreach ($expenses as $expense) {
+        if (strcasecmp($expense->status, 'Cash_In') === 0) {
+            //Cash_in: Deduct the item price from the total expense amount
+            $totalExpenseAmount += $expense->item_price;
+        } elseif (strcasecmp($expense->status, 'Cash_Out') === 0) {
+             //Cash_out: Add the item price to the total expense amount
+            $totalExpenseAmount -= $expense->item_price;
+        }
+    }
 
     // Retrieve account types
     $accountTypes = AccountType::all();

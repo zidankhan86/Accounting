@@ -26,7 +26,7 @@
                 <label for="inputName1">Account Type Name</label>
                 <input type="text" name="account_name" class="form-control" id="inputName1" placeholder="Account Type Name">
 
-                @error('expense_name')
+                @error('account_name')
 
                 <small class="text-danger">{{$message}}</small>
 
