@@ -184,7 +184,7 @@
                     <i class="fas fa-bell"></i>
                   </div>
                   <div class="dropdown-item-desc">
-                    Welcome to Stisla template!
+                    Welcome to Accounting
                     <div class="time">Yesterday</div>
                   </div>
                 </a>

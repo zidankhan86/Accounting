@@ -39,6 +39,7 @@ Route::get('/expense-edit',[ManageExpenseController::class,'ExpenseEdit'])->name
 
 //Manage Loan
 Route::get('/add-authorities',[LoanManageController::class,'addAuthorities'])->name('add.authorities');
+Route::get('/authorities-list',[LoanManageController::class,'AuthoritiesList'])->name('authorities.list');
 Route::post('/add-authorities-create',[LoanManageController::class,'addAuthoritiesCreate'])->name('add.authorities.create');
 Route::get('/add-loan',[LoanManageController::class,'addLoan'])->name('add.loan');
 Route::get('/add-type',[LoanManageController::class,'addType'])->name('add.loan.type');
