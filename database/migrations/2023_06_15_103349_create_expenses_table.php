@@ -20,6 +20,7 @@ return new class extends Migration
             ->restrictOnUpdate();
 
             $table->foreignId('tansaction_account_id')->constrained('account_types')
+            ->nullable()
             ->restrictOnDelete()
             ->restrictOnUpdate();
 
