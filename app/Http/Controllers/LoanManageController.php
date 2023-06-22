@@ -82,4 +82,10 @@ class LoanManageController extends Controller
         $authors = Authorities::simplePaginate(10);
         return view('backend.pages.manageLoan.authorList',compact('authors'));
     }
+
+    public function loanList(){
+
+        // $authors = Authorities::simplePaginate(10);
+        return view('backend.pages.manageLoan.loanList');
+    }
 }

@@ -43,14 +43,8 @@
 
              <li><a class="nav-link beep beep-sidebar" href="{{route('add.loan')}}">Add Loan </a></li>
 
-             <li><a class="nav-link" href="components-article.html">List Loans</a></li>
-
-             <li><a class="nav-link" href="components-gallery.html">Add Loans Accounts</a></li>
-
-            <li><a class="nav-link beep beep-sidebar" href="components-empty-state.html">List Loan Accounts</a></li>
-
-
-
+             <li><a class="nav-link" href="{{route('loan.list')}}">List Loans</a></li>
+             
             <li><a class="nav-link beep beep-sidebar" href="components-hero.html">VAT & TAX</a></li>
 
           </ul>
