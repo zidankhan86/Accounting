@@ -22,16 +22,7 @@
 
       <div class="card-body">
         <div class="form-row">
-            <div class="form-group col-md-12">
-                <label for="inputName1">Expense Name</label>
-                <input type="text" name="expense_name" class="form-control" id="inputName1" placeholder="Expense Name">
 
-                @error('expense_name')
-
-                <small class="text-danger">{{$message}}</small>
-
-                @enderror
-              </div>
 
           <div class="form-group col-md-6">
             <label for="inputName2">Expense Type</label>
@@ -51,6 +42,15 @@
             <small class="text-danger">{{$message}}</small>
             @enderror
           </div>
+
+
+          <div class="form-group col-md-12">
+                <label for="inputName1">Type Status</label>
+            <select name="status" class="form-control" id="">
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+              </div>
 
         </div>
 

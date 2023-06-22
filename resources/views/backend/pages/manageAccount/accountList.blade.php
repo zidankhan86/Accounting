@@ -24,7 +24,7 @@
             <tr>
               <td>{{$account->id}}</td>
               <td>{{$account->account_name}}</td>
-              <td>{{$account->AccountSetup->account_name}}</td>
+              <td>{{$account->AccountSetup->account_type}}</td>
               <td>{{$account->account_number}}</td>
               <td>{{$account->account_status}}</td>
               <td>

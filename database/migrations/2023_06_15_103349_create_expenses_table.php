@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreignId('tansaction_account_id')->constrained('account_types')
             ->restrictOnDelete()
             ->restrictOnUpdate();
-            
+
             $table->string('payable', 100);
             $table->longText('expense_type', 1000);
             $table->text('item_name', 1000);

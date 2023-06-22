@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Expense;
 use App\Models\Categories;
 use App\Models\AccountType;
+use App\Models\ManageAccount;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
@@ -24,7 +25,7 @@ class ManageExpenseController extends Controller
          //validation
 
         $validator = Validator::make($request->all(), [
-            'expense_name'       => 'required|string',
+            'status'       => 'required|string',
             'expense_type'       => 'required|string',
             'expense_details'    => 'required|string',
         ]);
@@ -37,7 +38,7 @@ class ManageExpenseController extends Controller
 
            Categories::create([
 
-            "expense_name"        =>$request->expense_name,
+            "status"        =>$request->status,
             "expense_type"        =>$request->expense_type,
             "expense_details"     =>$request->expense_details,
 
@@ -48,10 +49,12 @@ class ManageExpenseController extends Controller
          }
 
             //Add Expense Form
-           public function addExpense(){
+
+            public function addExpense(){
+            $accountName = ManageAccount::all();
             $transaction = AccountType::all();
             $expenses = Categories::all();
-            return view('backend.pages.manageExpense.addExpenseForm',compact('expenses','transaction'));
+            return view('backend.pages.manageExpense.addExpenseForm',compact('expenses','transaction','accountName'));
            }
            public function ExpenseCreate(Request $request){
 
@@ -119,8 +122,9 @@ public function ExpenseList(){
     }
 
     // Retrieve account types
+    $accounts=Categories::all();
     $accountTypes = AccountType::all();
-    return view('backend.pages.manageExpense.expenseList',compact('expenses','totalExpenseAmount', 'totalItemQuantity', 'accountTypes'));
+    return view('backend.pages.manageExpense.expenseList',compact('expenses','totalExpenseAmount', 'totalItemQuantity', 'accountTypes','accounts'));
 
 }
 

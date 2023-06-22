@@ -24,9 +24,9 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="inputName1">Account Type Name</label>
-                <input type="text" name="account_name" class="form-control" id="inputName1" placeholder="Account Type Name">
+                <input type="text" name="account_type" class="form-control" id="inputName1" placeholder="Account Type Name">
 
-                @error('account_name')
+                @error('account_type')
 
                 <small class="text-danger">{{$message}}</small>
 

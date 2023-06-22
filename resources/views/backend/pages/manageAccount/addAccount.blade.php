@@ -44,7 +44,7 @@
 
                                 @foreach ($accounts as $accounts)
 
-                                <option value="{{$accounts->id}}">{{$accounts->account_name}}</option>
+                                <option value="{{$accounts->id}}">{{$accounts->account_type}}</option>
 
                                 @endforeach
 

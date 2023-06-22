@@ -70,7 +70,7 @@ class ManageAccountsController extends Controller
                 public function AccountTypeCreate(Request $request){
 
                     $validator = Validator::make($request->all(), [
-                        'account_name' => 'required|unique:account_types,account_name',
+                        'account_type' => 'required|unique:account_types,account_type',
                         'account_status' => 'required',
                     ]);
 
@@ -84,7 +84,7 @@ class ManageAccountsController extends Controller
 
                 AccountType::create([
 
-                "account_name" =>$request->account_name,
+                "account_type" =>$request->account_type,
                 "account_status" =>$request->account_status,
                 ]);
                 Alert::toast(' Success! Account Type Added','success');

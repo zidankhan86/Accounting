@@ -13,7 +13,7 @@
               <th>ID</th>
               <th>Date & Time</th>
               <th>Payable</th>
-              {{-- <th>Expense Account</th> --}}
+              <th> Account</th>
               <th>Total Amount</th>
               <th>Total Quantity</th>
               <th>Account Type</th>
@@ -31,18 +31,18 @@
               <td>{{$account->id}}</td>
               <td>{{$account->created_at}}</td>
               <td>{{$account->payable}}</td>
-              {{-- <td>{{$account->transactionAccount->account_name}}</td> --}}
+              <td>{{$account->account_name}}</td>
 
               <td>{{$totalExpenseAmount}} BDT</td>
               <td>{{$totalItemQuantity}}</td>
 
-              <td>{{$account->ExpenseType->expense_type}}</td>
+              <td>{{$account->AccountSetup->account_type}}</td>
               <td>{{$account->item_name}}</td>
               <td>{{$account->item_price}}</td>
               <td>{{$account->item_quantity}}</td>
               <td>{{$account->status}}</td>
               <td>
-                
+
                 <a href="#" class="btn btn-secondary">Detail</a>
                 <a href="#" class="btn btn-info">Edit</a>
                 <a href="#" class="btn btn-danger" onclick="return confirm('Do you wants to Delete ?')">Delete</a>
