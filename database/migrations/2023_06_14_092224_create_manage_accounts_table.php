@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('account_type_id');
             $table->string('account_name',1000);
             $table->string('account_number',100);
-            $table->string('status')->default(0);
+            $table->boolean('status');
             $table->timestamps();
         });
     }

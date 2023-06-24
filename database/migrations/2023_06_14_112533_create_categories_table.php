@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('status',100);
+            $table->boolean('status',100);
             $table->string('expense_type',100);
             $table->longText('expense_details',1000);
             $table->timestamps();

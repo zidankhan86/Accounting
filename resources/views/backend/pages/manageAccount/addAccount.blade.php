@@ -68,8 +68,8 @@
                         <label for="inputAddress">Account Status</label>
                         <input type="hidden" name="status" class="form-control " id="inputAddress" placeholder="Account Status">
                           <select class="form-control" name="status" id="">
-                            <option value="Active">Active</option>
-                            <option value="Inactive">Inactive</option>
+                            <option value="0">Inactive</option>
+                            <option value="1">Active</option>
                           </select>
 
                         @error('status')

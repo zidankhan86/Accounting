@@ -47,8 +47,8 @@
           <div class="form-group col-md-12">
                 <label for="inputName1">Type Status</label>
             <select name="status" class="form-control" id="">
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
+                <option value="0">Inactive</option>
+                <option value="1">Active</option>
             </select>
               </div>
 

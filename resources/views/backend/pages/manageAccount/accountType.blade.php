@@ -37,8 +37,8 @@
             <label for="inputName2">Account Status</label>
             <input type="hidden" name="status" class="form-control" id="inputName2" placeholder="Account Status">
             <select name="status" class="form-control" name="" id="">
-                <option  value="Inactive">Inactive</option>
-                <option value="Active">Active</option>
+                <option  value="0">Inactive</option>
+                <option value="1">Active</option>
             </select>
             @error('expense_type')
             <p class="text-danger">{{$message}}</p>
