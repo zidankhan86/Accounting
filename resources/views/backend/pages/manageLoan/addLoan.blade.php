@@ -16,7 +16,7 @@
       <div class="card-header">
         <h4 class="text-center">+Add Loan Form</h4>
       </div>
-    <form action="{{route('add.authorities.create')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('loan.create')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
       <div class="card-body">
@@ -60,7 +60,7 @@
 
           <div class="form-group col-md-3">
             <label for="inputBalance1">Loan Reason</label>
-            <input type="text" name="number" class="form-control" id="inputBalance1" placeholder="Write Loan Reason here....">
+            <input type="text" name="loan_reasion" class="form-control" id="inputBalance1" placeholder="Write Loan Reason here....">
             @error('account_number')
             <small class="text-danger">{{$message}}</small>
             @enderror
@@ -92,7 +92,7 @@
 
            <div class="form-group col-md-6">
             <label for="inputName2">Amount</label>
-           <input class="form-control" type="number" name="cash_limit" placeholder="100000">
+           <input class="form-control" type="number" name="loan_amount" placeholder="100000">
 
             @error('cash_credit')
             <p class="text-danger">{{$message}}</p>
@@ -101,7 +101,7 @@
 
           <div class="form-group col-md-6">
             <label for="inputBalance1">Interest (%) </label>
-            <input type="number" name="address" class="form-control" id="inputBalance1" placeholder="Enter an address ">
+            <input type="number" name="interest" class="form-control" id="inputBalance1" placeholder="Enter an address ">
             @error('address')
             <small class="text-danger">{{$message}}</small>
             @enderror
@@ -109,7 +109,7 @@
 
            <div class="form-group col-md-4">
             <label for="inputAddress">Payment Type</label>
-            <input type="hidden" name="status" class="form-control " id="inputAddress" placeholder="Account Status">
+            <input type="hidden" name="payment_type" class="form-control " id="inputAddress" placeholder="Account Status">
               <select class="form-control" name="status" id="">
                 <option value="Active">Daily</option>
                 <option value="Inactive">Monthly</option>
@@ -124,7 +124,7 @@
 
           <div class="form-group col-md-4">
             <label for="inputAddress">Duration *</label>
-            <input type="number" name="status" class="form-control " id="inputAddress" placeholder="Account Status">
+            <input type="number" name="duration" class="form-control " id="inputAddress" placeholder="Account Status">
 
 
             @error('status')
@@ -135,7 +135,7 @@
 
           <div class="form-group col-md-4">
             <label for="inputAddress">Per Month</label>
-            <input type="number" name="status" class="form-control " id="inputAddress" placeholder="1000">
+            <input type="number" name="per_month" class="form-control " id="inputAddress" placeholder="1000">
 
             @error('status')
             <small class="text-danger">{{$message}}</small>

@@ -43,6 +43,8 @@ Route::get('/add-authorities',[LoanManageController::class,'addAuthorities'])->n
 Route::get('/authorities-list',[LoanManageController::class,'AuthoritiesList'])->name('authorities.list');
 Route::post('/add-authorities-create',[LoanManageController::class,'addAuthoritiesCreate'])->name('add.authorities.create');
 Route::get('/add-loan',[LoanManageController::class,'addLoan'])->name('add.loan');
+
+Route::post('/loan-create',[LoanManageController::class,'Loancreate'])->name('loan.create');
 Route::get('/add-type',[LoanManageController::class,'addType'])->name('add.loan.type');
 Route::post('/add-type/create',[LoanManageController::class,'typeCreate'])->name('loan.type.create');
 Route::get('/loan-list',[LoanManageController::class,'loanList'])->name('loan.list');
