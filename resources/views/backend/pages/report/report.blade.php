@@ -1,13 +1,17 @@
 @extends('backend.master')
 @section('content')
 <h4 class="text-center text-light">Balance</h4><br><br>
+
+
+<div>
+
 <div class="row">
     @foreach ($accounts as $item)
     <div class="col-md-3">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Account Name: <span class="text-danger">{{ $item->account_name }}</span></h4>
-                {{-- <p class="card-text">Balance: {{ balance($item->id) }}</p> --}}
+                <p class="card-text">Balance: {{ ($item->id) }}</p>
             </div>
 
         </div>
@@ -15,6 +19,8 @@
     </div>
 
     @endforeach
+</div>
+{{$accounts->links()}}
 </div>
 <h4 class="text-center text-primary">Report</h4>
 <form action="" method="get" class="form-group">
