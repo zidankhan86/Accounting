@@ -19,13 +19,12 @@ return new class extends Migration
             ->restrictOnDelete()
             ->restrictOnUpdate();
 
-            $table->foreignId('tansaction_account_id')->constrained('account_types')
+            $table->foreignId('transaction_type_id')->constrained('account_types')
             ->nullable()
             ->restrictOnDelete()
             ->restrictOnUpdate();
 
             $table->string('payable', 100);
-            $table->longText('expense_type', 1000);
             $table->text('item_name', 1000);
             $table->string('item_price', 100);
             $table->double('item_quantity', 100);

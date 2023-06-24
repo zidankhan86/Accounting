@@ -63,7 +63,6 @@ class ManageExpenseController extends Controller
 
             $validator = Validator::make($request->all(), [
                 'payable' => 'required',
-                'expense_type' => 'required',
                 'item_name' => 'required',
                 'item_price' => 'required|numeric|min:0',
                 'item_quantity' => 'required|integer|min:1',
@@ -79,13 +78,12 @@ class ManageExpenseController extends Controller
             Expense::create([
 
             "payable"             =>$request->payable,
-            "expense_type"        =>$request->expense_type,
             "item_name"           =>$request->item_name,
             "item_price"          =>$request->item_price,
             "item_quantity"       =>$request->item_quantity,
             "status"              =>$request->status,
             "expense_id"          =>$request->expense_id,
-            "tansaction_account_id"=>$request->tansaction_account_id
+            "transaction_type_id"=>$request->transaction_type_id
 
 
          ]);
@@ -112,10 +110,10 @@ public function ExpenseList(){
 
 
         foreach ($expenses as $expense) {
-        if (strcasecmp($expense->status, 'Cash_In') === 0) {
+        if (strcasecmp($expense->status, 'Cash In') === 0) {
             //Cash_in: Deduct the item price from the total expense amount
             $totalExpenseAmount += $expense->item_price;
-        } elseif (strcasecmp($expense->status, 'Cash_Out') === 0) {
+        } elseif (strcasecmp($expense->status, 'Cash Out') === 0) {
              //Cash_out: Add the item price to the total expense amount
             $totalExpenseAmount -= $expense->item_price;
         }

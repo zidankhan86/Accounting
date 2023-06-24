@@ -18,6 +18,6 @@ class Expense extends Model
 
      public function transactionAccount()
     {
-        return $this->hasMany(AccountType::class, 'tansaction_account_id', 'id');
+        return $this->hasMany(AccountType::class, 'transaction_type_id', 'id');
     }
 }

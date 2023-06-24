@@ -36,7 +36,7 @@
                 <div class="form-group col-md-6">
                 <label for="inputName2">Expense Account Name</label>
 
-                <select name="tansaction_account_id" id="" class="form-control">
+                <select name="transaction_type_id" id="" class="form-control">
 
                 @foreach ($accountName as $expense)
 
