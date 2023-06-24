@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Authorities;
 use App\Models\LoanType;
+use App\Models\ManageAccount;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
@@ -55,7 +56,15 @@ class LoanManageController extends Controller
     }
 
     public function addLoan(){
-        return view('backend.pages.manageLoan.addLoan');
+
+
+        $authorities = Authorities::all();
+
+        $loanTypes = LoanType::all();
+
+        $accounts = ManageAccount::all();
+
+        return view('backend.pages.manageLoan.addLoan',compact('authorities','loanTypes','accounts'));
     }
 
     public function addType(){

@@ -12,8 +12,6 @@
 
 
 <div class="col-12 col-md-12 col-lg-12">
-
-
     <div class="card">
       <div class="card-header">
         <h4 class="text-center">+Add Loan Form</h4>
@@ -25,7 +23,17 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="inputName1">Authorities Name</label>
-                <input type="text" name="name" class="form-control" id="inputName1" placeholder="Authorities Name">
+
+
+
+                <select class="form-control" name="loan_type_id" id="">
+                    @foreach ($authorities as $authoritie)
+
+                    <option value="{{$authoritie->id}}">{{$authoritie->name}}</option>
+                    @endforeach
+                </select>
+
+
 
                 @error('account_holder_name')
 
@@ -36,7 +44,14 @@
 
           <div class="form-group col-md-3">
             <label for="inputName2">Account</label>
-           <input class="form-control" type="email" name="email" placeholder="Email">
+
+           <select class="form-control" name="Account_name_id" id="">
+            @foreach ($accounts as $account)
+
+            <option value="{{$account->id}}">{{$account->account_name}}</option>
+
+            @endforeach
+           </select>
 
             @error('bank_name')
             <p class="text-danger">{{$message}}</p>
@@ -45,7 +60,7 @@
 
           <div class="form-group col-md-3">
             <label for="inputBalance1">Loan Reason</label>
-            <input type="number" name="number" class="form-control" id="inputBalance1" placeholder="Contact Number">
+            <input type="text" name="number" class="form-control" id="inputBalance1" placeholder="Write Loan Reason here....">
             @error('account_number')
             <small class="text-danger">{{$message}}</small>
             @enderror
@@ -53,7 +68,7 @@
 
            <div class="form-group col-md-3">
             <label for="inputName2">Reference</label>
-           <input class="form-control" type="email" name="email" placeholder="Email">
+           <input class="form-control" type="text" name="reference" placeholder="Reference....">
 
             @error('bank_name')
             <p class="text-danger">{{$message}}</p>
@@ -62,7 +77,13 @@
 
           <div class="form-group col-md-3">
             <label for="inputBalance1">Loan Type</label>
-            <input type="number" name="number" class="form-control" id="inputBalance1" placeholder="Contact Number">
+
+            <select class="form-control" name="loan_type_id" id="">
+                @foreach ($loanTypes as $loanType)
+                <option value="{{$loanType->id}}">{{$loanType->loan_type}}</option>
+                @endforeach
+
+            </select>
             @error('account_number')
             <small class="text-danger">{{$message}}</small>
             @enderror
@@ -80,7 +101,7 @@
 
           <div class="form-group col-md-6">
             <label for="inputBalance1">Interest (%) </label>
-            <input type="text" name="address" class="form-control" id="inputBalance1" placeholder="Enter an address ">
+            <input type="number" name="address" class="form-control" id="inputBalance1" placeholder="Enter an address ">
             @error('address')
             <small class="text-danger">{{$message}}</small>
             @enderror
@@ -114,7 +135,7 @@
 
           <div class="form-group col-md-4">
             <label for="inputAddress">Per Month</label>
-            <input type="number" name="status" class="form-control " id="inputAddress" placeholder="Account Status">
+            <input type="number" name="status" class="form-control " id="inputAddress" placeholder="1000">
 
             @error('status')
             <small class="text-danger">{{$message}}</small>
