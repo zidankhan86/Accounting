@@ -14,15 +14,13 @@ return new class extends Migration
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('expense_id')
-            ->nullable()
-            ->constrained('expenses')
-            ->restrictOnDelete()
-            ->restrictOnUpdate();
+            ->constrained('expenses');
 
-            $table->foreignId('transaction_type_id')->constrained('account_types')
-            ->nullable()
-            ->restrictOnDelete()
-            ->restrictOnUpdate();
+            $table->foreignId('transaction_type_id')
+            ->constrained('account_types');
+
+            $table->double('amount')->nullable();
+            $table->double('due')->nullable();
 
             $table->string('payable', 100);
             $table->text('item_name', 1000);

@@ -67,6 +67,7 @@ class ManageExpenseController extends Controller
                 'item_price' => 'required|numeric|min:0',
                 'item_quantity' => 'required|integer|min:1',
                 'status' => 'required',
+                'transaction_type_id'=>'required'
             ]);
 
             if ($validator->fails()) {
@@ -74,7 +75,7 @@ class ManageExpenseController extends Controller
             }
         //Add Expense Create
 
-           // dd($request->all());
+           //dd($request->all());
             Expense::create([
 
             "payable"             =>$request->payable,
