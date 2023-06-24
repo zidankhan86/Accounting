@@ -29,7 +29,7 @@ return new class extends Migration
             $table->text('item_name', 1000);
             $table->string('item_price', 100);
             $table->double('item_quantity', 100);
-            $table->string('status');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

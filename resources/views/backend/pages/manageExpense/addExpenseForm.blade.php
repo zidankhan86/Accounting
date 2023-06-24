@@ -115,8 +115,8 @@
                 <div class="form-group col-md-12">
                 <label for="inputName1">Status</label>
                 <select  class="form-control" name="status" id="">
-                <option value="Cash In" style="color: green">Cash In</option>
-                <option value="Cash Out" style="color: red">Cash Out</option>
+                <option value="0" style="color: green">Cash Out</option>
+                <option value="1" style="color: red">Cash In</option>
                 </select>
 
                 @error('status')
