@@ -32,7 +32,7 @@
             <li><a class="nav-link" href="{{route('manage.expense')}}">Expenses type</a></li>
 
             <li><a class="nav-link" href="{{route('add.expense')}}">Add Expenses</a></li>
-            
+
             <li><a class="nav-link" href="{{route('expense.list')}}">Expenses List</a></li>
 
           </ul>
@@ -58,7 +58,7 @@
         <li class="dropdown">
           <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Reports</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="forms-advanced-form.html">Transactions</a></li>
+            <li><a class="nav-link" href="{{route('report')}}">Report</a></li>
             <li><a class="nav-link" href="forms-editor.html">Income Reports</a></li>
             <li><a class="nav-link" href="forms-validation.html">Expenses Reports</a></li>
             <li><a class="nav-link" href="forms-validation.html">Monthly and Yearly</a></li>

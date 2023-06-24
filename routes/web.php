@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LoanManageController;
-use App\Http\Controllers\ManageAccountsController;
-use App\Http\Controllers\ManageExpenseController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReportingController;
+use App\Http\Controllers\LoanManageController;
+use App\Http\Controllers\ManageExpenseController;
+use App\Http\Controllers\ManageAccountsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,6 @@ Route::get('/add-loan',[LoanManageController::class,'addLoan'])->name('add.loan'
 Route::get('/add-type',[LoanManageController::class,'addType'])->name('add.loan.type');
 Route::post('/add-type/create',[LoanManageController::class,'typeCreate'])->name('loan.type.create');
 Route::get('/loan-list',[LoanManageController::class,'loanList'])->name('loan.list');
+
+//Report
+Route::get('/report',[ReportingController::class,'report'])->name('report');
