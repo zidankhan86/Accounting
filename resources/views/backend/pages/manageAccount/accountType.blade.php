@@ -35,8 +35,8 @@
 
           <div class="form-group col-md-12">
             <label for="inputName2">Account Status</label>
-            <input type="hidden" name="account_status" class="form-control" id="inputName2" placeholder="Account Status">
-            <select name="account_status" class="form-control" name="" id="">
+            <input type="hidden" name="status" class="form-control" id="inputName2" placeholder="Account Status">
+            <select name="status" class="form-control" name="" id="">
                 <option  value="Inactive">Inactive</option>
                 <option value="Active">Active</option>
             </select>

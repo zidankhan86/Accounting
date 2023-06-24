@@ -36,7 +36,7 @@
               <td>{{$totalExpenseAmount}} BDT</td>
               <td>{{$totalItemQuantity}}</td>
 
-              <td>{{$account->AccountSetup->account_type}}</td>
+              <td>{{$account->account_type}}</td>
               <td>{{$account->item_name}}</td>
               <td>{{$account->item_price}}</td>
               <td>{{$account->item_quantity}}</td>

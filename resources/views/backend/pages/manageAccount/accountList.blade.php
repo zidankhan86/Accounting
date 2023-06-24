@@ -26,7 +26,7 @@
               <td>{{$account->account_name}}</td>
               <td>{{$account->AccountSetup->account_type}}</td>
               <td>{{$account->account_number}}</td>
-              <td>{{$account->account_status}}</td>
+              <td>{{$account->status}}</td>
               <td>
                 <a href="#" class="btn btn-secondary">Detail</a>
                 <a href="{{route('account.manage.edit',$account->id)}}" class="btn btn-info">Edit</a>

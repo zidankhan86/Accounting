@@ -66,8 +66,8 @@
 
            <div class="form-group col-md-12">
             <label for="inputAddress">Account Status</label>
-            <input type="hidden" name="account_status" class="form-control " id="inputAddress" placeholder="Account Status">
-              <select class="form-control" name="account_status" id="">
+            <input type="hidden" name="status" class="form-control " id="inputAddress" placeholder="Account Status">
+              <select class="form-control" name="status" id="">
                 <option value="Active">Active</option>
                 <option value="Inactive">Inactive</option>
               </select>

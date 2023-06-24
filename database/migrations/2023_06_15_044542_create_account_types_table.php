@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('account_types', function (Blueprint $table) {
             $table->id();
             $table->string('account_type',100)->unique();
-            $table->string('account_status',100);
+            $table->string('status')->default(0);
             $table->timestamps();
         });
     }

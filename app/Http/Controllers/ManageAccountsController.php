@@ -27,7 +27,7 @@ class ManageAccountsController extends Controller
                  $validator = Validator::make($request->all(), [
                 'account_name' => 'required|string',
                 'account_number' => 'required|unique:manage_accounts,account_number',
-                'account_status' => 'required',
+                'status' => 'required',
 
                  ]);
 
@@ -46,8 +46,8 @@ class ManageAccountsController extends Controller
 
                 "account_name"             =>$request->account_name,
                 "account_number"           =>$request->account_number,
-                "account_status"           =>$request->account_status,
-                "account_id"               =>$request->account_id
+                "status"                   =>$request->status,
+                "account_type_id"           =>$request->account_type_id
 
                 ]);
                 Alert::toast(' Success! Account Setup','success');
@@ -71,7 +71,7 @@ class ManageAccountsController extends Controller
 
                     $validator = Validator::make($request->all(), [
                         'account_type' => 'required|unique:account_types,account_type',
-                        'account_status' => 'required',
+                        'status' => 'required',
                     ]);
 
                     if ($validator->fails()) {
@@ -85,7 +85,7 @@ class ManageAccountsController extends Controller
                 AccountType::create([
 
                 "account_type" =>$request->account_type,
-                "account_status" =>$request->account_status,
+                "status" =>$request->status,
                 ]);
                 Alert::toast(' Success! Account Type Added','success');
                 return redirect()->back();
