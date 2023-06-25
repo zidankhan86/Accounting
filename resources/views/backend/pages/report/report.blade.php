@@ -68,7 +68,7 @@
                 <th scope="col">Serial</th>
                 <th scope="col">Payable</th>
                 <th scope="col">Account</th>
-                <th scope="col">Transaction Type</th>
+                <th scope="col">Expense Type</th>
                 <th scope="col">Paid</th>
                 <th scope="col">Due</th>
                 <th scope="col">Status</th>
@@ -76,7 +76,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($transactions as $item)
+            @foreach ($expenses as $item)
             <tr class="">
                 <td scope="row">{{ $item->id }}</td>
                 <td>{{ $item->payable }}</td>
