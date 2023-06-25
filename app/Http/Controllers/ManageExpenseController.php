@@ -65,7 +65,7 @@ class ManageExpenseController extends Controller
                 'payable' => 'required',
                 'item_name' => 'required',
                 'item_price' => 'required|numeric|min:0',
-                'item_quantity' => 'required|integer|min:1',
+                'quanity' => 'required|integer|min:1',
                 'status' => 'required',
                 'transaction_type_id'=>'required'
             ]);
@@ -81,7 +81,7 @@ class ManageExpenseController extends Controller
             "payable"             =>$request->payable,
             "item_name"           =>$request->item_name,
             "item_price"          =>$request->item_price,
-            "item_quantity"       =>$request->item_quantity,
+            "quanity"             =>$request->quanity,
             "status"              =>$request->status,
             "expense_id"          =>$request->expense_id,
             "transaction_type_id"=>$request->transaction_type_id
@@ -97,7 +97,7 @@ public function ExpenseList(){
 
      //Calculate total expense amount and total item quantity
      $totalExpenseAmount = Expense::sum('item_price');
-     $totalItemQuantity = Expense::sum('item_quantity');
+     $totalItemQuantity = Expense::sum('quanity');
 
      //Perform any other accounting calculations or operations here
 

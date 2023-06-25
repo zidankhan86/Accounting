@@ -39,7 +39,7 @@
               <td>{{$account->account_type}}</td>
               <td>{{$account->item_name}}</td>
               <td>{{$account->item_price}}</td>
-              <td>{{$account->item_quantity}}</td>
+              <td>{{$account->quanity}}</td>
               <td>{{$account->status}}</td>
               <td>
 

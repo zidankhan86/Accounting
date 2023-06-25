@@ -96,14 +96,14 @@
                 <div class="form-group col-md-4">
                 <label for="inputAmount">Item Quantity</label>
                 <div class="input-group">
-                <input type="number" name="item_quantity" class="form-control" id="inputAmount" placeholder="Item Quantity">
+                <input type="number" name="quanity" class="form-control" id="inputAmount" placeholder="Item Quantity">
                 <div class="input-group-append">
                 <button class="btn btn-outline-danger quantity-decrease" type="button"><i class="fas fa-minus"></i></button>
                 <button class="btn btn-outline-success quantity-increase" type="button"><i class="fas fa-plus"></i></button>
                 </div>
                 </div>
 
-                @error('item_quantity')
+                @error('quanity')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
                 </div>

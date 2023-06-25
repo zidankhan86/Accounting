@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('payable', 100);
             $table->text('item_name', 1000);
             $table->string('item_price', 100);
-            $table->double('item_quantity', 100);
+            $table->double('quanity', 100);
             $table->boolean('status')->default(0);
             $table->timestamps();
         });
