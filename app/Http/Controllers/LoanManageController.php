@@ -103,6 +103,25 @@ class LoanManageController extends Controller
 
     public function Loancreate(Request $request){
 
+        $validator = Validator::make($request->all(), [
+            'loan_type_id' => 'required',
+            'Authorities_name_id' => 'required',
+            'Account_name_id' => 'required',
+            'loan_reasion' => 'required',
+            'reference' => 'required',
+            'interest' => 'required',
+            'payment_type' => 'required',
+            'duration' => 'required',
+            'per_month' => 'required',
+            'note' => 'required',
+            'loan_amount' => 'required|numeric|min:0',
+        ]);
+
+        if ($validator->fails()) {
+            Alert::toast()->error('Failed to loan add','Failed!');
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         //dd($request->all());
 
         Loan::create([
