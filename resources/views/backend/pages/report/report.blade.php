@@ -62,7 +62,7 @@
     </div>
 </form>
 <div class="table-responsive">
-    <table class="table">
+    <table class="table" id="orderReport">
         <thead>
             <tr>
                 <th scope="col">Serial</th>
@@ -97,6 +97,22 @@
             @endforeach
         </tbody>
     </table>
+
+    <div style="text-align: center;">
+        <button onclick="printDiv('orderReport')" class="btn btn-success">Print</button>
+      </div>
+
+
+
+<script>
+    function printDiv(divId){
+        var printContents = document.getElementById(divId).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 </div>
 
 @endsection
