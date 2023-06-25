@@ -11,7 +11,7 @@
         <li class="dropdown active">
           <a href="{{route('report')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
         </li>
-        <li class="menu-header">Starter</li>
+        <li class="menu-header">Accounts Dterms</li>
         <li class="dropdown">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Manage Accounts</span></a>
           <ul class="dropdown-menu">
