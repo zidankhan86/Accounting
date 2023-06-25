@@ -18,6 +18,8 @@ class ReportingController extends Controller
             request()->query('y', Carbon::now()->year),
             request()->query('m', Carbon::now()->month)
         ));
+
+
         $to      = clone $from;
         $to->day = $to->daysInMonth;
         if(request()->query('entity') == '0'){
@@ -37,6 +39,8 @@ class ReportingController extends Controller
         }
         // $accounts = AccountSetup::with('transaction')->get();
         $accounts = ManageAccount::simplePaginate(8);
-        return view('backend.pages.report.report',compact('accounts','expenses'));
+        
+        $account = ManageAccount::with('AccountSetup')->get();
+        return view('backend.pages.report.report',compact('accounts','expenses','account'));
     }
 }

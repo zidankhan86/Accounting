@@ -99,13 +99,13 @@ public function ExpenseList(){
      $totalExpenseAmount = Expense::sum('item_price');
      $totalItemQuantity = Expense::sum('quanity');
 
-     //Perform any other accounting calculations or operations here
+     //Perform any other accounting calculations
 
 
      //Retrieve account types
      $accountTypes = AccountType::all();
 
-     //Return the data to the view or perform any other actions
+     //Return the data to the view 
 
        $expenses = Expense::simplePaginate(10);
 
