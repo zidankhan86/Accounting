@@ -76,25 +76,25 @@
             </tr>
         </thead>
         <tbody>
-            {{-- @foreach ($transactions as $item)
+            @foreach ($transactions as $item)
             <tr class="">
                 <td scope="row">{{ $item->id }}</td>
                 <td>{{ $item->payable }}</td>
-                <td>{{ $item->account->name }}</td>
-                <td>{{ $item->transactionType->name }}</td>
+                <td>{{ $item->account_name }}</td>
+                <td>{{ $item->name }}</td>
                 <td>{{ $item->amount }}</td>
                 <td>{{ $item->due>0 ? $item->due : 'No Due' }}</td>
                 <td>{{ $item->status == true?'Cash In':'Cash Out' }}</td>
                 <td>
-                    <a href="{{ route('account.transaction.edit',$item->id) }}" class="btn btn-primary">
+                    <a href="#" class="btn btn-primary">
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     </a>
-                    <a href="{{ route('account.transaction.destroy',$item->id) }}" class="btn btn-danger">
+                    <a href="#" class="btn btn-danger">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </a>
                 </td>
             </tr>
-            @endforeach --}}
+            @endforeach
         </tbody>
     </table>
 </div>
