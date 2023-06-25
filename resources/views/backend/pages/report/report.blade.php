@@ -10,7 +10,7 @@
     <div class="col-md-3">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Account Name: <span class="text-danger">{{ $item->account_name }}</span></h4>
+                <h4 class="card-title">Account: <span class="text-danger">{{ $item->account_name }}</span></h4>
                 <p class="card-text">Balance: {{ ($item->id) }}</p>
             </div>
 
