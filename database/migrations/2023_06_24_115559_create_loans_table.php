@@ -28,7 +28,6 @@ return new class extends Migration
             $table->string('duration');
             $table->string('per_month');
             $table->longText('note');
-
             $table->timestamps();
         });
     }

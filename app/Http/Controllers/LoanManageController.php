@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Authorities;
+use App\Models\Loan;
 use App\Models\LoanType;
 use App\Models\ManageAccount;
 use Illuminate\Http\Request;
@@ -47,7 +48,7 @@ class LoanManageController extends Controller
 
         ]);
 
-       Alert::toast('Authorities Added!','success');
+       Alert::toast()->success('Authorities Added','Success!');
 
 
 
@@ -96,5 +97,31 @@ class LoanManageController extends Controller
 
         // $authors = Authorities::simplePaginate(10);
         return view('backend.pages.manageLoan.loanList');
+    }
+
+    //Loan Create
+
+    public function Loancreate(Request $request){
+
+        //dd($request->all());
+
+        Loan::create([
+
+        "loan_type_id"=>$request->loan_type_id,
+        "Authorities_name_id"=>$request->Authorities_name_id,
+        "Account_name_id"=>$request->Account_name_id,
+        "loan_reasion"=>$request->loan_reasion,
+        "reference"=>$request->reference,
+        "interest"=>$request->interest,
+        "payment_type"=>$request->payment_type,
+        "duration"=>$request->duration,
+        "per_month"=>$request->per_month,
+        "note"=>$request->note,
+        "loan_amount"=>$request->loan_amount,
+
+        ]);
+        Alert::toast()->success('Loan Added','Success!');
+        return back();
+
     }
 }

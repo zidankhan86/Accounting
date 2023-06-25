@@ -26,7 +26,7 @@
 
 
 
-                <select class="form-control" name="loan_type_id" id="">
+                <select class="form-control" name="Authorities_name_id" id="">
                     @foreach ($authorities as $authoritie)
 
                     <option value="{{$authoritie->id}}">{{$authoritie->name}}</option>
@@ -109,8 +109,7 @@
 
            <div class="form-group col-md-4">
             <label for="inputAddress">Payment Type</label>
-            <input type="hidden" name="payment_type" class="form-control " id="inputAddress" placeholder="Account Status">
-              <select class="form-control" name="status" id="">
+              <select class="form-control" name="payment_type" id="">
                 <option value="Active">Daily</option>
                 <option value="Inactive">Monthly</option>
                 <option value="Inactive">Yearly</option>
