@@ -48,7 +48,7 @@ class LoanManageController extends Controller
 
         ]);
 
-       Alert::toast()->success('Authorities Added','Success!');
+       Alert::toast()->success('Authorities Added');
 
 
 
@@ -139,7 +139,7 @@ class LoanManageController extends Controller
         "loan_amount"=>$request->loan_amount,
 
         ]);
-        Alert::toast()->success('Loan Added','Success!');
+        Alert::toast()->success('Loan Added');
         return back();
 
     }
