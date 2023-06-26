@@ -39,7 +39,7 @@ class ReportingController extends Controller
         }
         // $accounts = AccountSetup::with('transaction')->get();
         $accounts = ManageAccount::simplePaginate(8);
-        
+
         $account = ManageAccount::with('AccountSetup')->get();
         return view('backend.pages.report.report',compact('accounts','expenses','account'));
     }
