@@ -14,9 +14,14 @@
 
 
     <div class="card">
-      <div class="card-header">
-        <h4 class="text-center">+Add Account Type</h4>
-      </div>
+        <div class="card-header">
+            <h4 class="text-center">+Add Account Type</h4>
+          </div>
+    <div>
+        <h6 style="text-align: right;"><i class="fas fa-chevron-right">Manage Accounts </i> <i class="fas fa-chevron-right"> Accounts Type </i> </h6>
+    </div>
+
+
     <form action="{{route('account.type.create')}}" method="POST" enctype="multipart/form-data">
         @csrf
 

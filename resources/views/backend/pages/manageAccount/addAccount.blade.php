@@ -18,6 +18,11 @@
                   <div class="card-header">
                     <h4 class="text-center">+Add Account Form</h4>
                   </div>
+
+         <div>
+     <h6 style="text-align: right;"><i class="fas fa-chevron-right">Manage Accounts </i> <i class="fas fa-chevron-right"> Accounts Setup </i> </h6>
+         </div>
+
                 <form action="{{route('add.account.create')}}" method="POST" enctype="multipart/form-data">
                     @csrf
 
