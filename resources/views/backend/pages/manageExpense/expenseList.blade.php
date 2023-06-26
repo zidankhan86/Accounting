@@ -6,6 +6,11 @@
       <div class="card-header">
         <h4 class="text-success">Expense List</h4>
       </div>
+      <div>
+        <h6 style="text-align: right;"><i class="fas fa-chevron-right">Manage Expenses </i>
+            <i class="fas fa-chevron-right">Expense List </i> </h6>
+      </div>
+
       <div class="card-body">
         <div class="table-responsive">
           <table class="table table-bordered table-md">

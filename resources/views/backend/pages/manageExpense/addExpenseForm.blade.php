@@ -17,6 +17,12 @@
       <div class="card-header">
         <h4 class="text-center">+Add Expense </h4>
       </div>
+
+      <div>
+        <h6 style="text-align: right;"><i class="fas fa-chevron-right">Manage Expenses </i>
+            <i class="fas fa-chevron-right"> Add Expenses </i> </h6>
+      </div>
+
     <form action="{{route('expense.create')}}" method="POST" enctype="multipart/form-data">
         @csrf
 

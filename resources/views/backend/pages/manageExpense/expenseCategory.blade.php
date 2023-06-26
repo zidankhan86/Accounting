@@ -17,6 +17,12 @@
       <div class="card-header">
         <h4 class="text-center">+Add Expense Type</h4>
       </div>
+
+      <div>
+        <h6 style="text-align: right;"><i class="fas fa-chevron-right">Manage Accounts </i>
+            <i class="fas fa-chevron-right">Expense Type </i> </h6>
+      </div>
+
     <form action="{{route('expense.type.create')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
