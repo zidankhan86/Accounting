@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Expense;
 use App\Models\Categories;
 use App\Models\AccountType;
-use App\Models\ManageAccount;
 use Illuminate\Http\Request;
+use App\Models\ManageAccount;
+use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 
@@ -51,7 +52,15 @@ class ManageExpenseController extends Controller
             //Add Expense Form
 
             public function addExpense(){
-            $accountName = ManageAccount::all();
+                $accountName = ManageAccount::leftJoin('expenses', 'expenses.expense_id', 'manage_accounts.id')
+                ->select('manage_accounts.id as id',
+                    'manage_accounts.account_name as account_name',
+                    DB::raw('SUM(CASE WHEN expenses.status = 1 THEN expenses.item_price ELSE 0 END) as income'),
+                    DB::raw('SUM(CASE WHEN expenses.status = 0 THEN expenses.item_price ELSE 0 END) as expense')
+                )
+                ->groupBy('id', 'account_name')
+                ->get();
+            // return $accountName;
             $transaction = AccountType::all();
             $expenses = Categories::all();
             return view('backend.pages.manageExpense.addExpenseForm',compact('expenses','transaction','accountName'));
@@ -62,7 +71,7 @@ class ManageExpenseController extends Controller
             //Validation
 
             $validator = Validator::make($request->all(), [
-                'payable' => 'required',
+                
                 'item_name' => 'required',
                 'item_price' => 'required|numeric|min:0',
                 'quanity' => 'required|integer|min:1',
@@ -78,7 +87,7 @@ class ManageExpenseController extends Controller
            //dd($request->all());
             Expense::create([
 
-            "payable"             =>$request->payable,
+            "payable"             =>$request->item_price * $request->quantity,
             "item_name"           =>$request->item_name,
             "item_price"          =>$request->item_price,
             "quanity"             =>$request->quanity,
@@ -105,7 +114,7 @@ public function ExpenseList(){
      //Retrieve account types
      $accountTypes = AccountType::all();
 
-     //Return the data to the view 
+     //Return the data to the view
 
        $expenses = Expense::simplePaginate(10);
 

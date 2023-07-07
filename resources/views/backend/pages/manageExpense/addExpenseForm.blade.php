@@ -28,17 +28,7 @@
 
                 <div class="card-body">
                 <div class="form-row">
-                <div class="form-group col-md-12">
-                <label for="inputName1">Payable</label>
-                <input type="number" name="payable" class="form-control" id="inputName1" placeholder="Payable">
-
-                @error('payable')
-
-                <small class="text-danger">{{$message}}</small>
-
-                 @enderror
-                 </div>
-
+                
                 <div class="form-group col-md-6">
                 <label for="inputName2">Expense Account Name</label>
 
@@ -46,7 +36,7 @@
 
                 @foreach ($accountName as $expense)
 
-                <option value="{{$expense->id}}">Account: {{$expense->account_name}} Balance: </option>
+                <option value="{{$expense->id}}">Account: {{$expense->account_name}} Balance: {{ $expense->income -$expense->expense }} TK. </option>
 
                 @endforeach
 
