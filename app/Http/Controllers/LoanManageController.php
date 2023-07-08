@@ -96,6 +96,7 @@ class LoanManageController extends Controller
     public function loanList(){
 
         // $authors = Authorities::simplePaginate(10);
+
         return view('backend.pages.manageLoan.loanList');
     }
 
@@ -123,6 +124,10 @@ class LoanManageController extends Controller
         }
 
         //dd($request->all());
+        $loanAmount = $request->loan_amount;
+        $interestRate = $request->interest;
+
+        $interest = $this->calculateInterest($loanAmount, $interestRate);
 
         Loan::create([
 
@@ -132,6 +137,7 @@ class LoanManageController extends Controller
         "loan_reasion"=>$request->loan_reasion,
         "reference"=>$request->reference,
         "interest"=>$request->interest,
+        "interest" => $interest, // Calculate the interest here
         "payment_type"=>$request->payment_type,
         "duration"=>$request->duration,
         "per_month"=>$request->per_month,
@@ -139,8 +145,14 @@ class LoanManageController extends Controller
         "loan_amount"=>$request->loan_amount,
 
         ]);
-        Alert::toast()->success('Loan Added');
-        return back();
+
+         Alert::toast()->success('Loan Added');
+         return back();
 
     }
+    private function calculateInterest($loanAmount, $interestRate)
+    {
+        return ($loanAmount * $interestRate) / 100;
+    }
+
 }

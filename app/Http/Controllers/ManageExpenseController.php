@@ -52,6 +52,9 @@ class ManageExpenseController extends Controller
         //Add Expense Form
 
         public function addExpense(){
+            
+        //Expense Calcultion
+
         $accountName = ManageAccount::leftJoin('expenses', 'expenses.expense_id', 'manage_accounts.id')
         ->select('manage_accounts.id as id',
         'manage_accounts.account_name as account_name',
