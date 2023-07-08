@@ -66,7 +66,6 @@
         <thead>
             <tr>
                 <th scope="col">Serial</th>
-                <th scope="col">Payable</th>
                 <th scope="col">Account</th>
                 <th scope="col">Expense Type</th>
                 <th scope="col">Paid</th>
@@ -79,7 +78,6 @@
             @foreach ($expenses as $item)
             <tr class="">
                 <td scope="row">{{ $item->id }}</td>
-                <td>{{ $item->payable }}</td>
                 <td>{{ $item->account_name }}</td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->amount }}</td>

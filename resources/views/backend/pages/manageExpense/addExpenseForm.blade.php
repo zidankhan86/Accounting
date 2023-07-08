@@ -2,33 +2,30 @@
 @section('content')
 
 
-<style>
+    <style>
     .center {
     text-align: center;
     }
-</style>
+    </style>
 
 
 
 <div class="col-12 col-md-12 col-lg-12">
+<div class="card">
+  <div class="card-header">
+    <h4 class="text-center">+Add Expense </h4>
+     </div>
+       <div>
+         <h6 style="text-align: right;"><i class="fas fa-chevron-right">Manage Expenses </i>
+          <i class="fas fa-chevron-right"> Add Expenses </i> </h6>
+            </div>
 
-
-    <div class="card">
-      <div class="card-header">
-        <h4 class="text-center">+Add Expense </h4>
-      </div>
-
-      <div>
-        <h6 style="text-align: right;"><i class="fas fa-chevron-right">Manage Expenses </i>
-            <i class="fas fa-chevron-right"> Add Expenses </i> </h6>
-      </div>
-
-    <form action="{{route('expense.create')}}" method="POST" enctype="multipart/form-data">
-        @csrf
+                <form action="{{route('expense.create')}}" method="POST" enctype="multipart/form-data">
+                @csrf
 
                 <div class="card-body">
                 <div class="form-row">
-                
+
                 <div class="form-group col-md-6">
                 <label for="inputName2">Expense Account Name</label>
 
@@ -130,17 +127,10 @@
 
                <div class="center">
                <button type="submit" class="btn btn-success " style="color: rgb(8, 8, 8);">Submit</button>
-               </div>
-
-
-
-
-      </div>
-
+             </div>
+          </div>
         </form>
-
       </div>
     </div>
   </div>
-
 @endsection
