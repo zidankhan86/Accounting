@@ -10,33 +10,34 @@
         <div class="table-responsive">
           <table class="table table-bordered table-md">
             <tr>
-              <th>ID</th>
-              <th>Reference No</th>
-              <th>Authority</th>
-              <th>Account</th>
-              <th>Amount</th>
-              <th>Interest</th>
-              <th>Payable</th>
-              <th>Due</th>
-              <th>Installment</th>
-              <th>Status</th>
-              <th>Action</th>
+                <th>Loan Type</th>
+                <th>Authorities Name</th>
+                <th>Account Name</th>
+                <th>Loan Reason</th>
+                <th>Reference</th>
+                <th>Interest</th>
+                <th>Payment Type</th>
+                <th>Duration</th>
+                <th>Per Month</th>
+                <th>Note</th>
+                <th>Loan Amount</th>
             </tr>
 
-            {{-- @foreach ($authors as $account) --}}
+            @foreach ($loans as $loan)
 
 
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+                <td>{{ $loan->loan_type_id }}</td>
+                <td>{{ $loan->Authorities_name_id }}</td>
+                <td>{{ $loan->Account_name_id }}</td>
+                <td>{{ $loan->loan_reasion }}</td>
+                <td>{{ $loan->reference }}</td>
+                <td>{{ $loan->interest }}</td>
+                <td>{{ $loan->payment_type }}</td>
+                <td>{{ $loan->duration }}</td>
+                <td>{{ $loan->per_month }}</td>
+                <td>{{ $loan->note }}</td>
+                <td>{{ $loan->loan_amount }}</td>
               <td>
                 <a href="#" class="btn btn-secondary">Detail</a>
                 <a href="" class="btn btn-info">Edit</a>
@@ -45,7 +46,7 @@
             </tr>
 
 
-            {{-- @endforeach --}}
+            @endforeach
 
           </table>
 
