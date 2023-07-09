@@ -13,11 +13,9 @@ return new class extends Migration
     {
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('expense_id')
-            ->constrained('expenses');
+            $table->foreignId('expense_id');
 
-            $table->foreignId('transaction_type_id')
-            ->constrained('account_types');
+            $table->foreignId('transaction_type_id');
 
             $table->double('amount')->nullable();
             $table->double('due')->nullable();

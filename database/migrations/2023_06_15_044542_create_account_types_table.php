@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('account_types', function (Blueprint $table) {
             $table->id();
-            $table->string('account_type',100)->unique();
+            $table->string('account_type',100);
             $table->boolean('status')->default(0);
             $table->timestamps();
         });
