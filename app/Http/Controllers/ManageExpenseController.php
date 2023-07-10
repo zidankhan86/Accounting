@@ -74,7 +74,7 @@ class ManageExpenseController extends Controller
         //Validation
 
         $validator = Validator::make($request->all(), [
-
+        'payable'  => 'required',
         'item_name' => 'required',
         'item_price' => 'required|numeric|min:0',
         'quanity' => 'required|integer|min:1',
@@ -90,7 +90,7 @@ class ManageExpenseController extends Controller
         //dd($request->all());
         Expense::create([
 
-        "payable"             =>$request->item_price * $request->quantity,
+        "payable"             =>$request->payable,
         "item_name"           =>$request->item_name,
         "item_price"          =>$request->item_price,
         "quanity"             =>$request->quanity,

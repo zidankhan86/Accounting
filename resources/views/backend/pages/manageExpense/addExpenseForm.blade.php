@@ -26,6 +26,17 @@
                 <div class="card-body">
                 <div class="form-row">
 
+                  <div class="form-group col-md-12">
+                    <label for="inputName1">Payment Reasion</label>
+                    <input type="text" name="payable" class="form-control" id="inputName1" placeholder="i.e: Eid bonus...">
+
+                    @error('payable')
+
+                    <small class="text-danger">{{$message}}</small>
+
+                     @enderror
+                     </div>
+
                 <div class="form-group col-md-6">
                 <label for="inputName2">Expense Account Name</label>
 
