@@ -18,7 +18,7 @@ class Expense extends Model
 
      public function transactionAccount()
     {
-        return $this->belongsTo(AccountType::class, 'transaction_type_id', 'id');
+        return $this->belongsTo(AccountType::class, 'expense_type_id', 'id');
     }
 
     public function expenseDetails(){

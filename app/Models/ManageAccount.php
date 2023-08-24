@@ -22,6 +22,6 @@ class ManageAccount extends Model
      */
     public function balance(): HasMany
     {
-        return $this->hasMany(Expense::class, 'transaction_type_id', 'id');
+        return $this->hasMany(Expense::class, 'expense_type_id', 'id');
     }
 }
