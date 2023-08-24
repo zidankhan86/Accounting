@@ -6,6 +6,7 @@ use App\Models\Expense;
 use Illuminate\Http\Request;
 use App\Models\ManageAccount;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ReportingController extends Controller
@@ -40,7 +41,23 @@ class ReportingController extends Controller
         // $accounts = AccountSetup::with('transaction')->get();
         $accounts = ManageAccount::simplePaginate(8);
 
+        $accountName = ManageAccount::leftJoin('expenses', 'expenses.expense_type_id', 'manage_accounts.id')
+        ->select('manage_accounts.id as id',
+            'manage_accounts.account_name as account_name',
+            DB::raw('SUM(CASE WHEN expenses.status = 1 THEN expenses.item_price ELSE 0 END) as income'),
+            DB::raw('SUM(CASE WHEN expenses.status = 0 THEN expenses.item_price ELSE 0 END) as expense')
+        )
+        ->groupBy('id', 'account_name')
+        ->get();
+
+    $accountBalances = [];
+
+    foreach ($accountName as $expense) {
+        $balance = $expense->income - $expense->expense;
+        $accountBalances[$expense->id] = $balance;
+    }
+
         $account = ManageAccount::with('AccountSetup')->get();
-        return view('backend.pages.report.report',compact('accounts','expenses','account'));
+        return view('backend.pages.report.report',compact('accounts','expenses','accountName', 'accountBalances'));
     }
 }
