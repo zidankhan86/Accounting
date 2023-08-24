@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Account: <span class="text-danger">{{ $item->account_name }}</span></h4>
-                <p class="card-text">Balance: {{ ($item->id) }}</p>
+                <p class="card-text">Balance: {{ $accountBalances[$item->id] }} Tk.</p>
             </div>
 
         </div>
