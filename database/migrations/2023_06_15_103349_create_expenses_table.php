@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('expense_id');
 
-            $table->foreignId('transaction_type_id');
+            $table->foreignId('expense_type_id');
 
             $table->double('amount')->nullable();
             $table->double('due')->nullable();

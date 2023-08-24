@@ -55,7 +55,7 @@ class ManageExpenseController extends Controller
 
         //Expense Calcultion
 
-        $accountName = ManageAccount::leftJoin('expenses', 'expenses.transaction_type_id', 'manage_accounts.id')
+        $accountName = ManageAccount::leftJoin('expenses', 'expenses.expense_type_id', 'manage_accounts.id')
         ->select('manage_accounts.id as id',
         'manage_accounts.account_name as account_name',
         DB::raw('SUM(CASE WHEN expenses.status = 1 THEN expenses.item_price ELSE 0 END) as income'),
@@ -79,7 +79,7 @@ class ManageExpenseController extends Controller
         'item_price' => 'required|numeric|min:0',
         'quanity' => 'required|integer|min:1',
         'status' => 'required',
-        'transaction_type_id'=>'required'
+        'expense_type_id'=>'required'
          ]);
 
         if ($validator->fails()) {
@@ -96,7 +96,7 @@ class ManageExpenseController extends Controller
         "quanity"             =>$request->quanity,
         "status"              =>$request->status,
         "expense_id"          =>$request->expense_id,
-        "transaction_type_id"=>$request->transaction_type_id
+        "expense_type_id"=>$request->expense_type_id
 
 
         ]);
