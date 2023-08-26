@@ -19,7 +19,8 @@ return new class extends Migration
 
             $table->double('amount')->nullable();
             $table->double('due')->nullable();
-
+            $table->string('account_name');
+            $table->string('account_number');
             $table->string('payable', 100);
             $table->text('item_name', 1000);
             $table->string('item_price', 100);

@@ -79,15 +79,30 @@ class ManageExpenseController extends Controller
         'item_price' => 'required|numeric|min:0',
         'quanity' => 'required|integer|min:1',
         'status' => 'required',
-        'expense_type_id'=>'required'
+        'expense_type_id'=>'required',
+
          ]);
 
         if ($validator->fails()) {
         return redirect()->back()->withErrors($validator)->withInput();
         }
-        //Add Expense Create
+
+        $selectedAccount = ManageAccount::findOrFail($request->expense_type_id);
+
+        $income = $selectedAccount->balance->where('status', 1)->sum('item_price');
+        $expense = $selectedAccount->balance->where('status', 0)->sum('item_price');
+
+        if ($request->status == 1) {
+            $balanceChange = $request->item_price;
+        } else {
+            $balanceChange = -$request->item_price;
+        }
+
+        $balance = $income - $expense + $balanceChange;
 
         //dd($request->all());
+
+      // dd($amount);
         Expense::create([
 
         "payable"             =>$request->payable,
@@ -96,7 +111,11 @@ class ManageExpenseController extends Controller
         "quanity"             =>$request->quanity,
         "status"              =>$request->status,
         "expense_id"          =>$request->expense_id,
-        "expense_type_id"=>$request->expense_type_id
+        "expense_type_id"=>$request->expense_type_id,
+        "amount"  => $balance ,
+        "account_name" => $selectedAccount->account_name,
+        "account_number"=>$selectedAccount->account_number
+
 
 
         ]);

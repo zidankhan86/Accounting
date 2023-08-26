@@ -37,25 +37,21 @@
                      @enderror
                      </div>
 
-                <div class="form-group col-md-6">
-                <label for="inputName2">Expense Account Name</label>
-
-                <select name="expense_type_id" id="" class="form-control">
-
-                @foreach ($accountName as $expense)
-
-                <option value="{{$expense->id}}">Account: {{$expense->account_name}} Balance: {{ $expense->income -$expense->expense }} TK. </option>
-
-                @endforeach
-
-                </select>
-                @error('expense_details')
-                <small class="text-danger">{{$message}}</small>
-                @enderror
-                </div>
-
-
-
+                     <div class="form-group col-md-6">
+                        <label for="inputName2">Expense Account Name</label>
+                        <select name="expense_type_id" id="" class="form-control">
+                            @foreach ($accountName as $expense)
+                                <option value="{{$expense->id}}">
+                                    Account: {{$expense->account_name}}
+                                    Balance: {{ $expense->income - $expense->expense }} TK.
+                                </option>
+                            @endforeach
+                        </select>
+                        <input type="hidden" name="amount" value="{{ $expense->income - $expense->expense }}">
+                        @error('expense_type_id')
+                        <small class="text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
 
 
                 <div class="form-group col-md-6">
