@@ -11,7 +11,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class ReportingController extends Controller
 {
-   
+
 
 
         public function report(Request $request)
@@ -43,7 +43,11 @@ class ReportingController extends Controller
                 Alert::toast()->error('No expenses for this report month');
             }
 
-            $accounts = ManageAccount::simplePaginate(8);
+            //$accounts = ManageAccount::simplePaginate(2);
+
+        
+
+            $expenses = $expensesQuery->simplePaginate(4);
 
             $accountName = ManageAccount::leftJoin('expenses', 'expenses.expense_type_id', 'manage_accounts.id')
                 ->select('manage_accounts.id as id',
@@ -54,12 +58,12 @@ class ReportingController extends Controller
                 ->groupBy('id', 'account_name')
                 ->get();
 
-            $accountBalances = [];
-            foreach ($accountName as $expense) {
-                $balance = $expense->income - $expense->expense;
-                $accountBalances[$expense->id] = $balance;
-            }
+                $accountBalances = [];
+                foreach ($accountName as $expense) {
+                    $balance = $expense->income - $expense->expense;
+                    $accountBalances[$expense->id] = $balance;
+                }
 
-            return view('backend.pages.report.report', compact('accounts', 'expenses', 'accountName', 'accountBalances'));
+            return view('backend.pages.report.report', compact( 'expenses', 'expenses', 'accountName', 'accountBalances'));
         }
 }

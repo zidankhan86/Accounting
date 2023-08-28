@@ -4,19 +4,20 @@
 
     <div>
         <div class="row">
-            @foreach ($accounts as $item)
+            @foreach ($expenses as $item)
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Account: <span class="text-danger">{{ $item->account_name }}</span></h4>
-                            <p class="card-text">Balance: {{ $accountBalances[$item->id] ?? 'N/A' }} Tk.</p>
+                            <p class="card-text">Amount: {{ $item->amount }} Tk.</p>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
-        {{ $accounts->links() }}
+        {{ $expenses->links() }}
     </div>
+
 
     <h4 class="text-center text-primary">Report</h4>
     <form action="" method="get" class="form-group">
@@ -32,8 +33,7 @@
                     @endforeach
                 </select>
             </div>
-            <!-- Other form inputs for month and entity -->
-            <!-- ... -->
+
             <div class="col-md-2">
                 <button class="mt-4 btn btn-primary">SEARCH</button>
             </div>
@@ -47,8 +47,8 @@
                     <th scope="col">Serial</th>
                     <th scope="col">Account</th>
                     <th scope="col">Expense Type</th>
-                    <th scope="col">Paid</th>
-                    <th scope="col">Due</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Paid For</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -59,8 +59,8 @@
                         <td scope="row">{{ $item->id }}</td>
                         <td>{{ $item->account_name }}</td>
                         <td>{{ $item->name }}</td>
-                        <td>{{ $item->amount }}</td>
-                        <td>{{ $item->due > 0 ? $item->due : 'No Due' }}</td>
+                        <td>{{ $item->amount }} Tk</td>
+                        <td>{{ $item->account_type }}</td>
                         <td>{{ $item->status == true ? 'Cash In' : 'Cash Out' }}</td>
                         <td>
                             <a href="#" class="btn btn-primary">
@@ -74,19 +74,5 @@
                 @endforeach
             </tbody>
         </table>
-
-        <div style="text-align: center;">
-            <button onclick="printDiv('orderReport')" class="btn btn-success">Print</button>
-        </div>
-
-        <script>
-            function printDiv(divId){
-                var printContents = document.getElementById(divId).innerHTML;
-                var originalContents = document.body.innerHTML;
-                document.body.innerHTML = printContents;
-                window.print();
-                document.body.innerHTML = originalContents;
-            }
-        </script>
     </div>
 @endsection
