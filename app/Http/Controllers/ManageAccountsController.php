@@ -19,7 +19,7 @@ class ManageAccountsController extends Controller
               return view('backend.pages.manageAccount.addAccount',compact('accounts'));
               }
 
-             public function addAccountCreate(Request $request){
+             public function AccountSetupCreate(Request $request){
 
                 //dd($request->all());
 
