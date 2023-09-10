@@ -1,25 +1,8 @@
 @extends('backend.master')
 @section('content')
-    <h4 class="text-center text-light">Balance</h4><br><br>
 
-    <div>
-        <div class="row">
-            @foreach ($expenses as $item)
-                <div class="col-md-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Account: <span class="text-danger">{{ $item->account_name }}</span></h4>
-                            <p class="card-text">Amount: {{ $item->amount }} Tk.</p>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-        {{ $expenses->links() }}
-    </div>
-
-
-    <h4 class="text-center text-primary">Report</h4>
+<br><br><br>
+    <h4 class="text-center text-primary">REPORT</h4><br>
     <form action="#"  class="form-group">
         <div class="row">
             <div class="col-md-1"></div>
@@ -67,7 +50,7 @@
                     <th scope="col">Account</th>
                     <th scope="col">Expense Type</th>
                     <th scope="col">Amount</th>
-                    <th scope="col">Paid For</th>
+                    <th scope="col">Pay Reason</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -77,9 +60,9 @@
                     <tr class="">
                         <td scope="row">{{ $item->id }}</td>
                         <td>{{ $item->account_name }}</td>
-                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->expenseType->expense_type }}</td>
                         <td>{{ $item->amount }} Tk</td>
-                        <td>{{ $item->account_type }}</td>
+                        <td>{{ $item->payable }}</td>
                         <td>{{ $item->status == true ? 'Cash In' : 'Cash Out' }}</td>
                         <td>
                             <a href="#" class="btn btn-primary">

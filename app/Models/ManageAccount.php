@@ -24,4 +24,14 @@ class ManageAccount extends Model
     {
         return $this->hasMany(Expense::class, 'expense_type_id', 'id');
     }
+
+    /**
+     * Get all of the comments for the ManageAccount
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function ExpenseType(): HasMany
+    {
+        return $this->hasMany(Categories::class);
+    }
 }

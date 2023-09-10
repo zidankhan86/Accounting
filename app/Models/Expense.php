@@ -16,7 +16,7 @@ class Expense extends Model
     return $this->belongsTo(Categories::class,'expense_id','id');
 }
 
-     public function transactionAccount()
+     public function ExpenseAccount()
     {
         return $this->belongsTo(AccountType::class, 'expense_type_id', 'id');
     }
