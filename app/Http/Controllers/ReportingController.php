@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
 use App\Models\Expense;
 use Illuminate\Http\Request;
 use App\Models\ManageAccount;
@@ -43,8 +44,6 @@ class ReportingController extends Controller
             Alert::toast()->error('No expenses for this report month');
         }
 
-        
-        $expenses = $expensesQuery->simplePaginate(4);
 
         $accountName = ManageAccount::leftJoin('expenses', 'expenses.expense_type_id', 'manage_accounts.id')
             ->select('manage_accounts.id as id',
@@ -61,6 +60,10 @@ class ReportingController extends Controller
                 $accountBalances[$expense->id] = $balance;
             }
 
-        return view('backend.pages.report.report', compact( 'expenses','accountName', 'accountBalances'));
+            $expenseType = Categories::all();
+
+
+
+        return view('backend.pages.report.report', compact('expenseType' ,'expenses','accountName', 'accountBalances'));
     }
 }

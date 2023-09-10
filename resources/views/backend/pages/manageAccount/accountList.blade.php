@@ -19,7 +19,9 @@
               <th>Account Name</th>
               <th>Account Type</th>
               <th>Account Number</th>
+              <th>Account Balance</th>
               <th>Account Status</th>
+
               <th>Action</th>
             </tr>
 
@@ -31,6 +33,7 @@
               <td>{{$account->account_name}}</td>
               <td>{{$account->AccountSetup->account_type}}</td>
               <td>{{$account->account_number}}</td>
+              <td>{{$account->AccountBalance->amount}} Tk</td>
               <td>{{$account->status == 1 ? 'Active' : 'Inactive'}}</td>
               <td>
                 <a href="#" class="btn btn-secondary">Detail</a>
