@@ -17,11 +17,9 @@
             <tr>
               <th>ID</th>
               <th>Date & Time</th>
-              <th>Payable</th>
+              <th>Payment Reason</th>
               <th> Account</th>
               <th>Total Amount</th>
-              <th>Total Quantity</th>
-              <th>Account Type</th>
               <th>Item Name</th>
               <th>Item Price</th>
               <th>Item Quantity</th>
@@ -37,15 +35,11 @@
               <td>{{$account->created_at}}</td>
               <td>{{$account->payable}}</td>
               <td>{{$account->account_name}}</td>
-
               <td>{{$totalExpenseAmount}} BDT</td>
-              <td>{{$totalItemQuantity}}</td>
-
-              <td>{{$account->account_type}}</td>
               <td>{{$account->item_name}}</td>
-              <td>{{$account->item_price}}</td>
+              <td>{{$account->item_price}} Tk</td>
               <td>{{$account->quanity}}</td>
-              <td>{{$account->status}}</td>
+              <td>{{$account->status == 1 ? 'Active':'Inactive'}}</td>
               <td>
 
                 <a href="#" class="btn btn-secondary">Detail</a>

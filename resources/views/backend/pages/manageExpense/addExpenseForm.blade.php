@@ -38,12 +38,12 @@
                      </div>
 
                      <div class="form-group col-md-6">
-                        <label for="inputName2">Expense Account Name</label>
+                        <label for="inputName2">Select Expense Account Name</label>
                         <select name="expense_type_id" id="" class="form-control">
                             @foreach ($accountName as $expense)
                                 <option value="{{$expense->id}}">
                                     Account: {{$expense->account_name}}
-                                    Balance: {{ $expense->income - $expense->expense }} TK.
+                                   , Balance Availeable: {{ $expense->income - $expense->expense }} TK.
                                 </option>
                             @endforeach
                         </select>
@@ -85,8 +85,8 @@
 
 
                 <div class="form-group col-md-4">
-                <label for="inputAmount">Item Price</label>
-                <input type="number" name="item_price" class="form-control" id="inputAmount" placeholder="Item Price">
+                <label for="inputAmount">Amount*</label>
+                <input type="number" name="item_price" class="form-control" id="inputAmount" placeholder="Enter an amount">
                 @error('item_price')
                 <small class="text-danger">{{$message}}</small>
                 @enderror
@@ -108,6 +108,15 @@
                 @enderror
                 </div>
 
+                   <div class="form-group col-md-12">
+                    <label for="inputName1">Payment Date</label>
+                    <input type="date" name="date" class="form-control" id="inputName1">
+
+                    @error('date')
+                    <small class="text-danger">{{$message}}</small>
+                     @enderror
+                    </div>
+
                 <div>
                 <input type="hidden" name="expense_id" value="{{$expense->id}}">
                 </div>
@@ -115,8 +124,8 @@
                 <div class="form-group col-md-12">
                 <label for="inputName1">Status</label>
                 <select  class="form-control" name="status" id="">
-                <option value="0" style="color: green">Cash Out</option>
-                <option value="1" style="color: red">Cash In</option>
+                <option value="0" style="color: green">Remove Balance</option>
+                <option value="1" style="color: red">Add Balance</option>
                 </select>
 
                 @error('status')
@@ -126,12 +135,16 @@
                 @enderror
                 </div>
 
+                   <div class="form-group col-md-12">
+                    <label for="inputName1">Note</label>
+                    <input type="text" name="note" class="form-control" id="inputName1" placeholder="Write Your Note Here..">
 
-
+                    @error('note')
+                    <small class="text-danger">{{$message}}</small>
+                     @enderror
+                    </div>
 
                </div>
-
-
                <div class="center">
                <button type="submit" class="btn btn-success " style="color: rgb(8, 8, 8);">Submit</button>
              </div>

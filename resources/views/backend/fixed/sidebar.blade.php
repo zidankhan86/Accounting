@@ -21,7 +21,6 @@
 
             <li><a class="nav-link" href="{{route('account.list')}}">List Accounts</a></li>
 
-            <li><a class="nav-link" href="layout-top-navigation.html">Cash Flow</a></li>
           </ul>
         </li>
 
