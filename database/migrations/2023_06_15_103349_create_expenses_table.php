@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('item_price', 100);
             $table->double('quanity', 100);
             $table->boolean('status')->default(0);
+            $table->date('date');
             $table->timestamps();
         });
     }

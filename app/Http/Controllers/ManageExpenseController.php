@@ -79,6 +79,7 @@ class ManageExpenseController extends Controller
         'item_price' => 'required|numeric|min:0',
         'quanity' => 'required|integer|min:1',
         'status' => 'required',
+        'date' =>'required|date|after_or_equal:today',
         'expense_type_id'=>'required',
 
          ]);
@@ -100,7 +101,7 @@ class ManageExpenseController extends Controller
 
         $balance = $income - $expense + $balanceChange;
 
-        //dd($request->all());
+      //  dd($request->all());
 
       // dd($amount);
         Expense::create([
@@ -114,7 +115,8 @@ class ManageExpenseController extends Controller
         "expense_type_id"=>$request->expense_type_id,
         "amount"  => $balance ,
         "account_name" => $selectedAccount->account_name,
-        "account_number"=>$selectedAccount->account_number
+        "account_number"=>$selectedAccount->account_number,
+        "date"=>$request->date
 
 
 
@@ -128,7 +130,7 @@ class ManageExpenseController extends Controller
 
         //Calculate total expense amount and total item quantity
         $totalExpenseAmount = Expense::sum('item_price');
-        $totalItemQuantity = Expense::sum('quanity');
+
 
 
         //Retrieve account types
@@ -152,7 +154,7 @@ class ManageExpenseController extends Controller
         // Retrieve account types
         $accounts=Categories::all();
         $accountTypes = AccountType::all();
-        return view('backend.pages.manageExpense.expenseList',compact('expenses','totalExpenseAmount', 'totalItemQuantity', 'accountTypes','accounts'));
+        return view('backend.pages.manageExpense.expenseList',compact('expenses','totalExpenseAmount', 'accountTypes','accounts'));
 
 }
 
