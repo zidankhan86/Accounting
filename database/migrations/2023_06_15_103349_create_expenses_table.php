@@ -27,6 +27,7 @@ return new class extends Migration
             $table->double('quanity', 100);
             $table->boolean('status')->default(0);
             $table->date('date');
+            $table->longText('note')->nullable();
             $table->timestamps();
         });
     }
