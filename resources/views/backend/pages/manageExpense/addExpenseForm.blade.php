@@ -135,14 +135,15 @@
                 @enderror
                 </div>
 
-                   <div class="form-group col-md-12">
-                    <label for="inputName1">Note</label>
-                    <input type="text" name="note" class="form-control" id="inputName1" placeholder="Write Your Note Here..">
+                <div class="form-group col-md-12" style="margin-bottom: 20px;">
+                    <label for="inputName1" style="font-size: 18px; font-weight: bold;">Note</label> 
+                    <input type="text" name="note" class="form-control" id="inputName1" style="height: 60px; font-size: 16px;" placeholder="Write Your Note Here.." /> <!-- Increase height and font size -->
 
                     @error('note')
                     <small class="text-danger">{{$message}}</small>
-                     @enderror
-                    </div>
+                    @enderror
+                </div>
+
 
                </div>
                <div class="center">

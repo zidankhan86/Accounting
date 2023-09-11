@@ -81,6 +81,7 @@ class ManageExpenseController extends Controller
         'status' => 'required',
         'date' =>'required|date|after_or_equal:today',
         'expense_type_id'=>'required',
+        'note'=>'nullable'
 
          ]);
 
@@ -101,7 +102,7 @@ class ManageExpenseController extends Controller
 
         $balance = $income - $expense + $balanceChange;
 
-      //  dd($request->all());
+      // dd($request->all());
 
       // dd($amount);
         Expense::create([
@@ -116,8 +117,8 @@ class ManageExpenseController extends Controller
         "amount"  => $balance ,
         "account_name" => $selectedAccount->account_name,
         "account_number"=>$selectedAccount->account_number,
-        "date"=>$request->date
-
+        "date"=>$request->date,
+        "note"=>$request->note
 
 
         ]);
