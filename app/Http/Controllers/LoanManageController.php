@@ -95,11 +95,14 @@ class LoanManageController extends Controller
 
     public function loanList(){
 
-        // $authors = Authorities::simplePaginate(10);
-        $loans = Loan::all();
-        $authorities=Authorities::all();
 
-        return view('backend.pages.manageLoan.loanList',compact('loans','authorities'));
+        $loans = Loan::with('authority','AccountName')->get();
+        $authorities=Authorities::all();
+        $accounts = ManageAccount::all();
+       // $accountName =
+
+
+        return view('backend.pages.manageLoan.loanList',compact('loans','authorities','accounts'));
     }
 
     //Loan Create

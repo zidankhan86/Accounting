@@ -17,15 +17,15 @@ class Loan extends Model
     }
 
     //Authorities Relation with Loan
-    public function Authorities()
+    public function authority()
     {
-        return $this->hasMany(Authorities::class, 'Authorities_name_id', 'id');
+        return $this->belongsTo(Authorities::class, 'Authorities_name_id', 'id');
     }
 
     //Manage Account Relation with Loan
     public function AccountName()
     {
-        return $this->hasMany(ManageAccount::class, 'Account_name_id', 'id');
+        return $this->belongsTo(ManageAccount::class, 'Account_name_id', 'id');
     }
 
 }

@@ -3,6 +3,9 @@
 
 <div class="col-12 col-md-12 col-lg-12">
     <div class="card">
+        <div style="text-align: right;">
+            <a class="btn btn-success text-center" style="display: inline-block;" href="{{ route('add.authorities') }}">+Create Authorities</a>
+        </div>
       <div class="card-header">
         <h4 class="text-success">Loan Authorities List</h4>
       </div>
