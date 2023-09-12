@@ -14,7 +14,7 @@
 <div class="col-12 col-md-12 col-lg-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="text-center">+Add Loan Form</h4>
+        <h4 class="text-center">+Create Loan</h4>
       </div>
     <form action="{{route('loan.create')}}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -91,7 +91,7 @@
 
 
            <div class="form-group col-md-6">
-            <label for="inputName2">Amount</label>
+            <label for="inputName2">Payable Amount</label>
            <input class="form-control" type="number" name="loan_amount" placeholder="100000">
 
             @error('cash_credit')

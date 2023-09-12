@@ -40,8 +40,8 @@
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Manage Loan
         </span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link beep beep-sidebar" href="{{route('add.authorities')}}">Add Authorities </a></li>
-            <li><a class="nav-link beep beep-sidebar" href="{{route('authorities.list')}}">Authorities List </a></li>
+            
+            <li><a class="nav-link" href="{{route('authorities.list')}}">Authorities</a></li>
 
 
             <li><a class="nav-link" href="{{route('add.loan.type')}}">Loan Types</a></li>

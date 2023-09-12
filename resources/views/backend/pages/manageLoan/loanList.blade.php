@@ -28,8 +28,8 @@
 
             <tr>
                 <td>{{ $loan->loan_type_id }}</td>
-                <td>{{ $loan->Authorities_name_id }}</td>
-                <td>{{ $loan->Account_name_id }}</td>
+                <td>{{ $loan->authority->name }}</td>
+                <td>{{ $loan->AccountName->account_name}}</td>
                 <td>{{ $loan->loan_reasion }}</td>
                 <td>{{ $loan->reference }}</td>
                 <td>{{ $loan->interest }}</td>
