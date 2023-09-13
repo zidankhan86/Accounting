@@ -21,12 +21,12 @@ return new class extends Migration
             $table->foreignId('Account_name_id')->constrained('manage_accounts');
 
             $table->string('loan_reasion');
-            $table->string('reference');
+            $table->string('reference')->unique();
             $table->string('loan_amount');
             $table->string('interest');
             $table->string('payment_type');
-            $table->string('duration');
-            $table->string('per_month');
+            $table->string('duration')->nullable();
+            $table->string('per_month')->nullable();
             $table->longText('note');
             $table->timestamps();
         });

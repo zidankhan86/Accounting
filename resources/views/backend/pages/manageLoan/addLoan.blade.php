@@ -48,7 +48,7 @@
            <select class="form-control" name="Account_name_id" id="">
             @foreach ($accounts as $account)
 
-            <option value="{{$account->id}}">{{$account->account_name}}</option>
+            <option value="{{$account->id}}">Account:{{$account->account_name}},Number:{{$account->account_number}}</option>
 
             @endforeach
            </select>
@@ -107,12 +107,11 @@
             @enderror
            </div>
 
-           <div class="form-group col-md-4">
-            <label for="inputAddress">Payment Type</label>
+           <div class="form-group col-md-12">
+            <label for="inputAddress">Status</label>
               <select class="form-control" name="payment_type" id="">
-                <option value="Active">Daily</option>
-                <option value="Inactive">Monthly</option>
-                <option value="Inactive">Yearly</option>
+                <option value="1">Active</option>
+                <option value="0">Inactive</option>
               </select>
 
             @error('status')
@@ -121,25 +120,22 @@
           </div>
 
 
-          <div class="form-group col-md-4">
+          {{-- <div class="form-group col-md-4">
             <label for="inputAddress">Duration *</label>
-            <input type="number" name="duration" class="form-control " id="inputAddress" placeholder="Account Status">
-
-
+            <input type="number" name="duration" class="form-control " id="inputAddress" placeholder="Loan Duration">
             @error('status')
             <small class="text-danger">{{$message}}</small>
             @enderror
-          </div>
+          </div> --}}
 
 
-          <div class="form-group col-md-4">
+          {{-- <div class="form-group col-md-4">
             <label for="inputAddress">Per Month</label>
             <input type="number" name="per_month" class="form-control " id="inputAddress" placeholder="1000">
-
             @error('status')
             <small class="text-danger">{{$message}}</small>
             @enderror
-          </div>
+          </div> --}}
 
           <div class="form-group col-md-12" style="width: 80%;">
             <label for="inputAddress" style="font-size: 18px;">Note</label>

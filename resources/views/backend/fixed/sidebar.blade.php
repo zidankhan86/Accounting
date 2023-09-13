@@ -11,7 +11,7 @@
         <li class="dropdown active">
           <a href="{{route('report')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
         </li>
-        <li class="menu-header">Accounts Dterms</li>
+        <li class="menu-header">Accounts </li>
         <li class="dropdown">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Manage Accounts</span></a>
           <ul class="dropdown-menu">
@@ -40,17 +40,15 @@
           <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Manage Loan
         </span></a>
           <ul class="dropdown-menu">
-            
+
             <li><a class="nav-link" href="{{route('authorities.list')}}">Authorities</a></li>
 
 
             <li><a class="nav-link" href="{{route('add.loan.type')}}">Loan Types</a></li>
 
-             <li><a class="nav-link beep beep-sidebar" href="{{route('add.loan')}}">Add Loan </a></li>
 
-             <li><a class="nav-link" href="{{route('loan.list')}}">List Loans</a></li>
+             <li><a class="nav-link" href="{{route('loan.list')}}">Loans</a></li>
 
-            <li><a class="nav-link beep beep-sidebar" href="components-hero.html">VAT & TAX</a></li>
 
           </ul>
         </li>
