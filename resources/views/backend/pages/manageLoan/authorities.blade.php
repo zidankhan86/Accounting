@@ -45,7 +45,7 @@
 
           <div class="form-group col-md-6">
             <label for="inputBalance1">Contact Number</label>
-            <input type="number" name="number" class="form-control" id="inputBalance1" placeholder="Contact Number">
+            <input type="tel" name="number" class="form-control" id="inputBalance1" placeholder="Contact Number">
             @error('account_number')
             <small class="text-danger">{{$message}}</small>
             @enderror
@@ -54,7 +54,7 @@
 
            <div class="form-group col-md-6">
             <label for="inputName2">Cash Credit (CC) Loan Limit</label>
-           <input class="form-control" type="number" name="cash_limit" placeholder="100000">
+           <input class="form-control" type="number" name="cash_limit" value="100000" placeholder="100000">
 
             @error('cash_credit')
             <p class="text-danger">{{$message}}</p>
@@ -62,8 +62,8 @@
            </div>
 
           <div class="form-group col-md-6">
-            <label for="inputBalance1">Address </label>
-            <input type="text" name="address" class="form-control" id="inputBalance1" placeholder="Enter an address ">
+            <label for="inputAddress">Address </label>
+            <input type="text" name="address" class="form-control"  placeholder="Enter an address ">
             @error('address')
             <small class="text-danger">{{$message}}</small>
             @enderror

@@ -29,7 +29,7 @@ class LoanManageController extends Controller
         ]);
 
         if ($validator->fails()) {
-            // Redirect or return the validation errors to the user
+            Alert::toast()->error('Failed to add authorities ');
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
@@ -117,8 +117,8 @@ class LoanManageController extends Controller
             'reference' => 'required',
             'interest' => 'required',
             'payment_type' => 'required',
-            'duration' => 'required',
-            'per_month' => 'required',
+            'duration' => 'nullable',
+            'per_month' => 'nullable',
             'note' => 'required',
             'loan_amount' => 'required|numeric|min:0',
         ]);
