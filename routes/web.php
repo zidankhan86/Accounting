@@ -48,6 +48,9 @@ Route::post('/loan-create',[LoanManageController::class,'Loancreate'])->name('lo
 Route::get('/add-type',[LoanManageController::class,'addType'])->name('add.loan.type');
 Route::post('/add-type/create',[LoanManageController::class,'typeCreate'])->name('loan.type.create');
 Route::get('/loan-list',[LoanManageController::class,'loanList'])->name('loan.list');
+Route::get('/loan-payment',[LoanManageController::class,'loanPayment'])->name('loan.payment');
+Route::post('/loan-payment-create',[LoanManageController::class,'loanPaymentCreate'])->name('loan.payment.create');
+Route::post('/get-account-data',[LoanManageController::class,'getAccountData'])->name('get.account.data');
 
 //Report
 Route::get('/report',[ReportingController::class,'report'])->name('report');

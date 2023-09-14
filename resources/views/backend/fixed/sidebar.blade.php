@@ -49,6 +49,8 @@
 
              <li><a class="nav-link" href="{{route('loan.list')}}">Loans</a></li>
 
+             <li><a class="nav-link" href="{{route('loan.payment')}}">Loans Payment</a></li>
+
 
           </ul>
         </li>
