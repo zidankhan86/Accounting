@@ -34,7 +34,7 @@
                 <td>{{ $loan->loan_reasion }}</td>
                 <td>{{ $loan->reference }}</td>
                 <td>{{ $loan->interest }}Tk</td>
-                <td>{{ $loan->payment_type }}</td>
+                <td>Cash Credit(CC) Loan</td>
                 <td>{{ $loan->note }}</td>
                 <td>{{ $loan->loan_amount }} Tk</td>
               <td>
