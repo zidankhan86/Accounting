@@ -28,6 +28,8 @@ return new class extends Migration
             $table->string('duration')->nullable();
             $table->string('per_month')->nullable();
             $table->longText('note');
+            $table->string('account_number');
+            $table->string('name');
             $table->timestamps();
         });
     }

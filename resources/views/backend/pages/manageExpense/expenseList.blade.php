@@ -3,6 +3,9 @@
 
 <div class="col-12 col-md-12 col-lg-12">
     <div class="card">
+        <div style="text-align: right;">
+            <a class="btn btn-success text-center" style="display: inline-block;" href="{{ route('add.expense') }}">+Create Expense</a>
+        </div>
       <div class="card-header">
         <h4 class="text-success">Expense List</h4>
       </div>
@@ -16,7 +19,7 @@
           <table class="table table-bordered table-md">
             <tr>
               <th>ID</th>
-              <th>Date & Time</th>
+              <th>Date</th>
               <th>Payment Reason</th>
               <th> Account</th>
               <th>Total Amount</th>
@@ -32,7 +35,7 @@
 
             <tr>
               <td>{{$account->id}}</td>
-              <td>{{$account->created_at}}</td>
+              <td>{{$account->date}}</td>
               <td>{{$account->payable}}</td>
               <td>{{$account->account_name}}</td>
               <td>{{$totalExpenseAmount}} BDT</td>

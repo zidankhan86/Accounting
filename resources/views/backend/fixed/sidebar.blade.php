@@ -30,9 +30,8 @@
 
             <li><a class="nav-link" href="{{route('manage.expense')}}">Expenses type</a></li>
 
-            <li><a class="nav-link" href="{{route('add.expense')}}">Add Expenses</a></li>
 
-            <li><a class="nav-link" href="{{route('expense.list')}}">Expenses List</a></li>
+            <li><a class="nav-link" href="{{route('expense.list')}}">Expenses</a></li>
 
           </ul>
         </li>
