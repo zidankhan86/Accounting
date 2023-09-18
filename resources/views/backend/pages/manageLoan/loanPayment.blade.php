@@ -20,9 +20,11 @@
                     <div class="form-group col-md-12">
                         <label for="inputName1">Loan* (Select a loan account)</label>
                         <select class="form-control" name="account_number" id="account_number">
+                            <option value="">SELECT AN ACCOUNT</option>
                             @foreach ($accounts as $item)
                             <option value="{{$item->account_number}}" >Account:{{$item->account_name}},
                                 Number:{{$item->account_number}}</option>
+
                             @endforeach
                         </select>
                         @error('account_number')
@@ -139,5 +141,6 @@
         });
     });
 </script>
+
 
 @endsection

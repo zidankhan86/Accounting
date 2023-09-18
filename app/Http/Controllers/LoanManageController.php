@@ -193,14 +193,13 @@ class LoanManageController extends Controller
     }
 
     public function loanPaymentCreate(Request $request){
-
+       // dd($request->all());
         $validator = Validator::make($request->all(), [
 
 
         'Account_name_id' => 'required',
         'Authorities_name_id' => 'required',
         'loan_id' => 'required',
-        'expense_id' => 'required',
         'loan_amount' => 'required|numeric|min:0',
         'loan_payment' => 'required|numeric|min:0',
         'date'=>'required|date|after_or_equal:today',
@@ -236,7 +235,7 @@ class LoanManageController extends Controller
 
     // Update the loan amount in the Loan model
     $loan->update(['loan_amount' => $newLoanAmount]);
-
+  //dd($request->all());
 
         LoanPayment::create([
 
