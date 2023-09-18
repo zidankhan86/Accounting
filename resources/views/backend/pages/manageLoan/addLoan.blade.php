@@ -26,10 +26,10 @@
 
 
 
-                <select class="form-control" name="Authorities_name_id" id="">
+                <select class="form-control" name="name" id="">
                     @foreach ($authorities as $authoritie)
 
-                    <option value="{{$authoritie->id}}">{{$authoritie->name}}</option>
+                    <option value="{{$authoritie->name}}">{{$authoritie->name}}</option>
                     @endforeach
                 </select>
 
@@ -42,26 +42,32 @@
                 @enderror
               </div>
 
+        <div>
+            <input type="hidden" value="{{ $authoritie->id }}" name="Authorities_name_id">
+        </div>
+
           <div class="form-group col-md-3">
             <label for="inputName2">Account</label>
 
-           <select class="form-control" name="Account_name_id" id="">
+           <select class="form-control" name="account_number" id="">
             @foreach ($accounts as $account)
 
-            <option value="{{$account->id}}">Account:{{$account->account_name}},Number:{{$account->account_number}}</option>
+            <option value="{{$account->account_number}}">Account:{{$account->account_name}},Number:{{$account->account_number}}</option>
 
             @endforeach
            </select>
 
-            @error('bank_name')
+            @error('account_number')
             <p class="text-danger">{{$message}}</p>
             @enderror
            </div>
-
+                <div>
+                    <input type="hidden" name="Account_name_id" value="{{ $account->id }}">
+                </div>
           <div class="form-group col-md-3">
             <label for="inputBalance1">Loan Reason</label>
             <input type="text" name="loan_reasion" class="form-control" id="inputBalance1" placeholder="Write Loan Reason here....">
-            @error('account_number')
+            @error('loan_reasion')
             <small class="text-danger">{{$message}}</small>
             @enderror
            </div>

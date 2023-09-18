@@ -28,4 +28,6 @@ class Loan extends Model
         return $this->belongsTo(ManageAccount::class, 'Account_name_id', 'id');
     }
 
+   
+
 }

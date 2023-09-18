@@ -136,6 +136,12 @@ class LoanManageController extends Controller
         $interestRate = $request->interest;
 
         $interest = $this->calculateInterest($loanAmount, $interestRate);
+        $existingLoan = Loan::where('account_number', $request->account_number)->first();
+
+        if ($existingLoan) {
+            // Update the existing loan's loan_amount by adding the new loan_amount
+            $existingLoan->loan_amount += $loanAmount;
+            $existingLoan->save();} else {
 
         Loan::create([
 
@@ -151,9 +157,10 @@ class LoanManageController extends Controller
         "per_month"=>$request->per_month,
         "note"=>$request->note,
         "loan_amount"=>$request->loan_amount,
-
+        "account_number"=>$request->account_number,
+        "name"=>$request->name,
         ]);
-
+    }
          Alert::toast()->success('Loan Added');
          return back();
 
@@ -178,12 +185,32 @@ class LoanManageController extends Controller
         $authorities = Authorities::all();
         $loan = Loan::all();
         $loanAmount = LoanPayment::all();
+
+        //dd($accounts);
         return view('backend.pages.manageLoan.loanPayment',compact('loanAmount','accounts','authorities','accountName','loan'));
     }
 
     public function loanPaymentCreate(Request $request){
 
-        //dd($request->all());
+       // dd($request->all());
+       $loan = Loan::where('account_number', $request->account_number)->first();
+
+       if (!$loan) {
+
+        return redirect()->back()->with('error', 'No matching loan found for the selected account number');
+    }
+
+    // Calculate the new loan amount after deducting the payment
+    $newLoanAmount = $loan->loan_amount - $request->loan_payment;
+
+    if ($newLoanAmount < 0) {
+        Alert::toast()->error('Insufficient Balance: Payment exceeds available balance');
+        return redirect()->back();
+    }
+
+    // Update the loan amount in the Loan model
+    $loan->update(['loan_amount' => $newLoanAmount]);
+
 
         LoanPayment::create([
 
@@ -196,28 +223,19 @@ class LoanManageController extends Controller
             "date" =>$request->date,
             "status" =>$request->status,
             "note" =>$request->note,
+            "balance" =>$request->balance,
+            "account_number" =>$request->account_number,
+            "name" =>$request->name,
 
         ]);
+         // Deduct the payment amount from the corresponding loan
+
+
+    Alert::toast()->success('Loan Payment Added');
 
         return redirect()->back();
     }
-    public function getAccountData(Request $request)
-{
-    $account_id = $request->input('account_id');
 
-    // Retrieve the data for the selected account
-    $account = ManageAccount::find($account_id);
-
-    // Prepare the response data
-    $response = [
-        'authority_options' => '<option value="' . $account->Authorities_name_id . '">' . $account->authority->name . '</option>',
-        'available_balance' => $account->income - $account->expense,
-        'loan_id' => $account->expense_id,
-        'due' => $account->loan_amount,
-    ];
-
-    return response()->json($response);
-}
 
 
 
