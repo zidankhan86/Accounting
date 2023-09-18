@@ -3,6 +3,9 @@
 
 <div class="col-12 col-md-12 col-lg-12">
     <div class="card">
+        <div style="text-align: right;">
+            <a class="btn btn-success text-center" style="display: inline-block;" href="{{route('add.account')}}">+Create Account</a>
+        </div>
       <div class="card-header">
         <h4 class="text-success">Account List</h4>
       </div>
@@ -19,7 +22,7 @@
               <th>Account Name</th>
               <th>Account Type</th>
               <th>Account Number</th>
-             
+
               <th>Account Status</th>
 
               <th>Action</th>
