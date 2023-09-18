@@ -13,42 +13,42 @@
         </li>
         <li class="menu-header">Accounts </li>
         <li class="dropdown">
-          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Manage Accounts</span></a>
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-th"></i> <span>Manage Accounts</span></a>
           <ul class="dropdown-menu">
-          <li><a class="nav-link" href="{{route('account.type')}}">Accounts Type</a></li>
+          <li><a class="nav-link" href="{{route('account.type')}}"><i class="fas fa-tags"></i>Accounts Type</a></li>
 
-            <li><a class="nav-link" href="{{route('add.account')}}">Accounts Setup</a></li>
 
-            <li><a class="nav-link" href="{{route('account.list')}}">List Accounts</a></li>
+
+            <li><a class="nav-link" href="{{route('account.list')}}"><i class="fas fa-user"></i> Accounts</a></li>
 
           </ul>
         </li>
 
         <li class="dropdown">
-          <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Manage Expenses</span></a>
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-money-bill-alt"></i> <span>Manage Expenses</span></a>
           <ul class="dropdown-menu">
 
-            <li><a class="nav-link" href="{{route('manage.expense')}}">Expenses type</a></li>
+            <li><a class="nav-link" href="{{route('manage.expense')}}"><i class="fas fa-tags"></i>Expenses type</a></li>
 
 
-            <li><a class="nav-link" href="{{route('expense.list')}}">Expenses</a></li>
+            <li><a class="nav-link" href="{{route('expense.list')}}"><i class="fas fa-exchange-alt"></i>Expenses</a></li>
 
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Manage Loan
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-hand-holding-usd"></i> <span>Manage Loan
         </span></a>
           <ul class="dropdown-menu">
 
-            <li><a class="nav-link" href="{{route('authorities.list')}}">Authorities</a></li>
+            <li><a class="nav-link" href="{{route('authorities.list')}}"><i class="fas fa-university"></i>Authorities</a></li>
 
 
-            <li><a class="nav-link" href="{{route('add.loan.type')}}">Loan Types</a></li>
+            <li><a class="nav-link" href="{{route('add.loan.type')}}"><i class="fas fa-tags"></i>Loan Types</a></li>
 
 
-             <li><a class="nav-link" href="{{route('loan.list')}}">Loans</a></li>
+             <li><a class="nav-link" href="{{route('loan.list')}}"><i class="fas fa-hand-holding-usd"></i>Loans</a></li>
 
-             <li><a class="nav-link" href="{{route('loan.payment')}}">Loans Payment</a></li>
+             <li><a class="nav-link" href="{{route('loan.payment')}}"><i class="fas fa-credit-card"></i>Loans Payment</a></li>
 
 
           </ul>

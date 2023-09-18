@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use App\Models\Expense;
+use App\Models\Loan;
 use Illuminate\Http\Request;
 use App\Models\ManageAccount;
 use Illuminate\Support\Carbon;
@@ -62,8 +63,10 @@ class ReportingController extends Controller
 
             $expenseType = Categories::all();
 
+            $totalAccount = ManageAccount::get()->count();
+            $totalLoanAmount = Loan::sum('loan_amount');
 
 
-        return view('backend.pages.report.report', compact('expenseType' ,'expenses','accountName', 'accountBalances'));
+        return view('backend.pages.report.report', compact('totalLoanAmount','totalAccount','expenseType' ,'expenses','accountName', 'accountBalances'));
     }
 }

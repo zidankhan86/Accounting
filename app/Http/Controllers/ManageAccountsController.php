@@ -37,7 +37,7 @@ class ManageAccountsController extends Controller
                  }
 
                 // Validation passed, create account
-                // ManageAccount::create($request->all());
+               
 
 
                 //dd($request->all());

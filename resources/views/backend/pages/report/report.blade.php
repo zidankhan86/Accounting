@@ -9,11 +9,11 @@
           <h4>Total Accounts</h4>
         </div>
         <div class="card-body">
-          <p>ACC: <code>.card-primary</code></p>
+          <p>ACCOUNT:</p> <strong> {{ $totalAccount }}</strong>
         </div>
         <div class="card-body">
 
-                <a href="" class="btn btn-success">View More</a>
+                <a href="{{ route('account.list') }}" class="btn btn-success">View More</a>
           </div>
       </div>
     </div>
@@ -25,11 +25,11 @@
           <h4>Total Loan Amount</h4>
         </div>
         <div class="card-body">
-          <p>Card <code>.card-secondary</code></p>
+          <p>AMOUNT :</p><strong> {{ $totalLoanAmount }} Tk</strong>
         </div>
         <div class="card-body">
 
-            <a href="" class="btn btn-success">View More</a>
+            <a href="{{ url('/loan-list') }}" class="btn btn-success">View More</a>
       </div>
       </div>
     </div>
@@ -38,10 +38,10 @@
     <div class="col-12 col-md-6 col-lg-3">
       <div class="card card-danger">
         <div class="card-header">
-          <h4>Card Header</h4>
+          <h4>Number Of User</h4>
         </div>
         <div class="card-body">
-          <p>Card <code>.card-danger</code></p>
+          <p>USER :<code></code></p>
         </div>
         <div class="card-body">
 
