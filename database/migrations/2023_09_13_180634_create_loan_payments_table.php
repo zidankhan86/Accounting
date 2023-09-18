@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('balance');
             $table->date('date');
             $table->boolean('status');
-            $table->string('note');
+            $table->string('note')->nullable();
             $table->string('name');
             $table->timestamps();
         });

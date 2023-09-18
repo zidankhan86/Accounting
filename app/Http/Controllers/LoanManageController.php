@@ -8,6 +8,7 @@ use App\Models\Authorities;
 use App\Models\LoanPayment;
 use Illuminate\Http\Request;
 use App\Models\ManageAccount;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -122,8 +123,9 @@ class LoanManageController extends Controller
             'payment_type' => 'required',
             'duration' => 'nullable',
             'per_month' => 'nullable',
-            'note' => 'required',
+            'note' => 'nullable',
             'loan_amount' => 'required|numeric|min:0',
+            'name'=>'required'
         ]);
 
         if ($validator->fails()) {
@@ -191,6 +193,30 @@ class LoanManageController extends Controller
     }
 
     public function loanPaymentCreate(Request $request){
+
+        $validator = Validator::make($request->all(), [
+
+
+        'Account_name_id' => 'required',
+        'Authorities_name_id' => 'required',
+        'loan_id' => 'required',
+        'expense_id' => 'required',
+        'loan_amount' => 'required|numeric|min:0',
+        'loan_payment' => 'required|numeric|min:0',
+        'date'=>'required|date|after_or_equal:today',
+        'status' => 'required',
+        'note' => 'nullable',
+        'balance' => 'required|numeric|min:0',
+        'account_number' => 'required',
+        'name' => 'required',
+
+
+        ]);
+
+        if($validator->fails()){
+            Alert::toast()->error('Something went wrong','Failed!');
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
        // dd($request->all());
        $loan = Loan::where('account_number', $request->account_number)->first();
