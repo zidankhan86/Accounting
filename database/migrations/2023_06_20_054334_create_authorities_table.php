@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('cash_limit',100);
             $table->string('address',100);
             $table->string('status');
-            $table->longText('note',1000);
+            $table->longText('note',1000)->nullable();
             $table->timestamps();
         });
     }

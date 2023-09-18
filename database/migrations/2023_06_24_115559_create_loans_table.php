@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('payment_type');
             $table->string('duration')->nullable();
             $table->string('per_month')->nullable();
-            $table->longText('note');
+            $table->longText('note')->nullable();
             $table->string('account_number');
             $table->string('name');
             $table->timestamps();

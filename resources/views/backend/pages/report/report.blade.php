@@ -1,6 +1,57 @@
 @extends('backend.master')
 @section('content')
 
+<div class="row">
+
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card card-primary">
+        <div class="card-header">
+          <h4>Total Accounts</h4>
+        </div>
+        <div class="card-body">
+          <p>ACC: <code>.card-primary</code></p>
+        </div>
+        <div class="card-body">
+
+                <a href="" class="btn btn-success">View More</a>
+          </div>
+      </div>
+    </div>
+
+
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card card-secondary">
+        <div class="card-header">
+          <h4>Total Loan Amount</h4>
+        </div>
+        <div class="card-body">
+          <p>Card <code>.card-secondary</code></p>
+        </div>
+        <div class="card-body">
+
+            <a href="" class="btn btn-success">View More</a>
+      </div>
+      </div>
+    </div>
+
+
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card card-danger">
+        <div class="card-header">
+          <h4>Card Header</h4>
+        </div>
+        <div class="card-body">
+          <p>Card <code>.card-danger</code></p>
+        </div>
+        <div class="card-body">
+
+            <a href="" class="btn btn-success">View More</a>
+      </div>
+      </div>
+    </div>
+
+</div>
+
 <br><br><br>
     <h4 class="text-center text-primary">REPORT</h4><br>
     <form action="#"  class="form-group">
