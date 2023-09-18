@@ -45,9 +45,9 @@
               <td>{{$account->status == 1 ? 'Active':'Inactive'}}</td>
               <td>
 
-                <a href="#" class="btn btn-secondary">Detail</a>
-                <a href="#" class="btn btn-info">Edit</a>
-                <a href="#" class="btn btn-danger" onclick="return confirm('Do you wants to Delete ?')">Delete</a>
+
+                <a href="#" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                <a href="#" class="btn btn-danger" onclick="return confirm('Do you wants to Delete ?')"><i class="fas fa-trash"></i></a>
             </td>
             </tr>
 

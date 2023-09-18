@@ -159,4 +159,8 @@ class ManageExpenseController extends Controller
 
 }
 
+        public function ExpenseInvoice(){
+            return view('backend.pages.manageExpense.expenseInvoice');
+        }
+
 }

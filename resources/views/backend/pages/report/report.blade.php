@@ -2,55 +2,69 @@
 @section('content')
 
 <div class="row">
-
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card card-primary">
-        <div class="card-header">
-          <h4>Total Accounts</h4>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+      <div class="card card-statistic-1">
+        <div class="card-icon bg-primary">
+          <i class="far fa-user"></i>
         </div>
-        <div class="card-body">
-          <p>ACCOUNT:</p> <strong> {{ $totalAccount }}</strong>
-        </div>
-        <div class="card-body">
-
-                <a href="{{ route('account.list') }}" class="btn btn-success">View More</a>
+        <div class="card-wrap">
+          <div class="card-header">
+            <h4>Total User</h4>
           </div>
+          <div class="card-body">
+            10
+          </div>
+        </div>
       </div>
     </div>
-
-
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card card-secondary">
-        <div class="card-header">
-          <h4>Total Loan Amount</h4>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+      <div class="card card-statistic-1">
+        <div class="card-icon bg-danger">
+          <i class="fas fa-user"></i>
         </div>
-        <div class="card-body">
-          <p>AMOUNT :</p><strong> {{ $totalLoanAmount }} Tk</strong>
+        <div class="card-wrap">
+          <div class="card-header">
+            <h4>Total Account</h4>
+          </div>
+          <div class="card-body">
+            {{ $totalAcc }}
+          </div>
         </div>
-        <div class="card-body">
-
-            <a href="{{ url('/loan-list') }}" class="btn btn-success">View More</a>
-      </div>
-      </div>
-    </div>
-
-
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card card-danger">
-        <div class="card-header">
-          <h4>Number Of User</h4>
-        </div>
-        <div class="card-body">
-          <p>USER :<code></code></p>
-        </div>
-        <div class="card-body">
-
-            <a href="" class="btn btn-success">View More</a>
-      </div>
       </div>
     </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+      <div class="card card-statistic-1">
+        <div class="card-icon bg-warning">
+          <i class="fas fa-hand-holding-usd"></i>
+        </div>
+        <div class="card-wrap">
+          <div class="card-header">
+            <h4>Total Loan Amount</h4>
+          </div>
+          <div class="card-body">
+             <small> {{ $lonTotal }} Tk</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+      <div class="card card-statistic-1">
+        <div class="card-icon bg-success">
+          <i class="fas fa-circle"></i>
+        </div>
+        <div class="card-wrap">
+          <div class="card-header">
+            <h4>Online Users</h4>
+          </div>
+          <div class="card-body">
+            47
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-</div>
+
 
 <br><br><br>
     <h4 class="text-center text-primary">REPORT</h4><br>
@@ -117,7 +131,7 @@
                         <td>{{ $item->status == true ? 'Cash In' : 'Cash Out' }}</td>
                         <td>
                             <a href="#" class="btn btn-primary">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                <i class="fas fa-edit"></i>
                             </a>
                             <a href="#" class="btn btn-danger">
                                 <i class="fa fa-trash" aria-hidden="true"></i>
