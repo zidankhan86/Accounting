@@ -53,8 +53,7 @@ class ManageExpenseController extends Controller
 
         public function addExpense(){
 
-        //Expense Calcultion
-
+        //Expense Calculation
         $accountName = ManageAccount::leftJoin('expenses', 'expenses.expense_type_id', 'manage_accounts.id')
         ->select('manage_accounts.id as id',
         'manage_accounts.account_name as account_name',
@@ -161,6 +160,26 @@ class ManageExpenseController extends Controller
 
         public function ExpenseInvoice(){
             return view('backend.pages.manageExpense.expenseInvoice');
+        }
+
+        public function ExpenseEdit( $id){
+
+             //Expense Calculation
+        $accountName = ManageAccount::leftJoin('expenses', 'expenses.expense_type_id', 'manage_accounts.id')
+        ->select('manage_accounts.id as id',
+        'manage_accounts.account_name as account_name',
+        DB::raw('SUM(CASE WHEN expenses.status = 1 THEN expenses.item_price ELSE 0 END) as income'),
+        DB::raw('SUM(CASE WHEN expenses.status = 0 THEN expenses.item_price ELSE 0 END) as expense')
+         )
+        ->groupBy('id', 'account_name')
+        ->get();
+        // return $accountName;
+        $transaction = AccountType::all();
+        $expenses = Categories::all();
+        $edit = Expense::find($id);
+
+            return view('backend.pages.manageExpense.expenseEdit',compact('edit','expenses','transaction','accountName'));
+
         }
 
 }

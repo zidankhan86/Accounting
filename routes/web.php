@@ -29,6 +29,7 @@ Route::get('/account-list',[ManageAccountsController::class,'AccountList'])->nam
 Route::get('/account-type',[ManageAccountsController::class,'AccountType'])->name('account.type');
 Route::get('/account-type-list',[ManageAccountsController::class,'AccountTypeList'])->name('account.type.list');
 Route::get('/account-type-edit/{id}',[ManageAccountsController::class,'AccountTypeEdit'])->name('account.type.edit');
+Route::get('/account-type-delete/{id}',[ManageAccountsController::class,'AccountTypeDelete'])->name('account.type.delete');
 Route::post('/account-type-update/{id}',[ManageAccountsController::class,'AccountTypeUpdate'])->name('account.type.update');
 Route::post('/account-type-create',[ManageAccountsController::class,'AccountTypeCreate'])->name('account.type.create');
 Route::get('/account-manage/edit/{id}',[ManageAccountsController::class,'AccountManageEdit'])->name('account.manage.edit');
@@ -39,8 +40,8 @@ Route::get('/add-expense-type',[ManageExpenseController::class,'manageExpense'])
 Route::post('/expense-type-create',[ManageExpenseController::class,'expenseTypeCreate'])->name('expense.type.create');
 Route::get('/add-expense-form',[ManageExpenseController::class,'addExpense'])->name('add.expense');
 Route::post('/expense-create',[ManageExpenseController::class,'ExpenseCreate'])->name('expense.create');
+Route::get('/expense-edit/{id}',[ManageExpenseController::class,'ExpenseEdit'])->name('expense.edit');
 Route::get('/expense-list',[ManageExpenseController::class,'ExpenseList'])->name('expense.list');
-Route::get('/expense-edit',[ManageExpenseController::class,'ExpenseEdit'])->name('expense.edit');
 Route::get('/expense-invoice',[ManageExpenseController::class,'ExpenseInvoice'])->name('expense.invoice');
 //Manage Loan
 Route::get('/add-authorities',[LoanManageController::class,'addAuthorities'])->name('add.authorities');

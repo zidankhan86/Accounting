@@ -160,4 +160,10 @@ class ManageAccountsController extends Controller
                 return back();
             }
 
-                    }
+            public function AccountTypeDelete($id){
+                $delete = AccountType::find($id);
+                $delete->delete();
+                return back();
+            }
+
+                }
