@@ -20,7 +20,7 @@
           <i class="fas fa-chevron-right"> Edit Expenses </i> </h6>
             </div>
 
-                <form action="{{route('expense.create')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('expense.update',$edit->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="card-body">

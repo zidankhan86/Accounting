@@ -41,6 +41,7 @@ Route::post('/expense-type-create',[ManageExpenseController::class,'expenseTypeC
 Route::get('/add-expense-form',[ManageExpenseController::class,'addExpense'])->name('add.expense');
 Route::post('/expense-create',[ManageExpenseController::class,'ExpenseCreate'])->name('expense.create');
 Route::get('/expense-edit/{id}',[ManageExpenseController::class,'ExpenseEdit'])->name('expense.edit');
+Route::post('/expense-update/{id}',[ManageExpenseController::class,'ExpenseUpdate'])->name('expense.update');
 Route::get('/expense-list',[ManageExpenseController::class,'ExpenseList'])->name('expense.list');
 Route::get('/expense-invoice',[ManageExpenseController::class,'ExpenseInvoice'])->name('expense.invoice');
 //Manage Loan
