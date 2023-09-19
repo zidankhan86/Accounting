@@ -22,6 +22,7 @@
                 <th>Payment Type</th>
                 <th>Note</th>
                 <th>Payable Amount</th>
+                <th>Action</th>
             </tr>
 
             @foreach ($loans as $loan)
@@ -38,9 +39,9 @@
                 <td>{{ $loan->note }}</td>
                 <td>{{ $loan->loan_amount }} Tk</td>
               <td>
-                <a href="#" class="btn btn-secondary">Detail</a>
-                <a href="" class="btn btn-info">Edit</a>
-                <a href="#" class="btn btn-danger">Delete</a>
+                <a href="#" class="btn btn-secondary"> <i class="fas fa-details"></i></a>
+                <a href="{{ route('loan.edit',$loan->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i> </a>
             </td>
             </tr>
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\ReportingController;
 use App\Http\Controllers\LoanManageController;
 use App\Http\Controllers\ManageExpenseController;
 use App\Http\Controllers\ManageAccountsController;
+use App\Http\Controllers\WebsiteController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -20,8 +21,15 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
+Route::get('/',[WebsiteController::class,'website'])->name('website');
+Route::get('/hero',[WebsiteController::class,'hero']);
+Route::get('/package',[WebsiteController::class,'package']);
+Route::get('/services',[WebsiteController::class,'services']);
+Route::get('/contact',[WebsiteController::class,'contact']);
+Route::get('/about',[WebsiteController::class,'about']);
+
 //Dashboard//Report
-Route::get('/',[ReportingController::class,'report'])->name('report');
+Route::get('/admin',[ReportingController::class,'report'])->name('report');
 //Manage Account
 Route::get('/add-account',[ManageAccountsController::class,'addAccount'])->name('add.account');
 Route::post('/add-account-create',[ManageAccountsController::class,'AccountSetupCreate'])->name('add.account.create');
@@ -50,6 +58,7 @@ Route::get('/authorities-list',[LoanManageController::class,'AuthoritiesList'])-
 Route::post('/add-authorities-create',[LoanManageController::class,'addAuthoritiesCreate'])->name('add.authorities.create');
 Route::get('/add-loan',[LoanManageController::class,'addLoan'])->name('add.loan');
 Route::post('/loan-create',[LoanManageController::class,'Loancreate'])->name('loan.create');
+Route::get('/loan-edit/{$id}',[LoanManageController::class,'loanEdit'])->name('loan.edit');
 Route::get('/add-type',[LoanManageController::class,'addType'])->name('add.loan.type');
 Route::post('/add-type/create',[LoanManageController::class,'typeCreate'])->name('loan.type.create');
 Route::get('/loan-list',[LoanManageController::class,'loanList'])->name('loan.list');
