@@ -15,21 +15,21 @@
 
     <div class="card">
         <div class="card-header">
-            <h4 class="text-center">+Add Account Type</h4>
+            <h4 class="text-center">+Edit Account Type</h4>
           </div>
     <div>
-        <h6 style="text-align: right;"><i class="fas fa-chevron-right">Manage Accounts </i> <i class="fas fa-chevron-right"> Accounts Type </i> </h6>
+        <h6 style="text-align: right;"><i class="fas fa-chevron-right"> <a href="">Manage Accounts</a> </i> <i class="fas fa-chevron-right"> <a href="">Accounts Type Edit </a> </i> </h6>
     </div>
 
 
-    <form action="{{route('account.type.create')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('account.type.update',$accountType->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
 
       <div class="card-body">
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="inputName1">Account Type Name</label>
-                <input type="text" name="account_type" class="form-control" id="inputName1" placeholder="Account Type Name">
+                <input type="text" name="account_type" value="{{ $accountType->account_type }}" class="form-control" id="inputName1" placeholder="Account Type Name">
 
                 @error('account_type')
 
@@ -41,7 +41,7 @@
           <div class="form-group col-md-12">
             <label for="inputName2">Account Status</label>
             <input type="hidden" name="status" class="form-control" id="inputName2" placeholder="Account Status">
-            <select name="status" class="form-control" name="" id="">
+            <select name="status" class="form-control" name="status"  id="">
                 <option  value="0">Inactive</option>
                 <option value="1">Active</option>
             </select>
@@ -53,7 +53,7 @@
         </div>
 
         <div class="center">
-            <button type="submit" class="btn btn-success ">Submit</button>
+            <button type="submit" class="btn btn-info ">Update Changes</button>
         </div>
       </div>
 

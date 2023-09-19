@@ -221,8 +221,8 @@ class LoanManageController extends Controller
        $loan = Loan::where('account_number', $request->account_number)->first();
 
        if (!$loan) {
-
-        return redirect()->back()->with('error', 'No matching loan found for the selected account number');
+        Alert::toast()->error('error', 'No matching loan found for the selected account number');
+        return redirect()->back();
     }
 
     // Calculate the new loan amount after deducting the payment
@@ -235,7 +235,7 @@ class LoanManageController extends Controller
 
     // Update the loan amount in the Loan model
     $loan->update(['loan_amount' => $newLoanAmount]);
-  //dd($request->all());
+    //dd($request->all());
 
         LoanPayment::create([
 
@@ -253,15 +253,10 @@ class LoanManageController extends Controller
             "name" =>$request->name,
 
         ]);
-         // Deduct the payment amount from the corresponding loan
-
 
     Alert::toast()->success('Loan Payment Added');
 
         return redirect()->back();
     }
-
-
-
 
 }
