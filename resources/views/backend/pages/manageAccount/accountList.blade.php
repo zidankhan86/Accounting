@@ -40,8 +40,8 @@
               <td>{{$account->status == 1 ? 'Active' : 'Inactive'}}</td>
               <td>
                 <a href="#" class="btn btn-secondary">Detail</a>
-                <a href="{{route('account.manage.edit',$account->id)}}" class="btn btn-info">Edit</a>
-                <a href="#" class="btn btn-danger">Delete</a>
+                <a href="{{route('account.manage.edit',$account->id)}}" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
             </td>
             </tr>
 

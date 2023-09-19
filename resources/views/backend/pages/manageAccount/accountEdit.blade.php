@@ -18,7 +18,7 @@
       <div class="card-header">
         <h4 class="text-success">Edit Account</h4>
       </div>
-    <form action="{{route('add.account.create')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('account.manage.update',$edit->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
 
       <div class="card-body">
@@ -40,11 +40,11 @@
 
 
 
-                <select name="account_id" id="" class="form-control">
+                <select name="account_type_id" id="" class="form-control">
 
                     @foreach ($accounts as $accounts)
 
-                    <option value="{{$accounts->id}}">{{$accounts->account_name}}</option>
+                    <option value="{{$accounts->id}}">{{$accounts->account_type}}</option>
 
                     @endforeach
 
@@ -57,8 +57,8 @@
            </div>
 
           <div class="form-group col-md-6">
-            <label for="inputBalance1">Account Number</label>
-            <input type="number" name="account_number" value="{{$edit->account_number}}" class="form-control" id="inputBalance1" placeholder="Account Number">
+            <label for="inputNumber1">Account Number</label>
+            <input type="text" name="account_number" value="{{$edit->account_number}}" class="form-control" id="inputBalance1" placeholder="Account Number">
             @error('account_number')
             <small class="text-danger">{{$message}}</small>
             @enderror
@@ -68,8 +68,8 @@
             <label for="inputAddress">Account Status</label>
             <input type="hidden" name="status" class="form-control " id="inputAddress" placeholder="Account Status">
               <select class="form-control" name="status" id="">
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
+                <option value="1">Active</option>
+                <option value="0">Inactive</option>
               </select>
 
             @error('bank_address')

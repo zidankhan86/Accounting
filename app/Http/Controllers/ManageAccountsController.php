@@ -37,7 +37,7 @@ class ManageAccountsController extends Controller
                  }
 
                 // Validation passed, create account
-               
+
 
 
                 //dd($request->all());
@@ -104,5 +104,22 @@ class ManageAccountsController extends Controller
 
                 }
 
+            public function AccountManageUpdate(Request $request ,$id){
+
+                //dd($request->all());
+                $update = ManageAccount::find($id);
+                $update->update([
+
+                    "account_name"             =>$request->account_name,
+                    "account_number"           =>$request->account_number,
+                    "status"                   =>$request->status,
+                    "account_type_id"           =>$request->account_type_id
+
+                ]);
+
+                Alert::toast()->success('Account Updated Successfully');
+                return redirect()->back();
+
+            }
 
                     }
