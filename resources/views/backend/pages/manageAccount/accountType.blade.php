@@ -45,7 +45,7 @@
                 <option  value="0">Inactive</option>
                 <option value="1">Active</option>
             </select>
-            @error('expense_type')
+            @error('status')
             <p class="text-danger">{{$message}}</p>
             @enderror
           </div>

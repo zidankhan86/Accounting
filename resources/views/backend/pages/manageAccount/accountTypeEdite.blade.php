@@ -22,7 +22,7 @@
     </div>
 
 
-    <form action="{{route('account.type.create')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('account.type.update',$accountType->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
 
       <div class="card-body">

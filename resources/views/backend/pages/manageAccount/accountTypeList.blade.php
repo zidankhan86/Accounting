@@ -34,7 +34,7 @@
               <td>{{$account->status == 1 ? 'Active' : 'Inactive'}}</td>
               <td>
                 <a href="{{ route('account.type.edit',$account->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
-                <a href="" class="btn btn-danger" onclick="return confirm('Sorry! It can not be delete')"><i class="fas fa-trash"></i></a>
+                <a href="{{ route('account.type.update',$account->id) }}" class="btn btn-danger" onclick="return confirm('Sorry! It can not be delete')"><i class="fas fa-trash"></i></a>
             </td>
             </tr>
 

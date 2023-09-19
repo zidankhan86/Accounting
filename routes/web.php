@@ -29,6 +29,7 @@ Route::get('/account-list',[ManageAccountsController::class,'AccountList'])->nam
 Route::get('/account-type',[ManageAccountsController::class,'AccountType'])->name('account.type');
 Route::get('/account-type-list',[ManageAccountsController::class,'AccountTypeList'])->name('account.type.list');
 Route::get('/account-type-edit/{id}',[ManageAccountsController::class,'AccountTypeEdit'])->name('account.type.edit');
+Route::post('/account-type-update/{id}',[ManageAccountsController::class,'AccountTypeUpdate'])->name('account.type.update');
 Route::post('/account-type-create',[ManageAccountsController::class,'AccountTypeCreate'])->name('account.type.create');
 Route::get('/account-manage/edit/{id}',[ManageAccountsController::class,'AccountManageEdit'])->name('account.manage.edit');
 Route::post('/account-manage/update/{id}',[ManageAccountsController::class,'AccountManageUpdate'])->name('account.manage.update');

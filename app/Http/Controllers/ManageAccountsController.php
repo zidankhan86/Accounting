@@ -105,6 +105,17 @@ class ManageAccountsController extends Controller
                 }
 
             public function AccountManageUpdate(Request $request ,$id){
+                $validator = Validator::make($request->all(), [
+                    'account_name' => 'required|string',
+                    'account_number' => 'required',
+                    'status' => 'required',
+
+                     ]);
+
+                     if ($validator->fails()) {
+                        Alert::toast()->error('Something went wrong','error');
+                        return redirect()->back()->withErrors($validator)->withInput();
+                     }
 
                 //dd($request->all());
                 $update = ManageAccount::find($id);
@@ -136,6 +147,17 @@ class ManageAccountsController extends Controller
 
                 $accountType = AccountType::simplePaginate(10);
                 return view('backend.pages.manageAccount.accountTypeList',compact('accountType'));
+            }
+
+            public function AccountTypeUpdate(Request $request,$id){
+                $update = AccountType::find($id);
+                $update->update([
+                    "account_type" =>$request->account_type,
+                    "status" =>$request->status,
+
+                ]);
+                Alert::toast()->success('Account Type Updated Successfully');
+                return back();
             }
 
                     }
