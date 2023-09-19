@@ -122,4 +122,20 @@ class ManageAccountsController extends Controller
 
             }
 
+            public function AccountManageDelete($id){
+                $delete = ManageAccount::find($id)->delete();
+                return back();
+            }
+            public function AccountTypeEdit($id){
+
+                $accountType = AccountType::find($id);
+                return view('backend.pages.manageAccount.accountTypeEdite',compact('accountType'));
+            }
+
+            public function AccountTypeList(){
+
+                $accountType = AccountType::simplePaginate(10);
+                return view('backend.pages.manageAccount.accountTypeList',compact('accountType'));
+            }
+
                     }
