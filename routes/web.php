@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReportingController;
 use App\Http\Controllers\LoanManageController;
 use App\Http\Controllers\ManageExpenseController;
 use App\Http\Controllers\ManageAccountsController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +20,8 @@ use App\Http\Controllers\ManageAccountsController;
 |
 */
 
-//Dashboard
-Route::get('/',[HomeController::class,'home'])->name('home');
-
+//Dashboard//Report
+Route::get('/',[ReportingController::class,'report'])->name('report');
 //Manage Account
 Route::get('/add-account',[ManageAccountsController::class,'addAccount'])->name('add.account');
 Route::post('/add-account-create',[ManageAccountsController::class,'AccountSetupCreate'])->name('add.account.create');
@@ -29,7 +30,6 @@ Route::get('/account-type',[ManageAccountsController::class,'AccountType'])->nam
 Route::post('/account-type-create',[ManageAccountsController::class,'AccountTypeCreate'])->name('account.type.create');
 Route::get('/account-manage/edit/{id}',[ManageAccountsController::class,'AccountManageEdit'])->name('account.manage.edit');
 Route::get('/account-manage/update/{id}',[ManageAccountsController::class,'AccountManageUpdate'])->name('account.manage.update');
-
 //Manage Expense
 Route::get('/add-expense-type',[ManageExpenseController::class,'manageExpense'])->name('manage.expense');
 Route::post('/expense-type-create',[ManageExpenseController::class,'expenseTypeCreate'])->name('expense.type.create');
@@ -43,7 +43,6 @@ Route::get('/add-authorities',[LoanManageController::class,'addAuthorities'])->n
 Route::get('/authorities-list',[LoanManageController::class,'AuthoritiesList'])->name('authorities.list');
 Route::post('/add-authorities-create',[LoanManageController::class,'addAuthoritiesCreate'])->name('add.authorities.create');
 Route::get('/add-loan',[LoanManageController::class,'addLoan'])->name('add.loan');
-
 Route::post('/loan-create',[LoanManageController::class,'Loancreate'])->name('loan.create');
 Route::get('/add-type',[LoanManageController::class,'addType'])->name('add.loan.type');
 Route::post('/add-type/create',[LoanManageController::class,'typeCreate'])->name('loan.type.create');
@@ -51,5 +50,4 @@ Route::get('/loan-list',[LoanManageController::class,'loanList'])->name('loan.li
 Route::get('/loan-payment',[LoanManageController::class,'loanPayment'])->name('loan.payment');
 Route::post('/loan-payment-create',[LoanManageController::class,'loanPaymentCreate'])->name('loan.payment.create');
 
-//Report
-Route::get('/report',[ReportingController::class,'report'])->name('report');
+

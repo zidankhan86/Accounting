@@ -63,13 +63,12 @@ class ReportingController extends Controller
 
             $expenseType = Categories::all();
 
-            // $AccountsCount = ManageAccount::get()->count();
-            // $totalLoanAmount = Loan::sum('loan_amount');
-            $lonTotal =Loan::sum('loan_amount');
-            $totalAcc = ManageAccount::count();
+
+            $TotalLoanAmount =Loan::sum('loan_amount');
+            $totalAccounts = ManageAccount::count();
 
         return view('backend.pages.report.report', compact('expenseType'
-         ,'expenses','accountName', 'accountBalances','totalAcc','lonTotal'
+         ,'expenses','accountName', 'accountBalances','totalAccounts','TotalLoanAmount'
         ));
     }
 }

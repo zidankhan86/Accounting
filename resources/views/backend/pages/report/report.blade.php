@@ -27,7 +27,7 @@
             <h4>Total Account</h4>
           </div>
           <div class="card-body">
-            {{ $totalAcc }}
+            {{ $totalAccounts }}
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@
             <h4>Total Loan Amount</h4>
           </div>
           <div class="card-body">
-             <small> {{ $lonTotal }} Tk</small>
+             <small> {{ $TotalLoanAmount }} Tk</small>
           </div>
         </div>
       </div>
@@ -63,6 +63,7 @@
       </div>
     </div>
   </div>
+
 
 
 
