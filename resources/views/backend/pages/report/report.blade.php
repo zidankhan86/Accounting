@@ -12,7 +12,7 @@
             <h4>Total User</h4>
           </div>
           <div class="card-body">
-            10
+            {{ $totalUser }}
           </div>
         </div>
       </div>

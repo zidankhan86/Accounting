@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -29,6 +30,8 @@ Route::get('/contact',[WebsiteController::class,'contact']);
 Route::get('/about',[WebsiteController::class,'about']);
 Route::get('/service-form',[WebsiteController::class,'serviceForm']);
 Route::get('/package-form',[WebsiteController::class,'packageForm']);
+Route::get('/login-form',[AuthController::class,'login'])->name('login');
+Route::post('/get-login',[AuthController::class,'getLogin'])->name('get.login');
 //ajax post
 Route::post('/contactStore',[WebsiteController::class,'contactStore']);
 Route::post('/service-add',[WebsiteController::class,'serviceAdd']);
@@ -38,7 +41,10 @@ Route::post('/package-add',[WebsiteController::class,'serviceStore']);
 Route::get('/service-data',[WebsiteController::class,'serviceData']);
 
 //Dashboard//Report
-Route::get('/admin',[ReportingController::class,'report'])->name('report');
+Route::group(['middleware' => 'auth','prefix'=>'admin'], function () {
+    
+
+Route::get('/',[ReportingController::class,'report'])->name('report');
 //Manage Account
 Route::get('/add-account',[ManageAccountsController::class,'addAccount'])->name('add.account');
 Route::post('/add-account-create',[ManageAccountsController::class,'AccountSetupCreate'])->name('add.account.create');
@@ -73,5 +79,5 @@ Route::post('/add-type/create',[LoanManageController::class,'typeCreate'])->name
 Route::get('/loan-list',[LoanManageController::class,'loanList'])->name('loan.list');
 Route::get('/loan-payment',[LoanManageController::class,'loanPayment'])->name('loan.payment');
 Route::post('/loan-payment-create',[LoanManageController::class,'loanPaymentCreate'])->name('loan.payment.create');
-
+});
 
