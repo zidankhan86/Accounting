@@ -9,19 +9,23 @@
         <div class="row">
 
 
+@foreach ($package as $item)
 
-        <div class="col-md-6 col-lg-3 ftco-animate">
-          <div class="block-7">
-            <div class="text-center">
-            <span class="excerpt d-block">Business</span>
-            <span class="price"><sup>$</sup> <span class="number">79</span> <sub>/mos</sub></span>
-            <ul class="pricing-text mb-5">
-              <li><span class="fa fa-check mr-2"></span>Brand Strategy</li>
-            </ul>
-            <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
-            </div>
-          </div>
-        </div>
+<div class="col-md-6 col-lg-3 ftco-animate">
+    <div class="block-7">
+      <div class="text-center">
+      <span class="excerpt d-block">Business</span>
+      <span class="price"><sup>$</sup> <span class="number">{{$item->title  }}</span> <sub>/mos</sub></span>
+      <ul class="pricing-text mb-5">
+        <li><span class="fa fa-check mr-2"></span>{{$item->about  }}</li>
+      </ul>
+      <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
+      </div>
+    </div>
+  </div>
+
+@endforeach
+
 
 
 

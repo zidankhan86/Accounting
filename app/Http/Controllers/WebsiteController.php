@@ -10,14 +10,16 @@ class WebsiteController extends Controller
 {
     public function website(){
         $service = DB::table('service')->get();
-        return view('frontend.pages.home',compact('service'));
+        $package = DB::table('package')->get();
+        return view('frontend.pages.home',compact('service','package'));
     }
 
     public function hero(){
         return view('frontend\pages\hero');
     }
     public function package(){
-        return view('frontend.pages.package');
+        $package = DB::table('package')->get();
+        return view('frontend.pages.package',compact('package'));
     }
     public function services(){
         $service = DB::table('service')->get();
@@ -28,7 +30,8 @@ class WebsiteController extends Controller
 
     }
     public function about(){
-        return view('frontend.pages.about');
+        $service = DB::table('service')->get();
+        return view('frontend.pages.about',compact('service'));
     }
 
     public function contactStore(Request $request){
@@ -48,6 +51,7 @@ class WebsiteController extends Controller
     }
 
     public function packageForm(){
+
         return view('backend.pages.frontendcomponents.packageform');
     }
     public function serviceStore(Request $request){
