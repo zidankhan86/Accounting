@@ -40,7 +40,8 @@
               <div class="card-header"><h4>Login</h4> <a href="" class="btn btn-info">Registration</a></div>
 
               <div class="card-body">
-                <form method="POST" action="#" class="needs-validation" novalidate="">
+                <form method="POST" action="{{route('get.login')}}" class="needs-validation" novalidate="">
+                    @csrf
                   <div class="form-group">
                     <label for="email">Email</label>
                     <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
@@ -79,19 +80,11 @@
                     </a>
                   </div>
                 <div class="text-center mt-4 mb-3">
-                  <div class="text-job text-muted">Login With Social</div>
+                  <div class="text-job text-muted">To Login</div>
                 </div>
-                <div class="row sm-gutters">
-                  <div class="col-6">
-                    <a class="btn btn-block btn-social btn-facebook">
-                      <span class="fab fa-facebook"></span> Facebook
-                    </a>
-                  </div>
-                  <div class="col-6">
-                    <a class="btn btn-block btn-social btn-twitter">
-                      <span class="fab fa-twitter"></span> Twitter
-                    </a>                                
-                  </div>
+                <div>
+                    <h6>Email : admin@gmail.com</h6><br>
+                    <h6>Password : 12345</h6><br>
                 </div>
 
               </div>
@@ -100,7 +93,7 @@
               Don't have an account? <a href="auth-register.html">Create One</a>
             </div>
             <div class="simple-footer">
-              Copyright &copy; Stisla 2018
+              Copyright &copy; Zidan
             </div>
           </div>
         </div>

@@ -31,6 +31,7 @@ Route::get('/about',[WebsiteController::class,'about']);
 Route::get('/service-form',[WebsiteController::class,'serviceForm']);
 Route::get('/package-form',[WebsiteController::class,'packageForm']);
 Route::get('/login-form',[AuthController::class,'login'])->name('login');
+Route::post('/get-login',[AuthController::class,'getLogin'])->name('get.login');
 //ajax post
 Route::post('/contactStore',[WebsiteController::class,'contactStore']);
 Route::post('/service-add',[WebsiteController::class,'serviceAdd']);

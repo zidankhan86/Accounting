@@ -7,6 +7,7 @@ use App\Models\Expense;
 use App\Models\Loan;
 use Illuminate\Http\Request;
 use App\Models\ManageAccount;
+use App\Models\User;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -66,9 +67,10 @@ class ReportingController extends Controller
 
             $TotalLoanAmount =Loan::sum('loan_amount');
             $totalAccounts = ManageAccount::count();
-
+            $totalUser = User::count();
         return view('backend.pages.report.report', compact('expenseType'
-         ,'expenses','accountName', 'accountBalances','totalAccounts','TotalLoanAmount'
+         ,'expenses','accountName', 'accountBalances','totalAccounts',
+         'TotalLoanAmount','totalUser'
         ));
     }
 }
