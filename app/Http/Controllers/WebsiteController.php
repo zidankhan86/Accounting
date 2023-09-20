@@ -9,7 +9,8 @@ use RealRashid\SweetAlert\Facades\Alert;
 class WebsiteController extends Controller
 {
     public function website(){
-        return view('frontend.pages.home');
+        $service = DB::table('service')->get();
+        return view('frontend.pages.home',compact('service'));
     }
 
     public function hero(){
@@ -19,7 +20,8 @@ class WebsiteController extends Controller
         return view('frontend.pages.package');
     }
     public function services(){
-        return view('frontend.pages.service');
+        $service = DB::table('service')->get();
+        return view('frontend.pages.service',compact('service'));
     }
     public function contact(){
         return view('frontend.pages.contact');
@@ -34,10 +36,21 @@ class WebsiteController extends Controller
         return DB::table('contact')->insert($request->input());
 
     }
-    public function contactForm(){
+    public function serviceForm(){
         return view('backend.pages.frontendcomponents.service');
     }
     public function serviceAdd(Request $request){
         return DB::table('service')->insert($request->input());
+    }
+    public function serviceData(Request $request){
+        $services = DB::table('service')->get();
+        return response()->json($services);
+    }
+
+    public function packageForm(){
+        return view('backend.pages.frontendcomponents.packageform');
+    }
+    public function serviceStore(Request $request){
+        return DB::table('package')->insert($request->input());
     }
 }

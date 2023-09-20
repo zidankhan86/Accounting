@@ -66,7 +66,8 @@
         <li class="dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Our Service</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="{{url('/contact-form')}}">Add Service</a></li>
+              <li><a class="nav-link" href="{{url('/service-form')}}">Add Service</a></li>
+              <li><a class="nav-link" href="{{url('/package-form')}}">Add Package</a></li>
             </ul>
           </li>
 

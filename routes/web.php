@@ -27,11 +27,15 @@ Route::get('/package',[WebsiteController::class,'package']);
 Route::get('/services',[WebsiteController::class,'services']);
 Route::get('/contact',[WebsiteController::class,'contact']);
 Route::get('/about',[WebsiteController::class,'about']);
-Route::get('/contact-form',[WebsiteController::class,'contactForm']);
+Route::get('/service-form',[WebsiteController::class,'serviceForm']);
+Route::get('/package-form',[WebsiteController::class,'packageForm']);
 //ajax post
 Route::post('/contactStore',[WebsiteController::class,'contactStore']);
 Route::post('/service-add',[WebsiteController::class,'serviceAdd']);
+Route::post('/package-add',[WebsiteController::class,'serviceStore']);
 
+//ajax get
+Route::get('/service-data',[WebsiteController::class,'serviceData']);
 
 //Dashboard//Report
 Route::get('/admin',[ReportingController::class,'report'])->name('report');
