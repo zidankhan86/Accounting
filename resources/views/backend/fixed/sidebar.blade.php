@@ -64,10 +64,10 @@
         </li>
 
         <li class="dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Our Service</span></a>
+            <a href="#" class="nav-link has-dropdown"><i class="fas fa-cogs"></i> <span>Our Service</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="{{url('/service-form')}}">Add Service</a></li>
-              <li><a class="nav-link" href="{{url('/package-form')}}">Add Package</a></li>
+              <li><a class="nav-link" href="{{url('/service-form')}}"><i class="fas fa-cogs"></i>Add Service</a></li>
+              <li><a class="nav-link" href="{{url('/package-form')}}"><i class="fas fa-box"></i>Add Package</a></li>
             </ul>
           </li>
 
