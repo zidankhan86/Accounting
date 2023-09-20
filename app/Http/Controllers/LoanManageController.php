@@ -259,4 +259,17 @@ class LoanManageController extends Controller
         return redirect()->back();
     }
 
+    public function loanEdit($id){
+
+        $edit = Loan::find($id);
+        $authorities = Authorities::all();
+
+        $loanTypes = LoanType::all();
+
+        $accounts = ManageAccount::all();
+
+
+
+        return view('backend.pages.manageLoan.loanEdit',compact('authorities','loanTypes','accounts','edit'));
+    }
 }

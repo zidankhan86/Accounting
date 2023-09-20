@@ -63,6 +63,14 @@
           </ul>
         </li>
 
+        <li class="dropdown">
+            <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Our Service</span></a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link" href="{{url('/service-form')}}">Add Service</a></li>
+              <li><a class="nav-link" href="{{url('/package-form')}}">Add Package</a></li>
+            </ul>
+          </li>
+
       <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
         <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
           <i class="fas fa-rocket"></i> Documentation
