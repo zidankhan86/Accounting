@@ -104,39 +104,39 @@
       </div>
   </section>
 
-  <script>
-let contactForm = document.getElementById('contactForm')
-contactForm.addEventListener('submit',async(event)=>{
-    event.preventDefault();
+        <script>
+        let contactForm = document.getElementById('contactForm')
+        contactForm.addEventListener('submit',async(event)=>{
+            event.preventDefault();
 
-    let name=document.getElementById('name').value;
-    let email = document.getElementById('email').value;
-    let subject = document.getElementById('subject').value;
-    let message = document.getElementById('message').value;
+            let name=document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let subject = document.getElementById('subject').value;
+            let message = document.getElementById('message').value;
 
-    if(name.length === 0){
-        alert('Name feild is required');
-    }else if(email.length === 0){
-    alert('Email feild is required')
-    }else if(subject.length === 0){
-        alert('Subject feild is required')
-    }else if (message.length === 0){
-        alert('Please write something as message')
-    }else{
+            if(name.length === 0){
+                alert('Name feild is required');
+            }else if(email.length === 0){
+            alert('Email feild is required')
+            }else if(subject.length === 0){
+                alert('Subject feild is required')
+            }else if (message.length === 0){
+                alert('Please write something as message')
+            }else{
 
-        let formData ={
-            name:name,
-            email:email,
-            subject:subject,
-            message:message
-        }
-        let URL = "/contactStore";
-        let result = await axios.post(URL,formData);
-        contactForm.reset()
-    }
-})
-  </script>
-  
+                let formData ={
+                    name:name,
+                    email:email,
+                    subject:subject,
+                    message:message
+                }
+                let URL = "/contactStore";
+                let result = await axios.post(URL,formData);
+                contactForm.reset()
+            }
+        })
+        </script>
+
 
 
 

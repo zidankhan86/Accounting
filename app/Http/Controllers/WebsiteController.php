@@ -32,6 +32,12 @@ class WebsiteController extends Controller
     public function contactStore(Request $request){
 
         return DB::table('contact')->insert($request->input());
-        
+
+    }
+    public function contactForm(){
+        return view('backend.pages.frontendcomponents.service');
+    }
+    public function serviceAdd(Request $request){
+        return DB::table('service')->insert($request->input());
     }
 }

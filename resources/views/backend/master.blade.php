@@ -9,6 +9,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{url('assets/modules/bootstrap/css/bootstrap.min.css')}}">
@@ -81,7 +82,7 @@
 
   <!-- Page Specific JS File -->
   <script src="{{url('assets/js/page/index.js')}}"></script>
-
+  <script src="{{asset('js/axios.min.js')}}"></script>
   <!-- Template JS File -->
   <script src="{{url('assets/js/scripts.js')}}"></script>
   <script src="{{url('assets/js/custom.js')}}"></script>
