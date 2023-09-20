@@ -20,13 +20,15 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//Fronted
 Route::get('/',[WebsiteController::class,'website'])->name('website');
 Route::get('/hero',[WebsiteController::class,'hero']);
 Route::get('/package',[WebsiteController::class,'package']);
 Route::get('/services',[WebsiteController::class,'services']);
 Route::get('/contact',[WebsiteController::class,'contact']);
 Route::get('/about',[WebsiteController::class,'about']);
+//ajax post
+Route::post('/contactStore',[WebsiteController::class,'contactStore']);
 
 //Dashboard//Report
 Route::get('/admin',[ReportingController::class,'report'])->name('report');

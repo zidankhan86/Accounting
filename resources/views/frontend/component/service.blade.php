@@ -1,7 +1,10 @@
 <br><br><br>
-    <div class="text:center">
-       <h1> <strong>OUR SERVICES</strong> </h1>
+<div class="row justify-content-center pb-5 mb-3">
+    <div class="col-md-7 heading-section text-center ftco-animate">
+        <span class="subheading">Plans</span>
+      <h2>Our Services</h2>
     </div>
+  </div>
     <br><br>
 <section class="ftco-section bg-light ftco-no-pt">
     <div class="container">

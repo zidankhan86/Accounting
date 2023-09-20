@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class WebsiteController extends Controller
 {
@@ -25,5 +27,11 @@ class WebsiteController extends Controller
     }
     public function about(){
         return view('frontend.pages.about');
+    }
+
+    public function contactStore(Request $request){
+
+        return DB::table('contact')->insert($request->input());
+        
     }
 }
