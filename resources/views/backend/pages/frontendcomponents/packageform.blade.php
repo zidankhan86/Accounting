@@ -29,7 +29,7 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="inputName1">Title</label>
-                <input type="text" name="title" class="form-control" id="title" placeholder="title">
+                <input type="number" name="title" class="form-control" id="title" placeholder="title">
 
                 @error('title')
 

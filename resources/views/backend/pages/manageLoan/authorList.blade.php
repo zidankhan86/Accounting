@@ -35,7 +35,8 @@
               <td>{{$account->address}}</td>
               <td>{{$account->status}}</td>
               <td>
-                <a href="#" class="btn btn-secondary">Detail</a>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-tags"></i> 
+                    </a>
                 <a href="{{route('edit.authorities.create',$account->id)}}" class="btn btn-info"><i class="fas fa-edit"></i></a>
                 <a href="#" class="btn btn-danger">Delete</a>
             </td>
