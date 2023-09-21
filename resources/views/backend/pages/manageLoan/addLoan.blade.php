@@ -126,22 +126,7 @@
           </div>
 
 
-          {{-- <div class="form-group col-md-4">
-            <label for="inputAddress">Duration *</label>
-            <input type="number" name="duration" class="form-control " id="inputAddress" placeholder="Loan Duration">
-            @error('status')
-            <small class="text-danger">{{$message}}</small>
-            @enderror
-          </div> --}}
-
-
-          {{-- <div class="form-group col-md-4">
-            <label for="inputAddress">Per Month</label>
-            <input type="number" name="per_month" class="form-control " id="inputAddress" placeholder="1000">
-            @error('status')
-            <small class="text-danger">{{$message}}</small>
-            @enderror
-          </div> --}}
+         
 
           <div class="form-group col-md-12" style="width: 80%;">
             <label for="inputAddress" style="font-size: 18px;">Note</label>
