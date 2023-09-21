@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\AccountType;
 use Illuminate\Http\Request;
 use App\Models\ManageAccount;
@@ -69,28 +70,30 @@ class ManageAccountsController extends Controller
                 //Account Type Create
                 public function AccountTypeCreate(Request $request){
 
-                    $validator = Validator::make($request->all(), [
-                        'account_type' => 'required|unique:account_types,account_type',
-                        'status' => 'required',
-                    ]);
+                    try {
+                        // Validate the request data
+                        $validatedData = $request->validate([
+                            'account_type' => 'required|string|max:255',
+                            'status' => 'required|in:0,1',
+                        ]);
 
-                    if ($validator->fails()) {
-                        Alert::toast()->error('Something went wrog','error');
-                        return redirect()->back()->withErrors($validator)->withInput();
-                    }
+                        // Create the account type
+                        AccountType::create([
+                            "account_type" => $validatedData['account_type'],
+                            "status" => $validatedData['status'],
+                        ]);
 
+                        // Show a success toast
+                        Alert::toast('Success! Account Type Added', 'success');
 
-               // dd($request->all());
-
-                AccountType::create([
-
-                "account_type" =>$request->account_type,
-                "status" =>$request->status,
-                ]);
-                Alert::toast(' Success! Account Type Added','success');
-                return redirect()->back();
+                        return redirect()->back();
+                    } catch (Exception $e) {
+                        // Handle exceptions here and show an error toast
+                       
+                        return redirect()->back()->withErrors(['error' => $e->getMessage()]);
 
                 }
+            }
 
                 public function AccountManageEdit($id){
 

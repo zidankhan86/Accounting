@@ -20,8 +20,7 @@
             </h6>
         </div>
 
-        <form  method="POST" enctype="multipart/form-data" id="accountTypeForm">
-           
+        <form method="POST" enctype="multipart/form-data" id="accountTypeForm">
 
             <div class="card-body">
                 <div class="form-row">
@@ -69,10 +68,14 @@
                     console.log(response.data);
                     // Reset the form if the submission was successful
                     accountTypeForm.reset();
+                    // Show the success toast
+                    successToast('Account type added, Success');
                 })
                 .catch(function (error) {
                     // Handle errors, you can display an error message here if needed
                     console.error(error);
+                    // Show an error toast
+                    errorToast('An error occurred while adding the account type');
                 });
         });
     });
