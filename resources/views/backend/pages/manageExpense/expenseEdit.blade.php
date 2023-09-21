@@ -28,7 +28,7 @@
 
                   <div class="form-group col-md-12">
                     <label for="inputName1">Payment Reasion</label>
-                    <input type="text" name="payable" value="{{ $edit->payable }}" class="form-control" id="inputName1" placeholder="i.e: Eid bonus...">
+                    <input type="text" name="payable" value="{{$edit->payable}}" class="form-control" id="inputName1" placeholder="i.e: Eid bonus...">
 
                     @error('payable')
 

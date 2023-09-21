@@ -236,4 +236,21 @@ class ManageExpenseController extends Controller
             return back();
         }
 
+        public function ExpenseView($id){
+            //Expense Calculation
+        $accountName = ManageAccount::leftJoin('expenses', 'expenses.expense_type_id', 'manage_accounts.id')
+        ->select('manage_accounts.id as id',
+        'manage_accounts.account_name as account_name',
+        DB::raw('SUM(CASE WHEN expenses.status = 1 THEN expenses.item_price ELSE 0 END) as income'),
+        DB::raw('SUM(CASE WHEN expenses.status = 0 THEN expenses.item_price ELSE 0 END) as expense')
+         )
+        ->groupBy('id', 'account_name')
+        ->get();
+        // return $accountName;
+        $transaction = AccountType::all();
+        $expenses = Categories::all();
+        $view = Expense::find($id);
+            return view('backend.pages.manageExpense.singleviewExpense',compact('view','expenses','transaction','accountName'));
+        }
+
 }

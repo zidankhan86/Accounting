@@ -133,6 +133,7 @@
                 let URL = "/contactStore";
                 let result = await axios.post(URL,formData);
                 contactForm.reset()
+                successToast('Message sent succesfully')
             }
         })
         </script>
