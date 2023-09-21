@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -44,4 +45,27 @@ return redirect()->back()->withInput()->withErrors(['login' => 'Invalid credenti
 
 
     }
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('website');
+    }
+
+    public function registration(){
+        return view('backend.pages.auth.registration');
+    }
+
+   public function registrationStore(Request $request){
+
+   // dd($request->all());
+    User::create([
+
+        "name"=>$request->name,
+        "email"=>$request->email,
+        "role" => 'admin',
+        "password"=>bcrypt($request->password),
+
+    ]);
+
+    return redirect()->route('login');
+   }
 }

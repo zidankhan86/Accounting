@@ -71,9 +71,20 @@
             </ul>
           </li>
 
+
+          <div class="mt-0 mb-0 p-5 hide-sidebar-mini">
+            <i class="fas fa-sign-out-alt"></i> <a href="{{ route('logout') }}" class="btn btn-sm btn-primary btn-icon-split">
+                 LOGOUT
+            </a>
+        </div>
+
       <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-        <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
+        <a href="" class="btn btn-primary btn-lg btn-block btn-icon-split">
           <i class="fas fa-rocket"></i> Documentation
         </a>
-      </div>        </aside>
+      </div>
+           </aside>
+
+
+
   </div>

@@ -82,6 +82,7 @@
             let URL = "/package-add";
             let result = await axios.post(URL,formData);
             contactForm.reset()
+            successToast('Package added, Success');
         }
     })
       </script>

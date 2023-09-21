@@ -82,6 +82,7 @@
             let URL = "/service-add";
             let result = await axios.post(URL,formData);
             contactForm.reset()
+            successToast('Service added, Success');
         }
     })
       </script>

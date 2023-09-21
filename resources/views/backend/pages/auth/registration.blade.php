@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Login &mdash; Stisla</title>
+  <title>Register</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/modules/fontawesome/css/all.min.css">
 
   <!-- CSS Libraries -->
-  <link rel="stylesheet" href="assets/modules/bootstrap-social/bootstrap-social.css">
+  <link rel="stylesheet" href="assets/modules/jquery-selectric/selectric.css">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -31,66 +31,60 @@
     <section class="section">
       <div class="container mt-5">
         <div class="row">
-          <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+          <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
             <div class="login-brand">
-              <img src="" alt="ACCOUNTING" width="100" class="shadow-light rounded-circle">
+              <img src="" alt="logo" width="100" class="shadow-light rounded-circle">
             </div>
 
             <div class="card card-primary">
-              <div class="card-header"><h4>Login</h4> <a href="{{route('registration')}}" class="btn btn-info">Registration</a></div>
+              <div class="card-header"><h4>Register</h4></div>
 
               <div class="card-body">
-                <form method="POST" action="{{route('get.login')}}" class="needs-validation" novalidate="">
+                <form method="POST" action="{{ route('registration.store') }}">
                     @csrf
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
-                    <div class="invalid-feedback">
-                      Please fill in your email
+                  <div class="row">
+                    <div class="form-group col-12">
+                      <label for="frist_name"> Name</label>
+                      <input id="frist_name" type="text" class="form-control" name="name" autofocus>
                     </div>
+
                   </div>
 
                   <div class="form-group">
-                    <div class="d-block">
-                    	<label for="password" class="control-label">Password</label>
-                      
-                    </div>
-                    <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
+                    <label for="email">Email</label>
+                    <input id="email" type="email" class="form-control" name="email">
                     <div class="invalid-feedback">
-                      please fill in your password
                     </div>
                   </div>
+
+                  <div class="row">
+                    <div class="form-group col-12">
+                      <label for="password" class="d-block">Password</label>
+                      <input id="password" type="password" class="form-control pwstrength" data-indicator="pwindicator" name="password">
+                      <div id="pwindicator" class="pwindicator">
+                        <div class="bar"></div>
+                        <div class="label"></div>
+                      </div>
+                    </div>
+
+                  </div>
+
+
 
                   <div class="form-group">
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
-                      <label class="custom-control-label" for="remember-me">Remember Me</label>
+                      <input type="checkbox"  class="custom-control-input" id="agree">
+                      <label class="custom-control-label" for="agree">I agree with the terms and conditions</label>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                      Login
+                    <button type="submit" class="btn btn-primary btn-lg ">
+                      Register
                     </button>
                   </div>
                 </form>
-                <div class="float-right">
-                    <a href="auth-forgot-password.html" class="text-small">
-                      Forgot Password?
-                    </a>
-                  </div>
-                <div class="text-center mt-4 mb-3">
-                  <div class="text-job text-muted">To Login</div>
-                </div>
-                <div>
-                    <h6>Email : admin@gmail.com</h6><br>
-                    <h6>Password : 12345</h6><br>
-                </div>
-
               </div>
-            </div>
-            <div class="mt-5 text-muted text-center">
-              Don't have an account? <a href="auth-register.html">Create One</a>
             </div>
             <div class="simple-footer">
               Copyright &copy; Zidan
@@ -109,14 +103,16 @@
   <script src="assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
   <script src="assets/modules/moment.min.js"></script>
   <script src="assets/js/stisla.js"></script>
-  
+
   <!-- JS Libraies -->
+  <script src="assets/modules/jquery-pwstrength/jquery.pwstrength.min.js"></script>
+  <script src="assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
 
   <!-- Page Specific JS File -->
-  
+  <script src="assets/js/page/auth-register.js"></script>
+
   <!-- Template JS File -->
   <script src="assets/js/scripts.js"></script>
   <script src="assets/js/custom.js"></script>
 </body>
-
 </html>

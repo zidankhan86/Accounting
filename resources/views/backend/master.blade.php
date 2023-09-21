@@ -10,6 +10,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{url('assets/modules/bootstrap/css/bootstrap.min.css')}}">
@@ -53,6 +57,17 @@
       <div class="main-content">
 
        @yield('content')
+
+       <script>
+        function successToast(message) {
+        toastr.success(message);
+        }
+
+        function errorToast(message) {
+            toastr.error(message);
+        }
+
+       </script>
        @include('sweetalert::alert')
 
 
