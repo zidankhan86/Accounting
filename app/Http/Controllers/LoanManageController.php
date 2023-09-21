@@ -272,4 +272,39 @@ class LoanManageController extends Controller
 
         return view('backend.pages.manageLoan.loanEdit',compact('authorities','loanTypes','accounts','edit'));
     }
+    public function EditAuthorities($id){
+        $edit = Authorities::find($id);
+        return view('backend.pages.manageLoan.editAuthorites',compact('edit'));
+    }
+
+        public function updateAuthorities(Request $request, $id)
+        {
+            $validator = Validator::make($request->all(), [
+                'note' => 'required|string',
+                
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json(['errors' => $validator->errors()], 422);
+            }
+
+            $update = Authorities::find($id);
+
+            if (!$update) {
+                return response()->json(['error' => 'Authority not found'], 404);
+            }
+
+            $update->update([
+                "name" => $request->input('name'),
+                "email" => $request->input('email'),
+                "number" => $request->input('number'),
+                "cash_limit" => $request->input('cash_limit'),
+                "address" => $request->input('address'),
+                "status" => $request->input('status'),
+                "note" => $request->input('note'),
+            ]);
+
+            return response()->json(['message' => 'Authority updated successfully'], 200);
+        }
+
 }
