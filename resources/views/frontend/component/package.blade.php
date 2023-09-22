@@ -15,7 +15,7 @@
     <div class="block-7">
       <div class="text-center">
       <span class="excerpt d-block">Business</span>
-      <span class="price"><sup>$</sup> <span class="number">{{$item->title  }}</span> <sub>/mos</sub></span>
+      <span class="price"><sup>TK</sup> <span class="number">{{$item->title  }}</span> <sub>/mos</sub></span>
       <ul class="pricing-text mb-5">
         <li><span class="fa fa-check mr-2"></span>{{$item->about  }}</li>
       </ul>

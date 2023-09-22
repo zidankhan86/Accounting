@@ -7,7 +7,7 @@
               <div class="col-md-8 ftco-animate">
                   <div class="text w-100 text-center">
                       <h2>We Business Grow</h2>
-                    <h1 class="mb-4">We Help You Businesses Innovate and Grow</h1>
+                    <h1 class="mb-4">Our Accounting will help you to Grow your business </h1>
                     <p><a href="{{ url('/contact') }}" class="btn btn-white">Connect with us</a></p>
                 </div>
               </div>
@@ -21,8 +21,8 @@
           <div class="row no-gutters slider-text align-items-center justify-content-center">
               <div class="col-md-8 ftco-animate">
                   <div class="text w-100 text-center">
-                      <h2>We Support Business</h2>
-                    <h1 class="mb-4">The Best Business Support</h1>
+                      <h2>It will Support Business</h2>
+                    <h1 class="mb-4">The Best Business Support is Accounting</h1>
                     <p><a href="{{ url('/contact') }}" class="btn btn-white">Connect with us</a></p>
                 </div>
               </div>
@@ -36,8 +36,8 @@
           <div class="row no-gutters slider-text align-items-center justify-content-center">
               <div class="col-md-8 ftco-animate">
                   <div class="text w-100 text-center">
-                      <h2>We Give Advice</h2>
-                    <h1 class="mb-4">Expert Financial Advice</h1>
+                      <h2>More profit</h2>
+                    <h1 class="mb-4">Lets grow your business</h1>
                     <p><a href="{{ url('/contact') }}" class="btn btn-white">Connect with us</a></p>
                 </div>
               </div>
