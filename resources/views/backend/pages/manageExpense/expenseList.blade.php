@@ -48,7 +48,7 @@
 
                 <a href="{{ route('expense.edit',$account->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
                 <a href="#" class="btn btn-danger" onclick="return confirm('Do you wants to Delete ?')"><i class="fas fa-trash"></i></a>
-                <a href="#" class="btn btn-info" ><i class="fas fa-tags"></i> </a>
+                <a href="{{route('expense.view',$account->id) }}" class="btn btn-info" ><i class="fas fa-tags"></i> </a>
 
 
             </td>

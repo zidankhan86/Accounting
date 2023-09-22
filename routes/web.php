@@ -68,7 +68,7 @@ Route::post('/expense-create',[ManageExpenseController::class,'ExpenseCreate'])-
 Route::get('/expense-edit/{id}',[ManageExpenseController::class,'ExpenseEdit'])->name('expense.edit');
 Route::post('/expense-update/{id}',[ManageExpenseController::class,'ExpenseUpdate'])->name('expense.update');
 Route::get('/expense-list',[ManageExpenseController::class,'ExpenseList'])->name('expense.list');
-Route::get('/expense-invoice',[ManageExpenseController::class,'ExpenseInvoice'])->name('expense.invoice');
+Route::get('/expense-view/{id}',[ManageExpenseController::class,'ExpenseView'])->name('expense.view');
 //Manage Loan
 Route::get('/add-authorities',[LoanManageController::class,'addAuthorities'])->name('add.authorities');
 Route::get('/edit-authorities/{id}',[LoanManageController::class,'EditAuthorities'])->name('edit.authorities.create');
