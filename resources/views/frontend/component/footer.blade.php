@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md-4 mb-md-0 mb-4">
                         <h2 class="footer-heading">About us</h2>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                        <p>A small web development team</p>
                         <ul class="ftco-footer-social p-0">
               <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
               <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
@@ -19,10 +19,10 @@
                                     <div class="col-md-4 mb-md-0 mb-4">
                                         <h2 class="footer-heading">Services</h2>
                                         <ul class="list-unstyled">
-                              <li><a href="#" class="py-1 d-block">Market Analysis</a></li>
-                              <li><a href="#" class="py-1 d-block">Accounting Advisor</a></li>
-                              <li><a href="#" class="py-1 d-block">General Consultancy</a></li>
-                              <li><a href="#" class="py-1 d-block">Structured Assestment</a></li>
+                              <li><a href="#" class="py-1 d-block">We sell Software</a></li>
+                              <li><a href="#" class="py-1 d-block">E-commerce Website</a></li>
+                              <li><a href="#" class="py-1 d-block">POS Software</a></li>
+                              <li><a href="#" class="py-1 d-block">etc</a></li>
                             </ul>
                                     </div>
                                     <div class="col-md-4 mb-md-0 mb-4">
@@ -37,10 +37,8 @@
                                     <div class="col-md-4 mb-md-0 mb-4">
                                         <h2 class="footer-heading">Resources</h2>
                                         <ul class="list-unstyled">
-                              <li><a href="#" class="py-1 d-block">Security</a></li>
-                              <li><a href="#" class="py-1 d-block">Global</a></li>
-                              <li><a href="#" class="py-1 d-block">Charts</a></li>
-                              <li><a href="#" class="py-1 d-block">Privacy</a></li>
+                              <li><a href="#" class="py-1 d-block">Software</a></li>
+
                             </ul>
                                     </div>
                                 </div>
