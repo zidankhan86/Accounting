@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Login &mdash; Stisla</title>
+  <title>Login &mdash; Accounting</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
@@ -82,7 +82,7 @@
                 <div class="text-center mt-4 mb-3">
                   <div class="text-job text-muted">To Login</div>
                 </div>
-                
+
                 <div>
                     <h6>Email : admin@gmail.com</h6><br>
                     <h6>Password : 12345</h6><br>

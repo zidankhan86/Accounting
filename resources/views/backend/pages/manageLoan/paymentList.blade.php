@@ -4,7 +4,7 @@
 <div class="col-12 col-md-12 col-lg-12">
     <div class="card">
         <div style="text-align: right;">
-            <a class="btn btn-success text-center" style="display: inline-block;" href="{{ route('loan.payment.create') }}">+Create Loan Payment</a>
+            <a class="btn btn-success text-center" style="display: inline-block;" href="{{ route('loan.payment') }}">+Create Loan Payment</a>
         </div>
       <div class="card-header">
         <h4 class="text-success">Loan Payment List</h4>

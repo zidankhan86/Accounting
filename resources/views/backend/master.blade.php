@@ -80,7 +80,6 @@
   </div>
 
   <!-- General JS Scripts -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="{{url('assets/modules/jquery.min.js')}}"></script>
   <script src="{{url('assets/modules/popper.js')}}"></script>
   <script src="{{url('assets/modules/tooltip.js')}}"></script>

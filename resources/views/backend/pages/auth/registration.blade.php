@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Register</title>
+  <title>Register -Accounting</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
@@ -33,7 +33,7 @@
         <div class="row">
           <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
             <div class="login-brand">
-              <img src="" alt="logo" width="100" class="shadow-light rounded-circle">
+              <a href="{{ url('/') }}" class="btn btn-success"><i class="fas fa-home"></i> ACCOUNTING HOME</a>
             </div>
 
             <div class="card card-primary">
@@ -46,7 +46,14 @@
                     <div class="form-group col-12">
                       <label for="frist_name"> Name</label>
                       <input id="frist_name" type="text" class="form-control" name="name" autofocus>
+                      @error('name')
+
+                    <p class="text-danger">{{ $message }}</p>
+
+                    @enderror
                     </div>
+
+
 
                   </div>
 
@@ -55,6 +62,11 @@
                     <input id="email" type="email" class="form-control" name="email">
                     <div class="invalid-feedback">
                     </div>
+                    @error('email')
+
+                    <p class="text-danger">{{ $message }}</p>
+
+                    @enderror
                   </div>
 
                   <div class="row">
@@ -65,7 +77,13 @@
                         <div class="bar"></div>
                         <div class="label"></div>
                       </div>
+                      @error('password')
+
+                      <p class="text-danger">{{ $message }}</p>
+
+                      @enderror
                     </div>
+
 
                   </div>
 
