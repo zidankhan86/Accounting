@@ -8,5 +8,6 @@
 @include('frontend\component\package')
 @include('frontend\component\feedback')
 @include('frontend\component\contact')
+@include('frontend\component\error')
 
 @endsection

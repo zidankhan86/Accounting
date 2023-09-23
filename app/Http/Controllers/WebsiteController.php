@@ -57,4 +57,7 @@ class WebsiteController extends Controller
     public function serviceStore(Request $request){
         return DB::table('package')->insert($request->input());
     }
+    public function error(){
+        return view('frontend.pages.error');
+    }
 }
