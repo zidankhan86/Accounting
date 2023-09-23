@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthController extends Controller
 {
@@ -24,6 +25,7 @@ class AuthController extends Controller
 ]);
 
 if ($validator->fails()) {
+
     return redirect()->back()->withErrors($validator)->withInput();
 }
 
@@ -41,7 +43,8 @@ if (Auth::attempt($credentials, $remember)) {
 }
 
 // Authentication failed
-return redirect()->back()->withInput()->withErrors(['login' => 'Invalid credentials']);
+Alert::toast()->error('Failed');
+return redirect()->back()->withInput();
 
 
     }
@@ -55,6 +58,15 @@ return redirect()->back()->withInput()->withErrors(['login' => 'Invalid credenti
     }
 
    public function registrationStore(Request $request){
+    $validator = Validator::make($request->all(), [
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|unique:users,email',
+        'password' => 'required|string|min:5',
+    ]);
+    if ($validator->fails()) {
+        Alert::toast()->error('Something went wrong', 'error')->position('top-end');
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
 
    // dd($request->all());
     User::create([
