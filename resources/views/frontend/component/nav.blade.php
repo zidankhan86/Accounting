@@ -17,7 +17,9 @@
             <li class="nav-item"><a href="{{ url('/services') }}" class="nav-link">Services</a></li>
           <li class="nav-item"><a href="{{ url('/package') }}" class="nav-link">Package</a></li>
           <li class="nav-item"><a href="{{ url('/contact') }}" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="{{ url('/error') }}" class="nav-link">Error</a></li>
           <li class="nav-item" style="color: green"><a href="{{ url('/admin') }}" class="nav-link">ACCOUNTING</a></li>
+
         </ul>
       </div>
     </div>

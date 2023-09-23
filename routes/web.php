@@ -27,6 +27,7 @@ Route::get('/hero',[WebsiteController::class,'hero']);
 Route::get('/package',[WebsiteController::class,'package']);
 Route::get('/services',[WebsiteController::class,'services']);
 Route::get('/contact',[WebsiteController::class,'contact']);
+Route::get('/error',[WebsiteController::class,'error']);
 Route::get('/about',[WebsiteController::class,'about']);
 Route::get('/service-form',[WebsiteController::class,'serviceForm']);
 Route::get('/package-form',[WebsiteController::class,'packageForm']);
