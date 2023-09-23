@@ -281,7 +281,7 @@ class LoanManageController extends Controller
         {
             $validator = Validator::make($request->all(), [
                 'note' => 'required|string',
-                
+
             ]);
 
             if ($validator->fails()) {
@@ -305,6 +305,10 @@ class LoanManageController extends Controller
             ]);
 
             return response()->json(['message' => 'Authority updated successfully'], 200);
+        }
+        public function loanPaymentList(){
+            $loanPayment = LoanPayment::simplePaginate();
+            return view('backend.pages.manageLoan.paymentList',compact('loanPayment'));
         }
 
 }

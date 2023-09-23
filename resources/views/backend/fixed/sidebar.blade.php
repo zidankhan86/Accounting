@@ -48,7 +48,7 @@
 
              <li><a class="nav-link" href="{{route('loan.list')}}"><i class="fas fa-hand-holding-usd"></i>Loans</a></li>
 
-             <li><a class="nav-link" href="{{route('loan.payment')}}"><i class="fas fa-credit-card"></i>Loans Payment</a></li>
+             <li><a class="nav-link" href="{{route('loan.payment.list')}}"><i class="fas fa-credit-card"></i>Loans Payment</a></li>
 
 
           </ul>

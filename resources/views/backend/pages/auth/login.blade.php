@@ -53,7 +53,7 @@
                   <div class="form-group">
                     <div class="d-block">
                     	<label for="password" class="control-label">Password</label>
-                      
+
                     </div>
                     <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
                     <div class="invalid-feedback">
@@ -82,6 +82,7 @@
                 <div class="text-center mt-4 mb-3">
                   <div class="text-job text-muted">To Login</div>
                 </div>
+                
                 <div>
                     <h6>Email : admin@gmail.com</h6><br>
                     <h6>Password : 12345</h6><br>
@@ -109,11 +110,11 @@
   <script src="assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
   <script src="assets/modules/moment.min.js"></script>
   <script src="assets/js/stisla.js"></script>
-  
+
   <!-- JS Libraies -->
 
   <!-- Page Specific JS File -->
-  
+
   <!-- Template JS File -->
   <script src="assets/js/scripts.js"></script>
   <script src="assets/js/custom.js"></script>

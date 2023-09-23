@@ -83,6 +83,7 @@ Route::post('/add-type/create',[LoanManageController::class,'typeCreate'])->name
 Route::get('/loan-list',[LoanManageController::class,'loanList'])->name('loan.list');
 Route::get('/loan-payment',[LoanManageController::class,'loanPayment'])->name('loan.payment');
 Route::post('/loan-payment-create',[LoanManageController::class,'loanPaymentCreate'])->name('loan.payment.create');
+Route::get('/loan-payment-list',[LoanManageController::class,'loanPaymentList'])->name('loan.payment.list');
 
 Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 });
